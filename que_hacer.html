@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>¿Qué hacer tras una agresión? | Cosiendo Alas</title>
+    <meta name="description" content="Guía de acción inmediata tras una agresión sexual. Conoce qué hacer en caso de violación, acoso o violencia digital.">
+    <meta name="keywords" content="qué hacer agresión sexual, NOM-046, atención médica violencia, resguardo de evidencia, Ley Olimpia, acoso laboral">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azulOceano: '#653a82',     
+                        verdeEsperanza: '#42c3d9', 
+                        doradoSuave: '#fcc352',    
+                        grisAntracita: '#2b1045',  
+                        moradoMedio: '#8e62b1',
+                        azulCielo: '#53a0cc',
+                        turquesaClaro: '#5dcad4',
+                        lavandaSuave: '#afb0de',
+                        fondoPagina: '#f8f6fb', 
+                    },
+                    fontFamily: {
+                        titulo1: ['Playfair Display', 'serif'],
+                        subtitulo: ['Montserrat', 'sans-serif'],
+                        texto: ['Source Sans Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-urgent { background: linear-gradient(135deg, #2b1045 0%, #a12b4e 100%); }
+        html { scroll-behavior: smooth; }
+        .nav-compact { height: 4rem !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); }
+        .logo-compact { height: 2.5rem !important; width: 2.5rem !important; }
+        
+        /* Estilos para ocultar la flecha por defecto del sumario en Safari/Chrome */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+    </style>
+</head>
+<body class="text-grisAntracita font-texto antialiased bg-fondoPagina overflow-x-hidden">
+
+    <a href="https://www.google.com" id="safe-exit" class="fixed bottom-6 right-4 z-[100] bg-red-600 text-white px-4 py-3 rounded-full shadow-2xl flex items-center justify-center hover:bg-red-700 transition-all font-bold tracking-wide border-2 border-white sm:right-6 sm:px-5 active:scale-95" title="Cerrar página inmediatamente">
+        <i class="fa-solid fa-person-running text-xl mr-2"></i> <span class="text-sm sm:text-base">SALIDA RÁPIDA</span>
+    </a>
+
+    <nav id="main-navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between h-full items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img id="nav-logo" class="h-10 w-10 sm:h-12 sm:w-12 object-contain transition-all duration-300" src="home.svg" alt="Logo Cosiendo Alas" onerror="this.src='https://placehold.co/100x100?text=CA'; this.style.borderRadius='50%'">
+                    <div>
+                        <span class="block font-subtitulo font-bold text-lg sm:text-xl sm:font-extrabold text-azulOceano tracking-wide">COSIENDO ALAS</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <a href="https://wa.me/525535538561?text=Hola,%20necesito%20apoyo%20urgente" target="_blank" class="hidden sm:flex px-5 py-2 bg-red-600 text-white font-subtitulo font-bold rounded-full hover:bg-red-700 transition shadow-lg items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span>55 3553 8561</span>
+                    </a>
+                    <button id="menu-btn" class="text-azulOceano hover:text-verdeEsperanza focus:outline-none ml-2 p-2 active:bg-gray-100 rounded-full transition">
+                        <i class="fa-solid fa-bars text-2xl sm:text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="overlay" class="fixed inset-0 bg-black/50 opacity-0 z-[45] hidden transition-opacity duration-300"></div>
+
+    <div id="side-menu" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl z-[55] overflow-y-auto transform translate-x-full transition-transform duration-300">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-subtitulo font-bold text-azulOceano text-lg">Menú</span>
+                <button id="close-menu-btn" class="text-gray-400 hover:text-azulOceano transition p-2">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+            </div>
+
+            <nav class="space-y-6 pb-20">
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Organización</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="index.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Inicio</a></li>
+                        <li><a href="somos.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">¿Quiénes somos?</a></li>
+                        <li><a href="directorio.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Directorio Institucional</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Servicios Corporativos</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="empresas.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Prevención Institucional</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Asistencia y Recursos</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="que_hacer.html" class="block font-subtitulo font-bold text-red-600 transition py-1"><i class="fa-solid fa-triangle-exclamation mr-2"></i>¿Qué hacer tras una agresión?</a></li>
+                        <li><a href="orientacion_juridica.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Orientación y Defensa Legal</a></li>
+                        <li><a href="material_victimas.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para víctimas</a></li>
+                        <li><a href="material_acompañantes.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para acompañantes</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Comunidad y Cultura</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="recomendaciones.html" class="block font-subtitulo font-semibold text-verdeEsperanza hover:text-azulOceano transition py-1"><i class="fa-solid fa-heart-circle-check mr-2"></i>Recomendaciones Culturales</a></li>
+                        <li><a href="cult_viol.html" class="block font-subtitulo font-semibold text-red-500 hover:text-red-700 transition py-1"><i class="fa-solid fa-eye mr-2"></i>Cultura de la Violencia</a></li>
+                        <li><a href="tienda.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1 mt-2 border-t border-gray-100 pt-2"><i class="fa-solid fa-store mr-2"></i>Tienda con Causa</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <header class="hero-urgent pt-32 pb-16 lg:pt-40 lg:pb-24 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h1 class="font-titulo1 font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-4">
+                ¿Qué hacer tras una <span class="text-doradoSuave italic">agresión?</span>
+            </h1>
+            <p class="font-subtitulo text-lg text-gray-100 max-w-2xl mx-auto font-medium">
+                Respira. No es tu culpa y no estás sola, solo o sole. Aquí tienes una guía paso a paso basada en el tipo de violencia que estás enfrentando para proteger tu salud y tus opciones legales.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+
+        <div class="mb-10 flex flex-col md:flex-row gap-6 items-start">
+            <div class="w-16 h-16 flex-shrink-0 bg-white border-4 border-doradoSuave rounded-full flex items-center justify-center font-bold text-2xl text-grisAntracita shadow-md">
+                1
+            </div>
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 flex-1 w-full relative">
+                <h3 class="font-subtitulo font-bold text-xl sm:text-2xl text-azulOceano mb-3">Ponte a salvo y busca apoyo</h3>
+                <p class="text-gray-600 mb-4">Si estás en peligro inminente, aléjate del lugar o de la persona agresora lo antes posible. Busca un espacio seguro y contacta a alguien de tu entera confianza para que te acompañe en las siguientes decisiones.</p>
+                <div class="bg-blue-50 p-4 rounded-lg flex items-start gap-3">
+                    <i class="fa-solid fa-phone text-azulOceano mt-1"></i>
+                    <p class="text-sm text-gray-700">Si no tienes a quién acudir en este momento, revisa nuestro <a href="directorio.html" class="text-azulOceano font-bold hover:underline">Directorio de Emergencia 24/7</a>.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-10 flex flex-col md:flex-row gap-6 items-start">
+            <div class="w-16 h-16 flex-shrink-0 bg-white border-4 border-red-500 rounded-full flex items-center justify-center font-bold text-2xl text-red-500 shadow-md">
+                2
+            </div>
+            <div class="flex-1 w-full">
+                <h3 class="font-subtitulo font-bold text-xl sm:text-2xl text-grisAntracita mb-2">Identifica tu situación</h3>
+                <p class="text-gray-600 mb-6">El protocolo de acción y recolección de pruebas cambia según lo que haya sucedido. Despliega la opción que describa tu caso:</p>
+
+                <div class="space-y-4">
+                    
+                    <details class="group bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden" open>
+                        <summary class="flex justify-between items-center font-subtitulo font-bold text-lg cursor-pointer p-6 text-azulOceano hover:bg-gray-50 transition">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-hand-dots text-red-500 text-xl w-6"></i>
+                                <span>Violación o Abuso Sexual Físico</span>
+                            </div>
+                            <span class="transition group-open:rotate-180 text-gray-400"><i class="fa-solid fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="p-6 pt-0 border-t border-gray-100 bg-gray-50/50">
+                            <p class="text-gray-700 text-sm mb-4">Si hubo contacto físico no consentido, la prioridad absoluta es tu salud física y el resguardo de evidencia biológica.</p>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-hospital text-red-500 mt-1"></i>
+                                    <div>
+                                        <strong class="text-grisAntracita block">Acude a un hospital (NOM-046)</strong>
+                                        <span class="text-sm text-gray-600">Tienes derecho a atención médica en las primeras 72h para recibir profilaxis (prevención de ITS/VIH) y anticoncepción de emergencia. <strong>No necesitas denunciar primero</strong> ante el MP para recibir esta atención médica.</span><strong>Menciona lo sucedido para recibir atención médica inmediata y no tengas que esperar</strong>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-ban text-red-500 mt-1"></i>
+                                    <div>
+                                        <strong class="text-grisAntracita block">No alteres la evidencia física</strong>
+                                        <span class="text-sm text-gray-600">No te bañes, no laves tus dientes ni te cambies de ropa. Si es estrictamente necesario cambiarte, guarda la ropa que llevabas puesta en una <strong>bolsa de papel</strong> (el plástico destruye el ADN), sin lavarla.</span> Si conoces a quien lo hizo y te manda o mandas algun mensaje <strong>No borres nada</strong>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <summary class="flex justify-between items-center font-subtitulo font-bold text-lg cursor-pointer p-6 text-azulOceano hover:bg-gray-50 transition">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-people-arrows text-doradoSuave text-xl w-6"></i>
+                                <span>Acoso u Hostigamiento (Laboral/Escolar)</span>
+                            </div>
+                            <span class="transition group-open:rotate-180 text-gray-400"><i class="fa-solid fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="p-6 pt-0 border-t border-gray-100 bg-gray-50/50">
+                            <p class="text-gray-700 text-sm mb-4">El hostigamiento involucra una relación de jerarquía (tu jefe/maestro), mientras que el acoso no (un compañero). En ambos, la prioridad es documentar el patrón.</p>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-file-lines text-doradoSuave mt-1"></i>
+                                    <div>
+                                        <strong class="text-grisAntracita block">Crea una bitácora y guarda mensajes</strong>
+                                        <span class="text-sm text-gray-600">Toma capturas de pantalla de correos, mensajes de WhatsApp o regalos no deseados. Anota en una libreta las fechas, horas y lugares de los comentarios o tocamientos inapropiados.</span><strong>si tienes mensajes, no borres nada</strong>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-users text-doradoSuave mt-1"></i>
+                                    <div>
+                                        <strong class="text-grisAntracita block">Identifica testigos y activa protocolos</strong>
+                                        <span class="text-sm text-gray-600">Evita quedarte a solas con la persona agresora. Busca si tu empresa o escuela tiene un "Comité de Ética" o un protocolo para presentar la queja internamente, a la par de la asesoría legal externa.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+
+                    <details class="group bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden">
+                        <summary class="flex justify-between items-center font-subtitulo font-bold text-lg cursor-pointer p-6 text-azulOceano hover:bg-gray-50 transition">
+                            <div class="flex items-center gap-3">
+                                <i class="fa-solid fa-mobile-screen text-verdeEsperanza text-xl w-6"></i>
+                                <span>Violencia Digital (Ley Olimpia)</span>
+                            </div>
+                            <span class="transition group-open:rotate-180 text-gray-400"><i class="fa-solid fa-chevron-down"></i></span>
+                        </summary>
+                        <div class="p-6 pt-0 border-t border-gray-100 bg-gray-50/50">
+                            <p class="text-gray-700 text-sm mb-4">Si compartieron fotos, videos o audios íntimos tuyos sin tu consentimiento, o si estás sufriendo extorsión o ciberacoso.</p>
+                            <ul class="space-y-4">
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-camera text-verdeEsperanza mt-1"></i>
+                                    <div>
+                                        <strong class="text-grisAntracita block">No borres nada</strong>
+                                        <span class="text-sm text-gray-600">Tu primer instinto será borrar los chats o bloquear a la persona, pero esa es la evidencia. Toma capturas de pantalla de las amenazas, copía los links (URLs) exactos de donde se publicó el material y guarda los números de teléfono.</span>
+                                    </div>
+                                </li>
+                                <li class="flex items-start gap-3">
+                                    <i class="fa-solid fa-lock text-verdeEsperanza mt-1"></i>
+                                    <div>
+                                        <strong class="text-grisAntracita block">Asegura tus cuentas y reporta</strong>
+                                        <span class="text-sm text-gray-600">Activa la verificación en dos pasos en tus redes sociales. Una vez que tengas las capturas y URLs guardadas en un lugar seguro (o enviadas a un amigo), reporta el contenido a las plataformas (Meta, X, TikTok) para que lo bajen.</span>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </details>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="mb-10 flex flex-col md:flex-row gap-6 items-start">
+            <div class="w-16 h-16 flex-shrink-0 bg-white border-4 border-doradoSuave rounded-full flex items-center justify-center font-bold text-2xl text-grisAntracita shadow-md">
+                3
+            </div>
+            <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-gray-100 flex-1 w-full">
+                <h3 class="font-subtitulo font-bold text-xl sm:text-2xl text-azulOceano mb-3">La denuncia es a tu ritmo</h3>
+                <p class="text-gray-600 mb-6">Denunciar legalmente es un derecho, no una obligación inmediata. Tómate el tiempo necesario para procesarlo, sanar y decidir. Cuando decidas hacerlo, es crucial que no te enfrentes en soledad al Ministerio Público.</p>
+                <a href="orientacion_juridica.html" class="inline-flex items-center px-6 py-3 bg-azulOceano text-white font-bold rounded-lg hover:bg-moradoMedio transition w-full sm:w-auto justify-center">
+                    Ver Traductor Legal y Solicitar Defensa <i class="fa-solid fa-arrow-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="contacto" class="bg-grisAntracita text-white pt-16 pb-24 lg:pb-8 border-t-4 border-doradoSuave">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                         <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                             <img src="home.svg" alt="Icon" class="w-8 h-8 object-contain" onerror="this.src='https://placehold.co/100x100?text=CA';">
+                         </div>
+                        <h3 class="font-subtitulo font-bold text-2xl">Cosiendo Alas</h3>
+                    </div>
+                    <p class="font-texto text-lavandaSuave text-lg mb-6 max-w-md">
+                        Organización dedicada a la prevención de la violencia sexual y la atención integral de víctimas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                           <i class="fa-brands fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="ENLACE_TIKTOK" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-titulo1 text-xl italic mb-4 text-doradoSuave">Contacto</h4>
+                    <ul class="space-y-3 font-texto text-lavandaSuave text-lg">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-verdeEsperanza"></i>
+                            <a href="mailto:cosiendo.tus.alas@gmail.com" class="hover:text-white transition break-all">cosiendo.tus.alas@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp mt-1 text-verdeEsperanza"></i>
+                            <a href="https://wa.me/525535538561" target="_blank" class="hover:text-white transition">55 3553 8561</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-moradoMedio border-opacity-30 pt-8 text-center text-lavandaSuave text-sm font-texto">
+                <p>&copy; 2024 Cosiendo Alas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const sideMenu = document.getElementById('side-menu');
+        const overlay = document.getElementById('overlay');
+        const menuLinks = document.querySelectorAll('#side-menu a');
+        const navbar = document.getElementById('main-navbar');
+        const navLogo = document.getElementById('nav-logo');
+
+        function toggleMenu() {
+            const isOpen = !sideMenu.classList.contains('translate-x-full');
+            if (isOpen) {
+                sideMenu.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => { overlay.classList.add('hidden'); }, 300);
+                document.body.style.overflow = '';
+            } else {
+                overlay.classList.remove('hidden');
+                void overlay.offsetWidth; 
+                overlay.classList.remove('opacity-0');
+                sideMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function harmonizeGraphics() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-compact');
+                navLogo.classList.add('logo-compact');
+            } else {
+                navbar.classList.remove('nav-compact');
+                navLogo.classList.remove('logo-compact');
+            }
+        }
+
+        // Script para el Acordeón: Permitir que solo uno esté abierto a la vez (opcional pero recomendado para UX)
+        const detailsElements = document.querySelectorAll("details");
+        detailsElements.forEach((targetDetail) => {
+            targetDetail.addEventListener("click", () => {
+                detailsElements.forEach((detail) => {
+                    if (detail !== targetDetail) {
+                        detail.removeAttribute("open");
+                    }
+                });
+            });
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") { window.location.href = "https://www.google.com"; }
+        });
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        menuLinks.forEach(link => { link.addEventListener('click', toggleMenu); });
+        window.addEventListener('scroll', harmonizeGraphics);
+        window.addEventListener('resize', harmonizeGraphics);
+        harmonizeGraphics();
+    </script>
+</body>
+</html>

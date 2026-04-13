@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Evaluación de Cumplimiento para Instituciones Educativas | Cosiendo Alas</title>
+    <meta name="description" content="Diagnóstico interactivo de cumplimiento para instituciones educativas de todos los niveles. LGES Arts. 42-43, Lineamientos SEP 2025, NOM-035 y Convenio 190 OIT. Cosiendo Alas.">
+    <meta name="keywords" content="Ley General Educación Superior, Lineamientos SEP 2025, protocolo género IES, termómetro universidades, violencia sexual educación México, NOM-035, CNDH recomendación universidades">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Paleta estricta de identidad gráfica
+                        verdeEsperanza: '#42c3d9',
+                        moradoMedio: '#8e62b1',
+                        doradoSuave: '#fcc352',
+                        turquesaClaro: '#5dcad4',
+                        cyanVibrante: '#35d4da',
+                        azulCielo: '#53a0cc',
+                        lilaApagado: '#8a6eb4',
+                        azulOceano: '#653a82',
+                        lavandaSuave: '#afb0de',
+                        rosaOscuro: '#936479',
+                        grisAntracita: '#2b1045',
+                        fondoPagina: '#f8f6fb', 
+                    },
+                    fontFamily: {
+                        // Fuentes gráficas
+                        titulo1: ['Playfair Display', 'serif'],
+                        subtitulo: ['Montserrat', 'sans-serif'],
+                        seccion: ['Montserrat', 'sans-serif'],
+                        texto: ['Source Sans Pro', 'sans-serif'],
+                        cita: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        html { scroll-behavior: smooth; }
+        body { background-color: #f8f6fb; }
+        
+        .hero-gradient { background: linear-gradient(135deg, #2b1045 0%, #653a82 50%, #42c3d9 100%); }
+        .nav-compact { height: 4rem !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); }
+        .logo-compact { height: 2.5rem !important; width: 2.5rem !important; }
+        
+        /* Estilos para Menús Colapsables */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .5s ease-in-out; }
+        @keyframes sweep {
+            0%    {opacity: 0; margin-top: -10px}
+            100%  {opacity: 1; margin-top: 0px}
+        }
+
+        /* Estilos base del cuestionario original adaptados a Tailwind */
+        .opt { cursor: pointer; transition: all 0.2s ease; }
+        .opt:hover { border-color: #653a82; background-color: #f8f6fb; }
+        
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        /* Tablas */
+        .tabla-custom { width: 100%; border-collapse: collapse; }
+        .tabla-custom th { background-color: #653a82; color: #fff; padding: 0.75rem; text-align: left; font-family: 'Montserrat', sans-serif; font-size: 0.85rem; }
+        .tabla-custom td { padding: 0.75rem; border-bottom: 1px solid #e5e7eb; font-family: 'Source Sans Pro', sans-serif; font-size: 0.9rem; vertical-align: top; }
+        .tabla-custom tr:nth-child(even) td { background-color: #f8f6fb; }
+    </style>
+</head>
+<body class="text-grisAntracita font-texto antialiased flex flex-col min-h-screen">
+
+    <a href="https://www.google.com" id="safe-exit" class="fixed bottom-6 right-4 z-[100] bg-red-600 text-white px-4 py-3 rounded-full shadow-2xl flex items-center justify-center hover:bg-red-700 transition-all font-subtitulo font-bold tracking-wide border-2 border-white sm:right-6 sm:px-5 active:scale-95" title="Cerrar página inmediatamente">
+        <i class="fa-solid fa-person-running text-xl mr-2"></i> <span class="text-sm sm:text-base">SALIDA RÁPIDA</span>
+    </a>
+
+    <nav id="main-navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between h-full items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img id="nav-logo" class="h-10 w-10 sm:h-12 sm:w-12 object-contain transition-all duration-300" src="home.svg" alt="Logo Cosiendo Alas" onerror="this.src='https://placehold.co/100x100?text=CA'; this.style.borderRadius='50%'">
+                    <div>
+                        <span class="block font-subtitulo font-bold text-lg sm:text-xl sm:font-extrabold text-azulOceano tracking-wide">COSIENDO ALAS</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <a href="https://wa.me/525535538561" target="_blank" class="hidden sm:flex px-5 py-2 bg-azulOceano text-white font-subtitulo font-bold rounded-full hover:bg-moradoMedio transition shadow-lg items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span>55 3553 8561</span>
+                    </a>
+                    <button id="menu-btn" class="text-azulOceano hover:text-verdeEsperanza focus:outline-none ml-2 p-2 active:bg-gray-100 rounded-full transition">
+                        <i class="fa-solid fa-bars text-2xl sm:text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="overlay" class="fixed inset-0 bg-black/50 opacity-0 z-[45] hidden transition-opacity duration-300"></div>
+
+    <div id="side-menu" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl z-[55] overflow-y-auto transform translate-x-full transition-transform duration-300">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-subtitulo font-bold text-azulOceano text-lg">Menú</span>
+                <button id="close-menu-btn" class="text-gray-400 hover:text-azulOceano transition p-2">
+                    <i class="fa-solid fa-xmark text-2xl"></i>
+                </button>
+            </div>
+
+            <nav class="space-y-6 pb-20">
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Organización</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="index.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Inicio</a></li>
+                        <li><a href="somos.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">¿Quiénes somos?</a></li>
+                        <li><a href="directorio.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Directorio Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Servicios Corporativos</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="empresas.html" class="block font-bold text-verdeEsperanza transition py-1"><i class="fa-solid fa-building-shield mr-2"></i>Prevención Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Asistencia y Recursos</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="que_hacer.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">¿Qué hacer tras una agresión?</a></li>
+                        <li><a href="orientacion_juridica.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Orientación y Defensa Legal</a></li>
+                        <li><a href="material_victimas.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para víctimas</a></li>
+                        <li><a href="material_acompañantes.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para acompañantes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Comunidad y Cultura</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="recomendaciones.html" class="block font-semibold text-verdeEsperanza hover:text-azulOceano transition py-1">Recomendaciones Culturales</a></li>
+                        <li><a href="cult_viol.html" class="block font-semibold text-rosaOscuro hover:text-red-700 transition py-1">Cultura de la Violencia</a></li>
+                        <li><a href="tienda.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Tienda con Causa</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <header class="hero-gradient pt-32 pb-16 lg:pt-40 lg:pb-24 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+        <div class="max-w-4xl mx-auto relative z-10 fade-in">
+            <span class="text-doradoSuave font-subtitulo font-bold tracking-widest uppercase text-xs sm:text-sm mb-4 block">Cosiendo Alas · Servicio para Instituciones Educativas · Todos los niveles</span>
+            <h1 class="font-titulo1 font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6 leading-tight">
+                Calculadora de Cumplimiento <br><span class="text-doradoSuave italic">para Instituciones Educativas</span>
+            </h1>
+            <p class="font-texto text-lg text-gray-100 max-w-3xl mx-auto mb-8">
+                Diagnóstico interactivo de cumplimiento legal para instituciones educativas públicas y privadas de todos los niveles. Basado en los <strong class="text-doradoSuave">Arts. 42 y 43 LGES 2021</strong>, <strong class="text-doradoSuave">Lineamientos SEP 2025</strong>, NOM-035-STPS-2018 y Convenio 190 OIT.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-3 mt-8 font-subtitulo text-xs sm:text-sm">
+                <span class="bg-white/10 border border-white/20 rounded-full px-4 py-2 text-lavandaSuave"><strong class="text-doradoSuave">1,139%</strong> aumento en atención a NNA (2010-2023)</span>
+                <span class="bg-white/10 border border-white/20 rounded-full px-4 py-2 text-lavandaSuave"><strong class="text-doradoSuave">48.67%</strong> de casos en IES sin medidas precautorias</span>
+                <span class="bg-white/10 border border-white/20 rounded-full px-4 py-2 text-lavandaSuave"><strong class="text-doradoSuave">38%</strong> de agresores en CDMX son académicos</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full space-y-16">
+        
+        <section class="fade-in">
+            <div class="bg-gradient-to-br from-grisAntracita to-azulOceano rounded-2xl p-6 sm:p-8 flex gap-6 items-start shadow-lg">
+                <div class="text-4xl text-doradoSuave"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                <div>
+                    <p class="font-seccion font-bold text-lg text-doradoSuave mb-2">Crisis sistémica documentada: la violencia sexual en las escuelas no es incidental</p>
+                    <p class="font-texto text-sm sm:text-base text-gray-200 leading-relaxed">
+                        En 2023 se atendieron en hospitales mexicanos a <strong class="text-doradoSuave">9,802 personas de entre 1 y 17 años por violencia sexual</strong> — un incremento del <strong class="text-doradoSuave">1,139.2%</strong> respecto a 2010. Este fenómeno no es una serie de incidentes aislados: es un problema estructural arraigado en relaciones de poder desiguales, una cultura de impunidad y una <em>sistemática incapacidad institucional</em> para implementar protocolos efectivos centrados en las víctimas. La falta de un protocolo activo no es una omisión administrativa menor — es una falla del Estado de derecho con víctimas reales.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <div class="mb-8 border-b border-gray-200 pb-4">
+                <span class="font-subtitulo text-xs font-bold tracking-widest uppercase text-moradoMedio block mb-1">Marco normativo · Obligaciones diferenciadas por nivel educativo · Fuentes primarias</span>
+                <h2 class="font-titulo1 font-bold text-3xl text-azulOceano">Lo que la ley exige de tu institución</h2>
+                <p class="font-texto text-gray-600 mt-2">La obligación de contar con protocolos activos de atención a la violencia de género no es discrecional ni exclusiva de las universidades. Aplica a <strong>todos los niveles y tipos de institución educativa</strong>, pública o privada con validez oficial, y está articulada en múltiples instrumentos normativos.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col">
+                    <div class="bg-azulOceano p-5">
+                        <span class="bg-doradoSuave/20 text-doradoSuave font-subtitulo text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">Arts. 42 y 43 · LGES 2021</span>
+                        <h3 class="font-seccion font-bold text-white text-lg">Ley General de Educación Superior · Educación superior pública y privada con RVOE</h3>
+                    </div>
+                    <div class="p-5 font-texto text-sm text-gray-600 flex-grow">
+                        <p class="mb-3"><strong>Art. 42:</strong> Obliga a basar las medidas en <em>diagnósticos y estudios</em> de actividades académicas y administrativas. No basta con publicar un protocolo: debe existir un diagnóstico previo que lo sustente.</p>
+                        <p class="mb-4"><strong>Art. 43:</strong> Exige espacios libres de violencia de género, instancias con personal capacitado, medidas precautorias y <strong>exclusión expresa de la conciliación</strong> en casos de violencia contra mujeres. La autonomía universitaria no exime de estas obligaciones.</p>
+                        <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LGES_200421.pdf" target="_blank" class="text-moradoMedio font-bold hover:underline block text-xs mb-2">↗ Texto LGES · Cámara de Diputados</a>
+                        <a href="https://www.scielo.org.mx/scielo.php?script=sci_arttext&pid=S0185-19182022000100221" target="_blank" class="text-moradoMedio font-bold hover:underline block text-xs">↗ Dilemas constitucionales IES · Scielo</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col">
+                    <div class="bg-verdeEsperanza p-5">
+                        <span class="bg-white/20 text-white font-subtitulo text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">Acuerdos 17/05/25 y 25/09/25 · SEP 2025</span>
+                        <h3 class="font-seccion font-bold text-grisAntracita text-lg">Lineamientos SEP · Educación básica pública y privada con RVOE</h3>
+                    </div>
+                    <div class="p-5 font-texto text-sm text-gray-600 flex-grow">
+                        <p class="mb-3">Emitidos en mayo de 2025, son de cumplimiento obligatorio para todas las escuelas de educación básica con validez oficial. Definen tres principios operativos que anteriormente eran ambiguos:</p>
+                        <ul class="list-disc pl-5 mb-4 space-y-1">
+                            <li><strong>No criminalización:</strong> prohíbe tratar a la víctima como sospechosa o responsable.</li>
+                            <li><strong>No revictimización:</strong> obliga a evitar declaraciones repetitivas innecesarias.</li>
+                            <li><strong>Debida diligencia:</strong> exige actuar con prontitud, agotando todas las líneas de investigación administrativa.</li>
+                        </ul>
+                        <p class="font-bold text-red-600 text-xs">Cualquier omisión constituye falta administrativa grave para el personal directivo y docente.</p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col">
+                    <div class="bg-moradoMedio p-5">
+                        <span class="bg-white/20 text-white font-subtitulo text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">Arts. 10, 13 y 15 · LGAMVLV</span>
+                        <h3 class="font-seccion font-bold text-white text-lg">Ley General de Acceso a una Vida Libre de Violencia · Todos los niveles</h3>
+                    </div>
+                    <div class="p-5 font-texto text-sm text-gray-600 flex-grow">
+                        <p class="mb-3"><strong>Art. 13:</strong> Define la violencia docente como conductas que dañan la autoestima con actos de discriminación, acoso y hostigamiento sexual, independientemente de la jerarquía.</p>
+                        <p class="mb-4"><strong>Art. 15:</strong> Obliga a establecer mecanismos para erradicar la violencia en escuelas públicas <em>y privadas</em>, crear procedimientos administrativos claros de sanción, y garantizar que el nombre de la víctima <strong>nunca se haga público</strong>.</p>
+                        <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LGAMVLV.pdf" target="_blank" class="text-azulOceano font-bold hover:underline block text-xs">↗ Texto LGAMVLV · Cámara de Diputados</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col">
+                    <div class="bg-doradoSuave p-5">
+                        <span class="bg-grisAntracita/10 text-grisAntracita font-subtitulo text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">Art. 73 · LGE · Todos los niveles</span>
+                        <h3 class="font-seccion font-bold text-grisAntracita text-lg">Ley General de Educación · Obligación de denuncia penal</h3>
+                    </div>
+                    <div class="p-5 font-texto text-sm text-gray-600 flex-grow">
+                        <p class="mb-3">Dispone que las autoridades educativas deben tomar medidas para preservar la integridad física, psicológica y social de los educandos, y establece la <strong>obligatoriedad de denunciar ante la Fiscalía</strong> cualquier hecho que pueda constituir un delito sexual cometido dentro del plantel.</p>
+                        <p class="font-bold text-red-600 text-xs mb-3">13 estados no establecen explícitamente esta obligación en sus protocolos locales, generando impunidad estructural. Guardar silencio implica corresponsabilidad por omisión.</p>
+                        <a href="https://www.diputados.gob.mx/LeyesBiblio/pdf/LGE.pdf" target="_blank" class="text-azulOceano font-bold hover:underline block text-xs">↗ Texto LGE · Cámara de Diputados</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col">
+                    <div class="bg-turquesaClaro p-5">
+                        <span class="bg-white/20 text-white font-subtitulo text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">NOM-035-STPS-2018</span>
+                        <h3 class="font-seccion font-bold text-grisAntracita text-lg">Riesgo psicosocial laboral · Docentes, investigadores, personal administrativo</h3>
+                    </div>
+                    <div class="p-5 font-texto text-sm text-gray-600 flex-grow">
+                        <p class="mb-3">La NOM-035 aplica a toda IES como centro de trabajo respecto a su personal: docentes, investigadores y administrativos. Obliga a diagnóstico de riesgos psicosociales — incluyendo el acoso entre pares y el hostigamiento por posición de poder —, plan de acción documentado y seguimiento periódico.</p>
+                        <p class="font-bold text-red-600 text-xs mb-3">Multa máxima: hasta $1.39 M MXN por trabajador afectado (LFT Art. 994 Fr. VI, 2025).</p>
+                        <a href="https://www.dof.gob.mx/nota_detalle.php?codigo=5541828&fecha=23/10/2018" target="_blank" class="text-azulOceano font-bold hover:underline block text-xs">↗ NOM-035 · DOF 23/10/2018</a>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-xl shadow-sm border border-gray-200 overflow-hidden flex flex-col">
+                    <div class="bg-grisAntracita p-5">
+                        <span class="bg-doradoSuave/20 text-doradoSuave font-subtitulo text-xs font-bold px-3 py-1 rounded-full mb-3 inline-block">Estándares vinculantes</span>
+                        <h3 class="font-seccion font-bold text-white text-lg">Recomendaciones CNDH y jurisprudencia interamericana</h3>
+                    </div>
+                    <div class="p-5 font-texto text-sm text-gray-600 flex-grow">
+                        <p class="mb-4">La CNDH ha emitido recomendaciones a IES públicas (Rec. 02/2020 a la UAM; Rec. 130/2025 a las Universidades del Bienestar). La Corte IDH establece que los protocolos no pueden exigir corroboración mediante prueba física ni requieren testigos para iniciar investigación (<em>Campo Algodonero, 2009</em>).</p>
+                        <a href="https://www.cndh.org.mx/sites/default/files/documentos/2020-02/REC_2020_002.pdf" target="_blank" class="text-azulOceano font-bold hover:underline block text-xs mb-2">↗ CNDH Rec. 02/2020</a>
+                        <a href="https://www.corteidh.or.cr/docs/casos/articulos/seriec_205_esp.pdf" target="_blank" class="text-azulOceano font-bold hover:underline block text-xs">↗ Campo Algodonero · Corte IDH</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-yellow-50 border-l-4 border-doradoSuave p-5 mt-6 rounded-r-xl font-texto text-sm text-yellow-900 shadow-sm">
+                <strong>Para instituciones privadas:</strong> La LGAMVLV (Art. 15), la LGE (Art. 73), los Lineamientos SEP 2025 y la LGES (Arts. 42–43) aplican igualmente a escuelas privadas con autorización o RVOE. Un estudio de 56 protocolos de IES (Ortiz Ortega et al., 2022) documentó que la mayoría carece de articulación con los reglamentos disciplinarios y no cumple el control de convencionalidad. <strong>La autonomía universitaria no es argumento legal para el incumplimiento.</strong>
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <div class="mb-8 border-b border-gray-200 pb-4">
+                <span class="font-subtitulo text-xs font-bold tracking-widest uppercase text-moradoMedio block mb-1">Estadísticas · INEGI / SSA / ENDIREH 2021 / Investigación académica</span>
+                <h2 class="font-titulo1 font-bold text-3xl text-azulOceano">La magnitud del problema en números oficiales</h2>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="bg-white p-5 rounded-xl border border-gray-200 border-t-4 border-t-red-600 shadow-sm">
+                    <span class="font-titulo1 text-3xl text-red-600 block">1,139%</span>
+                    <p class="font-texto text-xs text-gray-600 mt-2">De aumento en personas de 1–17 años atendidas por violencia sexual en hospitales (2010 a 2023).</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 border-t-4 border-t-rosaOscuro shadow-sm">
+                    <span class="font-titulo1 text-3xl text-rosaOscuro block">32.3%</span>
+                    <p class="font-texto text-xs text-gray-600 mt-2">De mujeres de 15 años y más sufrió violencia en el ámbito escolar a lo largo de su vida (ENDIREH 2021).</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 border-t-4 border-t-doradoSuave shadow-sm">
+                    <span class="font-titulo1 text-3xl text-doradoSuave block">19.5%</span>
+                    <p class="font-texto text-xs text-gray-600 mt-2">De universitarias experimentó acoso u hostigamiento en 2021; solo 10.4% presentó denuncia formal.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 border-t-4 border-t-doradoSuave shadow-sm">
+                    <span class="font-titulo1 text-3xl text-doradoSuave block">48.6%</span>
+                    <p class="font-texto text-xs text-gray-600 mt-2">De casos en IES se tramitaron sin que se implementaran medidas precautorias reales.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 border-t-4 border-t-azulOceano shadow-sm">
+                    <span class="font-titulo1 text-3xl text-azulOceano block">38%</span>
+                    <p class="font-texto text-xs text-gray-600 mt-2">De los denunciados en 581 quejas en universidades públicas de CDMX son académicos.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 border-t-4 border-t-azulOceano shadow-sm">
+                    <span class="font-titulo1 text-3xl text-azulOceano block">51.3%</span>
+                    <p class="font-texto text-xs text-gray-600 mt-2">De quejas en UNAM 2023 recibieron medidas precautorias. La mitad siguió conviviendo con su agresor.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 border-t-4 border-t-verdeEsperanza shadow-sm">
+                    <span class="font-titulo1 text-3xl text-verdeEsperanza block">↓ HAS</span>
+                    <p class="font-texto text-xs text-gray-600 mt-2">Prevalencia de acoso sexual fue estadísticamente <strong>menor en IES con protocolos activos</strong>.</p>
+                </div>
+                <div class="bg-white p-5 rounded-xl border border-gray-200 border-t-4 border-t-red-600 shadow-sm">
+                    <span class="font-titulo1 text-3xl text-red-600 block">13</span>
+                    <p class="font-texto text-xs text-gray-600 mt-2">Estados no establecen explícitamente en protocolos locales la obligación de denunciar a la fiscalía.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <details class="group bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden mb-6">
+                <summary class="flex justify-between items-center font-seccion font-bold text-xl cursor-pointer p-6 text-azulOceano hover:bg-gray-50 transition">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-folder-open text-moradoMedio"></i> El costo de un protocolo que no funciona (Casos Documentados)
+                    </div>
+                    <span class="transition group-open:rotate-180 text-gray-400">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="p-6 sm:p-8 border-t border-gray-100 bg-gray-50/50">
+                    <p class="font-texto text-sm text-gray-600 mb-6">Los siguientes casos documentan patrones sistémicos — no incidentes aislados — en los tres niveles educativos. Cada uno ilustra fallas de diseño o ejecución protocolaria con consecuencias reales.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col">
+                            <span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded mb-3 self-start">⚠ Superior · UAM Cuajimalpa · 2022-2023</span>
+                            <h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-2">El protocolo que absolvió al agresor confeso y paralizó la UAM</h4>
+                            <p class="font-texto text-sm text-gray-600 mb-4 flex-grow">Una alumna de Derecho denunció en enero 2023 que su expareja la violó dentro del campus. El agresor reconoció los hechos. La Comisión dictaminó <strong>"no responsabilidad"</strong> por incompetencia geográfica, ignorando la extraterritorialidad. La comisión estaba integrada por biólogos y diseñadores sin formación legal. Consecuencia: paro en 5 planteles y creación del Protocolo Único 2023.</p>
+                            <div class="bg-red-50 border-l-4 border-red-500 p-3 text-xs text-red-700 font-semibold mb-3">✗ Incompetencia sin fundamento · interpretación restrictiva · comisión sin formación · víctima forzada a convivir con agresor.</div>
+                            <p class="font-texto text-xs text-azulOceano">→ LGES Art. 43 exige excluir la conciliación y tener personal capacitado.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col">
+                            <span class="bg-azulCielo/20 text-azulOceano text-xs font-bold px-2 py-1 rounded mb-3 self-start">⚖ Recomendación CNDH 02/2020 · UAM</span>
+                            <h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-2">La Defensoría fue parte del problema</h4>
+                            <p class="font-texto text-sm text-gray-600 mb-4 flex-grow">Una estudiante denunció violencia por parte de su jefe en la Defensoría de Derechos Universitarios. La UAM concluyó el caso con la renuncia del titular sin ninguna medida precautoria, sin ampliar la investigación y sin garantizar la no repetición.</p>
+                            <div class="bg-red-50 border-l-4 border-red-500 p-3 text-xs text-red-700 font-semibold mb-3">✗ Omisión de medidas precautorias · Revictimización por exposición pública de la víctima.</div>
+                            <p class="font-texto text-xs text-azulOceano">→ Establece el precedente de que la CNDH puede emitir recomendaciones a IES públicas por fallas protocolarias.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col">
+                            <span class="bg-azulCielo/20 text-azulOceano text-xs font-bold px-2 py-1 rounded mb-3 self-start">⚖ Recomendación CNDH 130/2025</span>
+                            <h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-2">Universidades del Bienestar: protocolo nominal</h4>
+                            <p class="font-texto text-sm text-gray-600 mb-4 flex-grow">Por dos casos de hostigamiento sexual en Papantla. El protocolo existente no se aplicó, se omitió el acompañamiento y no se activaron mecanismos de protección. Las víctimas sufrieron graves afectaciones de salud mental sin apoyo.</p>
+                            <div class="bg-red-50 border-l-4 border-red-500 p-3 text-xs text-red-700 font-semibold mb-3">✗ La cadena de mando no fue investigada · Ausencia de reparación integral.</div>
+                            <p class="font-texto text-xs text-azulOceano">→ Demuestra que un protocolo impreso sin personal capacitado opera como simulación.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col">
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded mb-3 self-start">⚠ Básico Privado · Jardín Matatena · 2016</span>
+                            <h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-2">El prestigio institucional silenció el abuso</h4>
+                            <p class="font-texto text-sm text-gray-600 mb-4 flex-grow">El esposo de la directora abusaba de menores de 3 años. La dirección minimizó señales explícitas de trauma para evitar daños al prestigio. Evidenció el vacío de supervisión en escuelas privadas.</p>
+                            <div class="bg-red-50 border-l-4 border-red-500 p-3 text-xs text-red-700 font-semibold mb-3">✗ Ignorancia de alertas tempranas · El canal de denuncia terminaba en quien encubría los hechos.</div>
+                            <p class="font-texto text-xs text-azulOceano">→ LGAMVLV Art. 15 obliga a garantizar canales externos y protección a menores.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col">
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded mb-3 self-start">⚠ Básico Público · Patrón Sistémico</span>
+                            <h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-2">"Secreto Escolar": el traslado como política burocrática</h4>
+                            <p class="font-texto text-sm text-gray-600 mb-2 flex-grow">La práctica de cambiar a docentes señalados por abuso de escuela en lugar de procesarlos penalmente, permitiendo que repliquen conductas (Veracruz, Qro, SLP).</p>
+                            <table class="tabla-custom mb-3">
+                                <thead><tr><th>Estado / Caso</th><th>Falla Protocolaria</th></tr></thead>
+                                <tbody>
+                                    <tr><td><strong>SLP (Aquismón 2018)</strong></td><td>Directora no implementó vigilancia pese a antecedentes de agresiones a 6 niñas.</td></tr>
+                                    <tr><td><strong>BC (Tecate 2018)</strong></td><td>Conserje que abusó de 6 niñas capturado 5 años después; gozó licencias sindicales.</td></tr>
+                                    <tr><td><strong>CDMX (Jardín A. Oscoy)</strong></td><td>Conserje violentó a 30 niños. Falla total en control de accesos.</td></tr>
+                                </tbody>
+                            </table>
+                            <p class="font-texto text-xs text-azulOceano">→ Art. 73 LGE establece obligación estricta de denuncia penal.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col">
+                            <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded mb-3 self-start">⚠ Política Pública · 2021-2025</span>
+                            <h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-2">La desaparición del PNCE</h4>
+                            <p class="font-texto text-sm text-gray-600 mb-4 flex-grow">El Programa Nacional de Convivencia Escolar (PNCE) centralizaba la capacitación. Su eliminación dejó a los estados improvisando, creando una disparidad normativa donde el estado determina el nivel de protección.</p>
+                            <div class="bg-red-50 border-l-4 border-red-500 p-3 text-xs text-red-700 font-semibold mb-3">✗ Pérdida de enfoque nacional · Docentes sin capacitación unificada en prevención.</div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col">
+                            <span class="bg-azulCielo/20 text-azulOceano text-xs font-bold px-2 py-1 rounded mb-3 self-start">⚖ Estudio Normativo · 56 IES · 2022</span>
+                            <h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-2">El protocolo que existe pero no cumple</h4>
+                            <p class="font-texto text-sm text-gray-600 mb-4 flex-grow">Ortiz Ortega et al. documentó una paradoja: emisión de protocolos con baja asociación al control de convencionalidad. La mayoría no se articula con reglamentos disciplinarios y tiene definiciones incompatibles con LGAMVLV.</p>
+                            <div class="bg-red-50 border-l-4 border-red-500 p-3 text-xs text-red-700 font-semibold mb-3">✗ Instancias dependientes de rectoría sin autonomía · Estándares probatorios sin perspectiva de género.</div>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 shadow-sm flex flex-col">
+                            <span class="bg-red-100 text-red-700 text-xs font-bold px-2 py-1 rounded mb-3 self-start">⚠ Superior · UACH y Patrón Nacional</span>
+                            <h4 class="font-titulo1 font-bold text-lg text-grisAntracita mb-2">"Traición institucional"</h4>
+                            <p class="font-texto text-sm text-gray-600 mb-4 flex-grow">La mala atención provocó que estudiantes abandonaran sus estudios. La organización que debía protegerlas operó para proteger al perpetrador, enseñando a la comunidad que la denuncia cuesta más que el silencio.</p>
+                            <div class="bg-red-50 border-l-4 border-red-500 p-3 text-xs text-red-700 font-semibold mb-3">✗ Sanciones laxas (suspensiones de días) · Filtración de nombres · Agresor regresa con su víctima.</div>
+                            <p class="font-texto text-xs text-azulOceano">→ Produce un ciclo de impunidad autoperpetuado (Frías, 2025).</p>
+                        </div>
+                    </div>
+                </div>
+            </details>
+
+            <details class="group bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden mb-6">
+                <summary class="flex justify-between items-center font-seccion font-bold text-xl cursor-pointer p-6 text-azulOceano hover:bg-gray-50 transition">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-triangle-exclamation text-rosaOscuro"></i> Indicadores de riesgo que el personal debe saber identificar
+                    </div>
+                    <span class="transition group-open:rotate-180 text-gray-400">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="p-6 sm:p-8 border-t border-gray-100 bg-gray-50/50">
+                    <p class="font-texto text-sm text-gray-600 mb-6">Un componente esencial de cualquier protocolo efectivo es la prevención primaria. La falta de capacitación impide que estas señales sean leídas correctamente, retrasando la intervención protectora, porque frecuentemente son malinterpretadas como <em>problemas de conducta</em>.</p>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 border-t-4 border-t-azulCielo shadow-sm">
+                            <h4 class="font-seccion font-bold text-azulCielo mb-3">🏫 Nivel básico · NNA</h4>
+                            <ul class="font-texto text-sm text-gray-600 space-y-3">
+                                <li><strong>Conductuales:</strong> Retraimiento súbito, agresividad inexplicable, conductas sexualizadas inapropiadas para la edad, conocimientos sobre actos sexuales que no corresponden a su desarrollo.</li>
+                                <li><strong>Físicos:</strong> Dolores recurrentes sin causa médica, dificultades para caminar o sentarse, lesiones en áreas íntimas ocultadas.</li>
+                                <li><strong>Sociales:</strong> Relación inusualmente cercana y secreta con personal escolar o de intendencia, aislamiento de pares, falta de supervisión parental.</li>
+                            </ul>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border border-gray-200 border-t-4 border-t-doradoSuave shadow-sm">
+                            <h4 class="font-seccion font-bold text-doradoSuave mb-3">🏛 Media superior y superior</h4>
+                            <ul class="font-texto text-sm text-gray-600 space-y-3">
+                                <li><strong>Patrón docente-estudiante:</strong> Comentarios reiterados sobre apariencia física, propuestas de reuniones fuera del espacio académico bajo pretextos de tutoría o tesis, amenazas sobre evaluaciones ante rechazo.</li>
+                                <li><strong>Señales en la víctima:</strong> Ausencias repentinas, cambio de proyecto de investigación o asesor sin justificación académica, deterioro del rendimiento, aislamiento.</li>
+                                <li><strong>Señales en el espacio:</strong> Rumores persistentes sobre un docente en particular, tendederos de denuncia, quejas informales repetidas.</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-red-50 border-l-4 border-red-600 p-5 rounded-r-xl">
+                        <h4 class="font-seccion font-bold text-red-700 mb-2">⚠ Obligación del personal</h4>
+                        <p class="font-texto text-sm text-red-900 leading-relaxed">Los protocolos establecen que <strong>"guardar silencio sobre un acto de abuso sexual implica corresponsabilidad por omisión"</strong>. El docente que sospecha y no informa, o el director que sabe y no denuncia ante la Fiscalía, es administrativamente responsable conforme al Art. 73 LGE. En la práctica, el miedo a represalias sindicales frena las denuncias internas; de ahí la urgencia de protocolos y canales seguros.</p>
+                    </div>
+                </div>
+            </details>
+
+            <details class="group bg-white rounded-2xl shadow-md border border-gray-200 overflow-hidden mb-16">
+                <summary class="flex justify-between items-center font-seccion font-bold text-xl cursor-pointer p-6 text-azulOceano hover:bg-gray-50 transition">
+                    <div class="flex items-center gap-3">
+                        <i class="fa-solid fa-microscope text-verdeEsperanza"></i> Las investigadoras y los instrumentos que documentaron el problema
+                    </div>
+                    <span class="transition group-open:rotate-180 text-gray-400">
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </span>
+                </summary>
+                <div class="p-6 border-t border-gray-100 bg-gray-50/50">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        
+                        <div class="bg-white p-5 rounded-xl border-l-4 border-azulOceano shadow-sm">
+                            <h4 class="font-seccion font-bold text-azulOceano text-sm mb-2">Frías, S.M. (2025)</h4>
+                            <p class="font-texto text-xs text-gray-600 leading-relaxed">Violencia de género en universidades mexicanas. Magnitud, protocolos y respuestas institucionales. <em>Rev. Mexicana de Sociología</em> 88(1). Demuestra estadísticamente que la prevalencia es menor donde hay protocolos activos.</p>
+                        </div>
+                        
+                        <div class="bg-white p-5 rounded-xl border-l-4 border-moradoMedio shadow-sm">
+                            <h4 class="font-seccion font-bold text-moradoMedio text-sm mb-2">Huacuz Elías, M.G. (2018)</h4>
+                            <p class="font-texto text-xs text-gray-600 leading-relaxed">¿Violencia de género o violencia falocéntrica? INAH. La autora fue titular de la Defensoría de Derechos Universitarios UAM en el período posterior a la Recomendación CNDH 02/2020.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border-l-4 border-turquesaClaro shadow-sm">
+                            <h4 class="font-seccion font-bold text-turquesaClaro text-sm mb-2">Ortiz Ortega et al. (2022)</h4>
+                            <p class="font-texto text-xs text-gray-600 leading-relaxed">Dilemas constitucionales en la implementación de protocolos de violencia de género en universidades. <em>Scielo</em>. Analizó 56 protocolos IES, revelando la baja asociación con el control de convencionalidad.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border-l-4 border-verdeEsperanza shadow-sm">
+                            <h4 class="font-seccion font-bold text-verdeEsperanza text-sm mb-2">Varela Guinot, H. (2020)</h4>
+                            <p class="font-texto text-xs text-gray-600 leading-relaxed">Las universidades frente a la violencia de género: alcance limitado de los mecanismos formales. Analizó 35 universidades públicas y 10 privadas: 49% sin protocolo completo.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border-l-4 border-doradoSuave shadow-sm">
+                            <h4 class="font-seccion font-bold text-yellow-600 text-sm mb-2">Gómez, García & Hernández (2020)</h4>
+                            <p class="font-texto text-xs text-gray-600 leading-relaxed">Análisis de los protocolos ante la violencia de género en las unidades de la UAM. <em>Reencuentro</em>. Primera sistematización comparativa, documentó la heterogeneidad innecesaria.</p>
+                        </div>
+
+                        <div class="bg-white p-5 rounded-xl border-l-4 border-rosaOscuro shadow-sm">
+                            <h4 class="font-seccion font-bold text-rosaOscuro text-sm mb-2">González Karen (Anteproyecto 2026)</h4>
+                            <p class="font-texto text-xs text-gray-600 leading-relaxed">La violación enunciable: protocolos de género y procesos disciplinarios como dispositivos de impunidad en universidades públicas. MEM UAM-Xochimilco. Perspectiva situada (investigadora-sobreviviente).</p>
+                        </div>
+
+                    </div>
+                </div>
+            </details>
+        </section>
+
+        <section id="cuestionario-ancla">
+            <div class="text-center mb-10 fade-in">
+                <h2 class="font-titulo1 font-bold text-3xl sm:text-4xl text-grisAntracita mb-4">¿En qué nivel de cumplimiento está tu institución?</h2>
+                <p class="font-texto text-gray-600 max-w-2xl mx-auto">
+                    Autodiagnóstico · 24 preguntas · 6 dimensiones. Responde el estado <em>actual</em> de tu institución, no el aspiracional. Aplica a públicas y privadas con RVOE.
+                </p>
+            </div>
+
+            <div class="bg-white rounded-xl p-4 sm:p-5 border border-gray-200 shadow-sm mb-8 grid grid-cols-2 md:grid-cols-4 gap-4 fade-in">
+                <div class="flex items-center gap-2"><span class="font-titulo1 text-2xl font-bold text-red-600">0</span><span class="font-texto text-xs text-gray-500"><strong>No existe</strong></span></div>
+                <div class="flex items-center gap-2"><span class="font-titulo1 text-2xl font-bold text-doradoSuave">1</span><span class="font-texto text-xs text-gray-500"><strong>En desarrollo</strong></span></div>
+                <div class="flex items-center gap-2"><span class="font-titulo1 text-2xl font-bold text-azulCielo">2</span><span class="font-texto text-xs text-gray-500"><strong>Parcial</strong></span></div>
+                <div class="flex items-center gap-2"><span class="font-titulo1 text-2xl font-bold text-verdeEsperanza">3</span><span class="font-texto text-xs text-gray-500"><strong>Activo y revisado</strong></span></div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden fade-in" id="calc">
+                <div class="h-1 bg-gray-200 w-full"><div id="pf" class="h-full bg-gradient-to-r from-azulOceano to-verdeEsperanza transition-all duration-500" style="width:0%"></div></div>
+                
+                <div id="pt" class="pt-5 px-6 sm:px-8 font-seccion text-xs font-bold text-moradoMedio uppercase tracking-widest">Dimensión 1 de 6</div>
+                
+                <div class="px-6 sm:px-8 pt-4 flex items-center gap-4">
+                    <div id="dn" class="w-12 h-12 rounded-full text-white font-titulo1 text-2xl flex items-center justify-center flex-shrink-0 bg-azulOceano">1</div>
+                    <div>
+                        <h3 id="dt" class="font-titulo1 font-bold text-xl sm:text-2xl text-azulOceano">Marco Normativo y Protocolo</h3>
+                        <span id="dd" class="font-seccion text-xs font-semibold text-gray-500 block mt-1">Obligaciones LGES Arts. 42–43 · LGAMVLV · LGE Art. 73</span>
+                    </div>
+                </div>
+
+                <div id="pl" class="px-6 sm:px-8 pt-6 pb-4">
+                    </div>
+
+                <div class="px-6 sm:px-8 py-5 flex justify-between items-center border-t border-gray-100 bg-gray-50">
+                    <button class="font-seccion font-bold text-sm px-4 py-2 border-2 border-gray-300 text-gray-600 rounded-full hover:border-azulOceano hover:text-azulOceano transition-colors" id="bp" onclick="nav(-1)" style="display:none;">← Anterior</button>
+                    <span id="sb" class="font-texto text-xs sm:text-sm text-gray-500 text-center mx-auto"></span>
+                    <button class="font-seccion font-bold text-sm px-5 py-2 bg-azulOceano text-white rounded-full hover:bg-grisAntracita transition-colors disabled:opacity-50 disabled:cursor-not-allowed" id="bn" onclick="nav(1)">Siguiente →</button>
+                </div>
+            </div>
+
+            <div id="res" class="hidden fade-in bg-white rounded-2xl shadow-2xl border border-gray-200 overflow-hidden mt-8">
+                <div class="p-8 sm:p-12 text-center border-b border-gray-100 relative">
+                    <canvas id="gc" width="220" height="130" class="block mx-auto"></canvas>
+                    <span id="pn" class="font-titulo1 font-bold text-5xl text-grisAntracita block mt-4">--</span>
+                    <div id="nb" class="inline-block px-5 py-2 rounded-full font-seccion font-bold text-sm border-2 my-4">—</div>
+                    <p id="rd" class="font-texto text-base sm:text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">—</p>
+                </div>
+                
+                <div class="px-8 pt-6">
+                    <h4 class="font-titulo1 font-bold text-xl text-azulOceano mb-4">Desglose por dimensión</h4>
+                </div>
+                <div id="dv" class="grid grid-cols-2 md:grid-cols-3 gap-4 px-8 pb-8">
+                    </div>
+                
+                <div class="px-8 pt-4 border-t border-gray-100">
+                    <h4 class="font-titulo1 font-bold text-xl text-azulOceano mb-4">Acciones prioritarias fundamentadas</h4>
+                </div>
+                <div id="av" class="px-8 pb-8 space-y-2">
+                    </div>
+
+                <div class="bg-gradient-to-br from-grisAntracita to-azulOceano p-10 text-center">
+                    <h3 class="font-titulo1 font-bold text-2xl text-white mb-3">¿Cómo puede ayudar Cosiendo Alas?</h3>
+                    <p class="font-texto text-sm text-lavandaSuave max-w-2xl mx-auto mb-6">
+                        Diseñamos protocolos con perspectiva de género para instituciones de todos los niveles, con base en la LGES, los Lineamientos SEP 2025 y los estándares interamericanos. Capacitación para personal directivo, docente y administrativo.
+                    </p>
+                    <div class="flex flex-wrap justify-center gap-4">
+                        <a href="mailto:cosiendo.tus.alas@gmail.com?subject=Resultados Termómetro Educativo" class="bg-doradoSuave text-grisAntracita font-seccion font-bold text-sm px-8 py-3 rounded-full hover:bg-white transition-colors">
+                            Solicitar diagnóstico
+                        </a>
+                        <button onclick="reiniciar()" class="bg-transparent text-white border-2 border-white/30 font-seccion font-bold text-sm px-8 py-3 rounded-full hover:bg-white/10 transition-colors">
+                            Reiniciar evaluación
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contacto" class="bg-grisAntracita text-white pt-16 pb-24 lg:pb-8 border-t-4 border-doradoSuave mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                         <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                             <img src="home.svg" alt="Icon" class="w-8 h-8 object-contain" onerror="this.src='https://placehold.co/100x100?text=CA';">
+                         </div>
+                        <h2 class="font-subtitulo font-bold text-2xl">Cosiendo Alas</h2>
+                    </div>
+                    <p class="font-texto text-lavandaSuave text-lg mb-6 max-w-md">
+                        Organización dedicada a la prevención de la violencia sexual y la atención integral de víctimas.
+                    </p>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-xl italic mb-4 text-doradoSuave">Contacto Institucional</h3>
+                    <ul class="space-y-3 font-texto text-lavandaSuave text-lg">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-verdeEsperanza"></i>
+                            <a href="mailto:cosiendo.tus.alas@gmail.com" class="hover:text-white transition break-all">cosiendo.tus.alas@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp mt-1 text-verdeEsperanza"></i>
+                            <a href="https://wa.me/525535538561" target="_blank" class="hover:text-white transition">55 3553 8561</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-moradoMedio border-opacity-30 pt-8 text-center text-lavandaSuave text-xs sm:text-sm font-texto leading-relaxed">
+                <p><strong class="text-doradoSuave">Fuentes normativas:</strong> LGES Arts. 42, 43 y 19 Fr. XIX · Lineamientos SEP Acuerdos 17/05/25 y 25/09/25 · LGAMVLV Arts. 10, 13 y 15 · LGE Art. 73 · NOM-035-STPS-2018 · LFT Arts. 132 Fr.XXXI y 994 Fr.VI · CPEUM Arts. 1° y 3° · C190 OIT · Rec. Gral. 35 CEDAW (2017) · CNDH Recs. 02/2020 y 130/2025 · Corte IDH: Campo Algodonero (2009), Fernández Ortega (2010), Rosendo Cantú (2010).</p>
+                <p class="mt-2">&copy; 2024 Cosiendo Alas. Todos los derechos reservados. Herramienta de uso libre con atribución.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const sideMenu = document.getElementById('side-menu');
+        const overlay = document.getElementById('overlay');
+        const navbar = document.getElementById('main-navbar');
+        const navLogo = document.getElementById('nav-logo');
+        const menuLinks = document.querySelectorAll('#side-menu a');
+        
+        function toggleMenu() {
+            const isOpen = !sideMenu.classList.contains('translate-x-full');
+            if (isOpen) {
+                sideMenu.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => { overlay.classList.add('hidden'); }, 300);
+                document.body.style.overflow = '';
+            } else {
+                overlay.classList.remove('hidden');
+                void overlay.offsetWidth; 
+                overlay.classList.remove('opacity-0');
+                sideMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function harmonizeGraphics() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-compact');
+                navLogo.classList.add('logo-compact');
+            } else {
+                navbar.classList.remove('nav-compact');
+                navLogo.classList.remove('logo-compact');
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        menuLinks.forEach(link => { link.addEventListener('click', toggleMenu); });
+        
+        window.addEventListener('scroll', harmonizeGraphics);
+        window.addEventListener('resize', harmonizeGraphics);
+        harmonizeGraphics();
+        
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") { window.location.href = "https://www.google.com"; }
+        });
+    </script>
+
+    <script>
+        const DIMS=[
+          { n:1, t:"Marco Normativo y Protocolo", d:"LGES Arts. 42–43 · LGAMVLV · LGE Art. 73 · Lineamientos SEP 2025", c:"#653a82", q:[ "¿La institución cuenta con un Protocolo de Atención a la Violencia de Género que cumple explícitamente las obligaciones de la LGES Arts. 42-43 (para IES) o los Lineamientos SEP 2025 (para educación básica) y excluye la conciliación en casos de violencia contra mujeres?", "¿El protocolo incluye el principio de extraterritorialidad: la institución reconoce su obligación de atender casos que ocurran fuera del campus físico cuando involucren a integrantes de la comunidad educativa?", "¿El protocolo contempla medidas de protección inmediatas — separación del agresor, cambio de grupo, acompañamiento — sin esperar la resolución del caso y sin que la víctima deba solicitarlas explícitamente?", "¿El protocolo está articulado con el reglamento disciplinario de la institución, de modo que una denuncia activa ambos mecanismos con criterios compatibles y perspectiva de género?" ] },
+          { n:2, t:"Instancia Especializada y Personal Capacitado", d:"LGES Art. 43 inciso b · Lineamientos SEP 2025 · Autonomía operativa", c:"#8e62b1", q:[ "¿La institución cuenta con una instancia, unidad o persona responsable específicamente designada para operar el protocolo, con formación técnica en perspectiva de género, derechos humanos y procesos acusatorios?", "¿La comisión o instancia que dictamina los casos está integrada por personal con formación especializada — no por académicos o directivos asignados al azar por disponibilidad administrativa?", "¿El personal que hace primer contacto con las personas denunciantes ha recibido capacitación en atención sin revictimización, primeros auxilios psicológicos y protocolos de no criminalización?", "¿La instancia tiene autonomía operativa suficiente para aplicar medidas precautorias sin requerir autorización de la rectoría, dirección general o autoridad superior para cada caso?" ] },
+          { n:3, t:"Diagnóstico, Prevención y Detección", d:"LGES Art. 42 · LGE Art. 73 · Indicadores de alerta temprana · SEP 2025", c:"#42c3d9", q:[ "¿La institución ha realizado diagnósticos documentados sobre violencia de género y factores de riesgo en su comunidad educativa en los últimos 2 años, con metodología que diferencie por nivel, tipo de violencia y relación entre las partes?", "¿Existen programas de capacitación permanente para todo el personal (docentes, administrativos, directivos) en identificación de señales de alerta de abuso sexual, acoso y hostigamiento?", "¿El personal conoce la obligación legal de denunciar ante la Fiscalía cualquier hecho que pueda constituir un delito sexual, conforme al Art. 73 LGE — y comprende que guardar silencio implica corresponsabilidad por omisión?", "¿Los resultados del diagnóstico derivaron en un Plan de Prevención documentado con acciones concretas, plazos y responsables nominales, revisado al menos cada año?" ] },
+          { n:4, t:"Procedimiento Disciplinario con Perspectiva", d:"Estándares Corte IDH · CEDAW · SCJN · LGAMVLV", c:"#fcc352", q:[ "¿El reglamento disciplinario contiene definiciones de violación, acoso y hostigamiento sexual compatibles con la LGAMVLV y el Convenio 190 OIT — incluyendo conductas digitales y fuera del espacio físico?", "¿El estándar probatorio del procedimiento disciplinario no exige corroboración mediante prueba física ni requiere testigos para iniciar la investigación, conforme a la jurisprudencia de la Corte IDH (Campo Algodonero, 2009; Fernández Ortega, 2010)?", "¿El procedimiento garantiza que la persona denunciante y el presunto agresor no compartan espacios durante la investigación — y que esta separación se aplique sin necesidad de que la víctima la solicitela?", "¿Las resoluciones incluyen medidas de no repetición, seguimiento de cumplimiento y mecanismos de reparación integral para la persona afectada (apoyo psicológico, facilidades académicas, garantía de continuidad de estudios)?" ] },
+          { n:5, t:"Canal de Denuncia y Confidencialidad", d:"LGAMVLV Art. 15 · Lineamientos SEP 2025", c:"#936479", q:[ "¿Existe un canal de denuncia confidencial accesible a toda la comunidad educativa — estudiantes, docentes, personal — con garantías explícitas de anonimato y que no dependa de la misma dirección que podría ser parte del encubrimiento?", "¿El protocolo garantiza activamente que el nombre, datos personales y detalles de la denuncia de la víctima no serán difundidos a terceros, conforme a lo que exige la LGAMVLV Art. 15?", "¿El reglamento o protocolo protege explícitamente contra represalias académicas, laborales o sociales a quien denuncia, incluyendo protección contra acoso por parte de pares?", "¿La comunidad educativa conoce la existencia y el funcionamiento del canal de denuncia? (verificable mediante encuesta de percepción o evidencia de campañas)" ] },
+          { n:6, t:"Supervisión Externa y Articulación", d:"LGE Art. 73 · NOM-035 · CNDH · Fiscalía", c:"#2b1045", q:[ "¿La institución notifica a la Fiscalía correspondiente todo hecho que pueda constituir delito sexual, conforme al Art. 73 LGE — independientemente de si la víctima desea o no presentar denuncia penal?", "¿La institución aplica la NOM-035-STPS-2018 a su personal con diagnóstico documentado de riesgos psicosociales, plan de acción y seguimiento periódico?", "¿Existen mecanismos de supervisión externa del cumplimiento del protocolo (auditorías, informes a SEP) que no dependan exclusivamente de la autoevaluación institucional?", "¿La institución cuenta con un mecanismo de actualización periódica de su protocolo para incorporar reformas legales y resoluciones judiciales con perspectiva de género?" ] }
+        ];
+
+        const OPTS=[{p:0,l:"No existe"},{p:1,l:"En desarrollo"},{p:2,l:"Parcial"},{p:3,l:"Activo"}];
+
+        const NIVS=[
+          { min:90, n:"Nivel 5 · Institución Protectora", c:"#42c3d9", d:"Cumplimiento pleno de la LGES, Lineamientos SEP 2025 y estándares interamericanos. Tu institución cuenta con una cultura de prevención activa, auditada y compatible con el control de convencionalidad.", a:[{i:"✅",b:"#e0f2fe",t:"Publicar informe de cumplimiento",d:"Transparentar los avances ante la comunidad educativa, la SEP y la CNDH."}, {i:"📚",b:"#e0f2fe",t:"Contribuir a la investigación",d:"La experiencia de tu institución es valiosa para la investigación académica sobre protocolos."}] },
+          { min:70, n:"Nivel 4 · En Proceso Sólido", c:"#53a0cc", d:"Cuentas con protocolo activo e instancia operativa. Los vacíos más frecuentes en este nivel son la articulación con el reglamento disciplinario y la autonomía real de la instancia de género.", a:[{i:"⚖",b:"#f3f4f6",t:"Articular protocolo y reglamento",d:"Sin articulación, el protocolo no puede activar consecuencias reales disciplinarias."}, {i:"📱",b:"#fef3c7",t:"Conductas digitales y extraterritoriales",d:"El ámbito de protección debe incluir comunicaciones digitales y espacios fuera del campus."}] },
+          { min:50, n:"Nivel 3 · Cumplimiento Formal", c:"#fcc352", d:"Tienes los documentos pero no la operación. El Art. 42 LGES exige que las medidas se basen en diagnósticos reales; sin ellos, el protocolo no cumple la ley aunque esté firmado.", a:[{i:"🔍",b:"#fef3c7",t:"Diagnóstico real de la comunidad",d:"Sin datos propios, el protocolo no sustenta ninguna acción ante una revisión externa."}, {i:"🏛",b:"#fee2e2",t:"Revisar el estándar probatorio",d:"Exigir prueba física o testigos viola los estándares de la Corte IDH (Campo Algodonero)."}] },
+          { min:20, n:"Nivel 2 · Riesgo Normativo Alto", c:"#936479", d:"Tienes política escrita pero sin diagnóstico, sin instancia operativa y sin capacitación. El caso UAM Cuajimalpa muestra que este perfil puede desembocar en una crisis institucional sin previo aviso.", a:[{i:"🚨",b:"#fee2e2",t:"Capacitar a la instancia dictaminadora",d:"La LGES Art. 43 exige personal capacitado: este es el punto de entrada más urgente."}, {i:"📋",b:"#f3f4f6",t:"Activar medidas precautorias",d:"La separación del agresor debe ser regla, no excepción, sin esperar resolución."}, {i:"⚖",b:"#fef3c7",t:"Verificar denuncia a Fiscalía",d:"El silencio institucional implica corresponsabilidad por omisión (Art. 73 LGE)."}] },
+          { min:0, n:"Nivel 1 · Incumplimiento Legal", c:"#653a82", d:"Incumplimiento de LGES, Lineamientos SEP, LGAMVLV y LGE. El perfil es idéntico al documentado en casos de movilizaciones estudiantiles. La pregunta no es si ocurrirá una crisis, sino cuándo.", a:[{i:"🆘",b:"#fee2e2",t:"Elaborar el protocolo con perspectiva",d:"Toda institución con RVOE está legalmente obligada. Requiere acompañamiento especializado."}, {i:"📋",b:"#fee2e2",t:"Designar instancia capacitada",d:"No añadir la responsabilidad a un directivo sin recursos ni preparación específica."}, {i:"🔍",b:"#fee2e2",t:"Realizar diagnóstico",d:"El punto de partida legal según el Art. 42 LGES es el diagnóstico previo."}] }
+        ];
+
+        let dA=0, resp=Array(6).fill(null).map(()=>Array(4).fill(null));
+
+        function render(){
+          const d=DIMS[dA];
+          document.getElementById('dn').textContent=d.n;
+          document.getElementById('dn').style.background=d.c;
+          document.getElementById('dt').textContent=d.t;
+          document.getElementById('dd').textContent=d.d;
+          document.getElementById('pt').textContent=`Dimensión ${d.n} de 6`;
+          document.getElementById('pf').style.width=`${(dA/6)*100}%`;
+          const c=document.getElementById('pl');
+          c.innerHTML='';
+          d.q.forEach((q,pi)=>{
+            const el=document.createElement('div');
+            el.className = `py-5 ${pi === d.q.length - 1 ? '' : 'border-b border-gray-100'}`;
+            el.innerHTML=`<div class="font-texto text-base sm:text-lg text-grisAntracita font-semibold mb-4 leading-relaxed">${pi+1}. ${q}</div>
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                ${OPTS.map((o,oi)=>`<button class="border-2 rounded-xl p-3 transition-all duration-200 text-center hover:bg-gray-50 focus:outline-none ${resp[dA][pi]===oi?' ring-2 ring-offset-1':''}"
+                  onclick="sel(${pi},${oi})"${resp[dA][pi]===oi?` style="background:${d.c}15; border-color:${d.c}; color:${d.c}"`:` style="border-color:#e5e7eb; color:#4b5563"`}>
+                  <span class="font-titulo1 text-2xl font-bold block leading-none mb-1">${o.p}</span>
+                  <span class="font-seccion text-xs block opacity-80 uppercase tracking-wider">${o.l}</span>
+                </button>`).join('')}
+              </div>`;
+            c.appendChild(el);
+          });
+          actuNav();
+        }
+
+        function sel(pi,oi){resp[dA][pi]=oi;render();}
+
+        function actuNav(){
+          const rs=resp[dA].filter(r=>r!==null).length;
+          const pts=resp[dA].reduce((s,r)=>s+(r||0),0);
+          document.getElementById('bp').style.display=dA>0?'inline-block':'none';
+          document.getElementById('sb').innerHTML=rs>0?`Respondidas: <strong class="text-azulOceano">${rs}/4</strong> · Puntos: <strong class="text-azulOceano">${pts}/12</strong>`:'';
+          const b=document.getElementById('bn');
+          if(dA===5){
+            const todas=resp.flat().every(r=>r!==null);
+            b.textContent='Ver diagnóstico';
+            b.disabled=!todas;
+            b.onclick=mostrar;
+          } else {
+            b.textContent='Siguiente →';
+            b.disabled=rs<4;
+            b.onclick=()=>nav(1);
+          }
+        }
+
+        function nav(d){
+            dA=Math.max(0,Math.min(5,dA+d));
+            render();
+            document.getElementById('cuestionario-ancla').scrollIntoView({behavior:'smooth',block:'start'});
+        }
+
+        function drawGauge(pct){
+          const cv=document.getElementById('gc'),cx=cv.getContext('2d');
+          cx.clearRect(0,0,220,130);
+          cx.beginPath();cx.arc(110,125,90,Math.PI,2*Math.PI);
+          cx.strokeStyle='#f3f4f6';cx.lineWidth=14;cx.lineCap='round';cx.stroke();
+          const col=pct>=90?'#42c3d9':pct>=70?'#53a0cc':pct>=50?'#fcc352':pct>=20?'#936479':'#653a82';
+          cx.beginPath();cx.arc(110,125,90,Math.PI,Math.PI+Math.PI*pct/100);
+          cx.strokeStyle=col;cx.lineWidth=14;cx.lineCap='round';cx.stroke();
+        }
+
+        function mostrar(){
+          const tots=resp.map(d=>d.reduce((s,r)=>s+(r||0),0));
+          const total=tots.reduce((a,b)=>a+b,0);
+          const pct=Math.round(total/72*100);
+          document.getElementById('calc').style.display='none';
+          const r=document.getElementById('res');
+          r.classList.remove('hidden');
+          drawGauge(pct);
+          document.getElementById('pn').textContent=pct+'%';
+          const nvl=NIVS.find(n=>pct>=n.min);
+          const nb=document.getElementById('nb');
+          nb.textContent=nvl.n; nb.style.color=nvl.c; nb.style.borderColor=nvl.c; nb.style.background=nvl.c+'18';
+          document.getElementById('rd').textContent=nvl.d;
+          
+          document.getElementById('dv').innerHTML=DIMS.map((d,i)=>{
+            const p=tots[i],pp=Math.round(p/12*100);
+            return`<div class="bg-gray-50 rounded-xl p-4 border border-gray-200">
+              <span class="font-seccion text-[10px] font-bold text-gray-500 uppercase block mb-2 truncate" title="${d.t}">${d.t}</span>
+              <span class="font-titulo1 text-2xl font-bold" style="color:${d.c}">${p}</span>
+              <span class="font-texto text-xs text-gray-500">/ 12 pts</span>
+              <div class="w-full bg-gray-200 h-1.5 rounded-full mt-2 overflow-hidden"><div class="h-full" style="width:${pp}%;background:${d.c}"></div></div>
+            </div>`;
+          }).join('');
+          
+          document.getElementById('av').innerHTML=nvl.a.map(a=>`
+            <div class="flex gap-4 items-start p-4 border-b border-gray-50 last:border-0">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center text-lg flex-shrink-0" style="background:${a.b}">${a.i}</div>
+              <div>
+                <strong class="font-seccion text-sm text-grisAntracita block mb-1">${a.t}</strong>
+                <span class="font-texto text-sm text-gray-600 leading-relaxed block">${a.d}</span>
+              </div>
+            </div>`).join('');
+            
+          r.scrollIntoView({behavior:'smooth',block:'start'});
+        }
+
+        function reiniciar(){
+          dA=0; resp=Array(6).fill(null).map(()=>Array(4).fill(null));
+          document.getElementById('res').classList.add('hidden');
+          document.getElementById('calc').style.display='block';
+          render();
+          document.getElementById('cuestionario-ancla').scrollIntoView({behavior:'smooth', block:'start'});
+        }
+
+        render();
+    </script>
+</body>
+</html>

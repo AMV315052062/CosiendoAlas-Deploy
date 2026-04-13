@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>¿Quiénes Somos? | Cosiendo Alas</title>
+    <meta name="description" content="Conoce la misión, visión y al equipo detrás de Cosiendo Alas. Luchamos contra la impunidad y la revictimización, devolviendo el poder a quienes denuncian.">
+    <meta name="keywords" content="quiénes somos, misión Cosiendo Alas, equipo Cosiendo Alas, activismo violencia sexual, acompañamiento jurídico, prevención impunidad">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azulOceano: '#653a82',     
+                        verdeEsperanza: '#42c3d9', 
+                        doradoSuave: '#fcc352',    
+                        grisAntracita: '#2b1045',  
+                        moradoMedio: '#8e62b1',
+                        azulCielo: '#53a0cc',
+                        turquesaClaro: '#5dcad4',
+                        lavandaSuave: '#afb0de',
+                        fondoPagina: '#f8f6fb', 
+                    },
+                    fontFamily: {
+                        titulo1: ['Playfair Display', 'serif'],
+                        subtitulo: ['Montserrat', 'sans-serif'],
+                        texto: ['Source Sans Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-somos { background: linear-gradient(135deg, #2b1045 0%, #653a82 100%); }
+        html { scroll-behavior: smooth; }
+        .nav-compact { height: 4rem !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); }
+        .logo-compact { height: 2.5rem !important; width: 2.5rem !important; }
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-grisAntracita font-texto antialiased bg-fondoPagina overflow-x-hidden flex flex-col min-h-screen">
+
+    <a href="https://www.google.com" id="safe-exit" class="fixed bottom-6 right-4 z-[100] bg-red-600 text-white px-4 py-3 rounded-full shadow-2xl flex items-center justify-center hover:bg-red-700 transition-all font-bold tracking-wide border-2 border-white sm:right-6 sm:px-5 active:scale-95" title="Cerrar página inmediatamente">
+        <i class="fa-solid fa-person-running text-xl mr-2"></i> <span class="text-sm sm:text-base">SALIDA RÁPIDA</span>
+    </a>
+
+    <nav id="main-navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between h-full items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img id="nav-logo" class="h-10 w-10 sm:h-12 sm:w-12 object-contain transition-all duration-300" src="home.svg" alt="Logo Cosiendo Alas" onerror="this.src='https://placehold.co/100x100?text=CA'; this.style.borderRadius='50%'">
+                    <div>
+                        <span class="block font-subtitulo font-bold text-lg sm:text-xl sm:font-extrabold text-azulOceano tracking-wide">COSIENDO ALAS</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <a href="https://wa.me/525535538561" target="_blank" class="hidden sm:flex px-5 py-2 bg-azulOceano text-white font-subtitulo font-bold rounded-full hover:bg-moradoMedio transition shadow-lg items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span>55 3553 8561</span>
+                    </a>
+                    <button id="menu-btn" class="text-azulOceano hover:text-verdeEsperanza focus:outline-none ml-2 p-2 active:bg-gray-100 rounded-full transition">
+                        <i class="fa-solid fa-bars text-2xl sm:text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="overlay" class="fixed inset-0 bg-black/50 opacity-0 z-[45] hidden transition-opacity duration-300"></div>
+
+    <div id="side-menu" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl z-[55] overflow-y-auto transform translate-x-full transition-transform duration-300">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-subtitulo font-bold text-azulOceano text-lg">Menú</span>
+                <button id="close-menu-btn" class="text-gray-400 hover:text-azulOceano transition p-2"><i class="fa-solid fa-xmark text-2xl"></i></button>
+            </div>
+            <nav class="space-y-6 pb-20">
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Organización</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="index.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Inicio</a></li>
+                        <li><a href="somos.html" class="block font-subtitulo font-bold text-verdeEsperanza transition py-1"><i class="fa-solid fa-users mr-2"></i>¿Quiénes somos?</a></li>
+                        <li><a href="directorio.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Directorio Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Servicios Corporativos</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="empresas.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Prevención Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Asistencia y Recursos</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="que_hacer.html" class="block font-subtitulo font-bold text-red-600 hover:text-red-700 transition py-1"><i class="fa-solid fa-triangle-exclamation mr-2"></i>¿Qué hacer tras una agresión?</a></li>
+                        <li><a href="orientacion_juridica.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Orientación y Defensa Legal</a></li>
+                        <li><a href="material_victimas.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para víctimas</a></li>
+                        <li><a href="material_acompañantes.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para acompañantes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Comunidad y Cultura</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="recomendaciones.html" class="block font-subtitulo font-semibold text-verdeEsperanza hover:text-azulOceano transition py-1"><i class="fa-solid fa-heart-circle-check mr-2"></i>Recomendaciones Culturales</a></li>
+                        <li><a href="cult_viol.html" class="block font-subtitulo font-semibold text-red-500 hover:text-red-700 transition py-1"><i class="fa-solid fa-eye mr-2"></i>Cultura de la Violencia</a></li>
+                        <li><a href="tienda.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1 mt-2 border-t border-gray-100 pt-2"><i class="fa-solid fa-store mr-2"></i>Tienda con Causa</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <header class="hero-somos pt-32 pb-16 lg:pt-40 lg:pb-24 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 lg:w-96 lg:h-96 bg-doradoSuave opacity-10 rounded-full blur-3xl"></div>
+        <div class="max-w-4xl mx-auto relative z-10 fade-in">
+            <span class="text-doradoSuave font-bold tracking-widest uppercase text-sm mb-4 block">Nuestra Historia</span>
+            <h1 class="font-titulo1 font-bold text-4xl sm:text-5xl lg:text-6xl text-white mb-6 leading-tight">
+                El poder de <span class="text-doradoSuave italic">nombrar la herida</span>
+            </h1>
+            <p class="font-subtitulo text-lg text-gray-200 max-w-3xl mx-auto leading-relaxed">
+                Cosiendo Alas nace de la convicción de que la justicia no debe ser un privilegio ni un laberinto diseñado para silenciar. Somos un frente de acompañamiento, crítica y restitución de agencia.
+            </p>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 w-full space-y-24">
+        
+        <section class="fade-in">
+            <div class="bg-white p-8 md:p-12 rounded-3xl shadow-lg border border-gray-100 relative overflow-hidden">
+                <div class="absolute left-0 top-0 w-2 h-full bg-azulOceano"></div>
+                <h2 class="font-titulo1 italic text-3xl md:text-4xl text-azulOceano mb-6">Nuestro Manifiesto</h2>
+                <div class="space-y-6 font-texto text-gray-700 text-lg text-justify leading-relaxed">
+                    <p>
+                        La violencia sexual arrebata el control; el sistema penal, con su frialdad burocrática y sus peritajes revictimizantes, a menudo se encarga de sepultarlo. En Cosiendo Alas rechazamos la narrativa de la "víctima pasiva". Creemos firmemente que la persona que denuncia es quien posee el poder y la agencia sobre su propio proceso.
+                    </p>
+                    <p>
+                        Nuestra postura editorial es inquebrantable: <strong>la impunidad sistémica no es un accidente, es un diseño.</strong> Desde nuestro Observatorio Crítico diseccionamos cómo las instituciones, los medios de comunicación y las estructuras patriarcales trivializan la violencia. Al mismo tiempo, desde nuestro Traductor Legal y Botiquín Cultural, dotamos a las personas de herramientas para blindar su evidencia, proteger su salud mental y exigir una justicia libre de violencia institucional. Esperando que desde las recomendaciones, también encuentren ecos en su vivencia.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-8 fade-in">
+            <div class="bg-gray-50 p-8 rounded-2xl border-t-4 border-verdeEsperanza hover:shadow-md transition">
+                <div class="w-12 h-12 bg-cyan-100 text-verdeEsperanza rounded-full flex items-center justify-center text-xl mb-6">
+                    <i class="fa-solid fa-bullseye"></i>
+                </div>
+                <h3 class="font-subtitulo font-bold text-xl text-grisAntracita mb-4">Misión</h3>
+                <p class="text-sm text-gray-600 text-justify leading-relaxed">
+                    Brindar acompañamiento integral, jurídico y psicosocial, completamente a sobrevivientes de violencia. Combatimos la impunidad mediante la alfabetización legal, la exigencia de derechos ante los Ministerios Públicos y la prevención a través de la capacitación en el sector privado y educativo.
+                </p>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-2xl border-t-4 border-doradoSuave hover:shadow-md transition">
+                <div class="w-12 h-12 bg-yellow-100 text-doradoSuave rounded-full flex items-center justify-center text-xl mb-6">
+                    <i class="fa-solid fa-eye"></i>
+                </div>
+                <h3 class="font-subtitulo font-bold text-xl text-grisAntracita mb-4">Visión</h3>
+                <p class="text-sm text-gray-600 text-justify leading-relaxed">
+                    Visualizamos una sociedad donde el acceso a la justicia no dependa del estrato socioeconómico, donde las fiscalías dejen de operar como maquinarias de revictimización, y donde los espacios laborales y académicos asuman su responsabilidad ética en la erradicación de la violencia de género.
+                </p>
+            </div>
+
+            <div class="bg-gray-50 p-8 rounded-2xl border-t-4 border-moradoMedio hover:shadow-md transition">
+                <div class="w-12 h-12 bg-purple-100 text-moradoMedio rounded-full flex items-center justify-center text-xl mb-6">
+                    <i class="fa-solid fa-heart"></i>
+                </div>
+                <h3 class="font-subtitulo font-bold text-xl text-grisAntracita mb-4">Intención</h3>
+                <p class="text-sm text-gray-600 text-justify leading-relaxed">
+                    Ser el puente seguro entre la rigidez del derecho penal y el proceso humano de sanar. Nuestra intención es que ninguna persona se enfrente a la frialdad de una sala de audiencias en soledad, y que encuentren en el arte y en nuestra comunidad, un refugio para recuperar su voz.
+                </p>
+            </div>
+        </section>
+
+        <section class="fade-in">
+            <div class="flex items-center gap-4 mb-12">
+                <h2 class="font-subtitulo font-bold text-3xl text-grisAntracita">
+                    <i class="fa-solid fa-users text-azulOceano mr-2"></i>El Equipo
+                </h2>
+                <div class="h-1 bg-gray-200 flex-grow rounded-full"></div>
+            </div>
+
+            <div class="space-y-16">
+                
+                <div class="flex flex-col md:flex-row gap-8 items-center md:items-start bg-white p-6 rounded-2xl border border-gray-50 shadow-sm">
+                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gray-200 flex-shrink-0 border-4 border-azulOceano overflow-hidden shadow-inner flex items-center justify-center text-gray-400">
+                        <img src="" alt="Fotografía de Alexis" class="w-full h-full object-cover hidden">
+                        <i class="fa-solid fa-image text-3xl"></i> </div>
+                    <div class="flex-1">
+                        <h3 class="font-titulo1 font-bold text-2xl text-azulOceano mb-1">PENDIENTE</h3>
+                        <p class="text-sm font-bold text-doradoSuave uppercase tracking-wider mb-4">PENDIENTE</p>
+                        <p class="text-gray-700 text-justify leading-relaxed mb-4">
+                            PENDIENTE                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8 items-center md:items-start bg-white p-6 rounded-2xl border border-gray-50 shadow-sm">
+                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gray-200 flex-shrink-0 border-4 border-verdeEsperanza overflow-hidden shadow-inner flex items-center justify-center text-gray-400">
+                        <img src="" alt="Fotografía de Karen" class="w-full h-full object-cover hidden">
+                        <i class="fa-solid fa-image text-3xl"></i> </div>
+                    <div class="flex-1">
+                        <h3 class="font-titulo1 font-bold text-2xl text-azulOceano mb-1">PENDIENTE</h3>
+                        <p class="text-sm font-bold text-verdeEsperanza uppercase tracking-wider mb-4">PENDIENTE</p>
+                        <p class="text-gray-700 text-justify leading-relaxed mb-4">
+                            PENDIENTE.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col md:flex-row gap-8 items-center md:items-start bg-white p-6 rounded-2xl border border-gray-50 shadow-sm">
+                    <div class="w-40 h-40 md:w-48 md:h-48 rounded-full bg-gray-200 flex-shrink-0 border-4 border-gray-300 overflow-hidden shadow-inner flex items-center justify-center text-gray-400">
+                        <img src="" alt="Fotografía" class="w-full h-full object-cover hidden">
+                        <i class="fa-solid fa-image text-3xl"></i> </div>
+                    <div class="flex-1">
+                        <h3 class="font-titulo1 font-bold text-2xl text-grisAntracita mb-1">Nombre Colaborador/a</h3>
+                        <p class="text-sm font-bold text-gray-500 uppercase tracking-wider mb-4">Área Psicosocial / Prevención</p>
+                        <p class="text-gray-700 text-justify leading-relaxed mb-4">
+                            [Espacio listo para ingresar la biografía justificada de una tercera persona que colabore con la organización, como especialistas en psicología, trabajadores sociales o instructores de los cursos de prevención institucional. El formato asegura que la lectura sea impecable en dispositivos móviles y de escritorio].
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contacto" class="bg-grisAntracita text-white pt-16 pb-24 lg:pb-8 border-t-4 border-doradoSuave mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                         <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                             <img src="home.svg" alt="Icon" class="w-8 h-8 object-contain" onerror="this.src='https://placehold.co/100x100?text=CA';">
+                         </div>
+                        <h3 class="font-subtitulo font-bold text-2xl">Cosiendo Alas</h3>
+                    </div>
+                    <p class="font-texto text-lavandaSuave text-lg mb-6 max-w-md">
+                        Organización dedicada a la prevención de la violencia sexual y la atención integral de víctimas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                           <i class="fa-brands fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="ENLACE_TIKTOK" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-titulo1 text-xl italic mb-4 text-doradoSuave">Contacto</h4>
+                    <ul class="space-y-3 font-texto text-lavandaSuave text-lg">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-verdeEsperanza"></i>
+                            <a href="mailto:cosiendo.tus.alas@gmail.com" class="hover:text-white transition break-all">cosiendo.tus.alas@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp mt-1 text-verdeEsperanza"></i>
+                            <a href="https://wa.me/525535538561" target="_blank" class="hover:text-white transition">55 3553 8561</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-moradoMedio border-opacity-30 pt-8 text-center text-lavandaSuave text-sm font-texto">
+                <p>&copy; 2024 Cosiendo Alas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const sideMenu = document.getElementById('side-menu');
+        const overlay = document.getElementById('overlay');
+        const menuLinks = document.querySelectorAll('#side-menu a');
+        const navbar = document.getElementById('main-navbar');
+        const navLogo = document.getElementById('nav-logo');
+
+        function toggleMenu() {
+            const isOpen = !sideMenu.classList.contains('translate-x-full');
+            if (isOpen) {
+                sideMenu.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => { overlay.classList.add('hidden'); }, 300);
+                document.body.style.overflow = '';
+            } else {
+                overlay.classList.remove('hidden');
+                void overlay.offsetWidth; 
+                overlay.classList.remove('opacity-0');
+                sideMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function harmonizeGraphics() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-compact');
+                navLogo.classList.add('logo-compact');
+            } else {
+                navbar.classList.remove('nav-compact');
+                navLogo.classList.remove('logo-compact');
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") { window.location.href = "https://www.google.com"; }
+        });
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        menuLinks.forEach(link => { link.addEventListener('click', toggleMenu); });
+        window.addEventListener('scroll', harmonizeGraphics);
+        window.addEventListener('resize', harmonizeGraphics);
+        harmonizeGraphics();
+    </script>
+</body>
+</html>

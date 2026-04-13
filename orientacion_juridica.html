@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Orientación Jurídica y Tus Derechos | Cosiendo Alas</title>
+    <meta name="description" content="Conoce tus derechos procesales como víctima o imputada, y las herramientas jurídicas y protocolos de la SCJN que obligan al sistema a impartir justicia sin discriminación.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        verdeEsperanza: '#42c3d9',
+                        moradoMedio: '#8e62b1',
+                        doradoSuave: '#fcc352',
+                        turquesaClaro: '#5dcad4',
+                        cyanVibrante: '#35d4da',
+                        azulCielo: '#53a0cc',
+                        lilaApagado: '#8a6eb4',
+                        azulOceano: '#653a82',
+                        lavandaSuave: '#afb0de',
+                        rosaOscuro: '#936479',
+                        grisAntracita: '#2b1045',
+                        fondoPagina: '#f8f6fb', 
+                    },
+                    fontFamily: {
+                        titulo1: ['Playfair Display', 'serif'],
+                        subtitulo: ['Montserrat', 'sans-serif'],
+                        seccion: ['Montserrat', 'sans-serif'],
+                        texto: ['Source Sans Pro', 'sans-serif'],
+                        cita: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-legal { background: linear-gradient(135deg, #2b1045 0%, #653a82 100%); }
+        html { scroll-behavior: smooth; }
+        body { background-color: #f8f6fb; }
+        
+        .nav-compact { height: 4rem !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); }
+        .logo-compact { height: 2.5rem !important; width: 2.5rem !important; }
+        
+        /* Acordeones */
+        details > summary { list-style: none; }
+        details > summary::-webkit-details-marker { display: none; }
+        details[open] summary ~ * { animation: sweep .4s ease-in-out; }
+        @keyframes sweep {
+            0%    {opacity: 0; margin-top: -10px}
+            100%  {opacity: 1; margin-top: 0px}
+        }
+        
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .fundamento-tag {
+            display: inline-block;
+            background: #f0ecf8;
+            color: #653a82;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            margin: 0.2rem;
+            border: 1px solid #d5cce8;
+        }
+    </style>
+</head>
+<body class="text-grisAntracita font-texto antialiased flex flex-col min-h-screen">
+
+    <a href="https://www.google.com" id="safe-exit" class="fixed bottom-6 right-4 z-[100] bg-red-600 text-white px-4 py-3 rounded-full shadow-2xl flex items-center justify-center hover:bg-red-700 transition-all font-subtitulo font-bold tracking-wide border-2 border-white sm:right-6 sm:px-5 active:scale-95" title="Cerrar página inmediatamente">
+        <i class="fa-solid fa-person-running text-xl mr-2"></i> <span class="text-sm sm:text-base">SALIDA RÁPIDA</span>
+    </a>
+
+    <nav id="main-navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between h-full items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img id="nav-logo" class="h-10 w-10 sm:h-12 sm:w-12 object-contain transition-all duration-300" src="home.svg" alt="Logo Cosiendo Alas" onerror="this.src='https://placehold.co/100x100?text=CA'; this.style.borderRadius='50%'">
+                    <div>
+                        <span class="block font-subtitulo font-bold text-lg sm:text-xl sm:font-extrabold text-azulOceano tracking-wide">COSIENDO ALAS</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <a href="https://wa.me/525535538561" target="_blank" class="hidden sm:flex px-5 py-2 bg-azulOceano text-white font-subtitulo font-bold rounded-full hover:bg-moradoMedio transition shadow-lg items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span>55 3553 8561</span>
+                    </a>
+                    <button id="menu-btn" class="text-azulOceano hover:text-verdeEsperanza focus:outline-none ml-2 p-2 active:bg-gray-100 rounded-full transition">
+                        <i class="fa-solid fa-bars text-2xl sm:text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="overlay" class="fixed inset-0 bg-black/50 opacity-0 z-[45] hidden transition-opacity duration-300"></div>
+
+    <div id="side-menu" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl z-[55] overflow-y-auto transform translate-x-full transition-transform duration-300">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-subtitulo font-bold text-azulOceano text-lg">Menú</span>
+                <button id="close-menu-btn" class="text-gray-400 hover:text-azulOceano transition p-2"><i class="fa-solid fa-xmark text-2xl"></i></button>
+            </div>
+            <nav class="space-y-6 pb-20">
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Organización</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="index.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Inicio</a></li>
+                        <li><a href="somos.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">¿Quiénes somos?</a></li>
+                        <li><a href="directorio.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Directorio Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Servicios Corporativos</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="empresas.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Prevención Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Asistencia y Recursos</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="que_hacer.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">¿Qué hacer tras una agresión?</a></li>
+                        <li><a href="orientacion_juridica.html" class="block font-bold text-verdeEsperanza transition py-1">Orientación y Defensa Legal</a></li>
+                        <li><a href="material_victimas.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para víctimas</a></li>
+                        <li><a href="material_acompañantes.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para acompañantes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Comunidad y Cultura</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="recomendaciones.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1"><i class="fa-solid fa-heart-circle-check mr-2"></i>Recomendaciones Culturales</a></li>
+                        <li><a href="cult_viol.html" class="block font-semibold text-rosaOscuro hover:text-red-700 transition py-1"><i class="fa-solid fa-eye mr-2"></i>Cultura de la Violencia</a></li>
+                        <li><a href="tienda.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1 mt-2 border-t border-gray-100 pt-2">Tienda con Causa</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <header class="hero-legal pt-32 pb-16 lg:pt-40 lg:pb-24 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 lg:w-96 lg:h-96 bg-cyanVibrante opacity-10 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 lg:w-96 lg:h-96 bg-moradoMedio opacity-20 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-4xl mx-auto relative z-10 fade-in">
+            <span class="text-doradoSuave font-subtitulo font-bold tracking-widest uppercase text-sm mb-4 block">Defensa Legal Estratégica</span>
+            <h1 class="font-titulo1 font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6 leading-tight">
+                Las reglas del sistema <span class="text-doradoSuave italic">a tu favor</span>
+            </h1>
+            <p class="font-texto text-lg text-gray-200 max-w-3xl mx-auto mb-8">
+                El derecho no es neutral. Conoce tus derechos frente a las autoridades y descubre cómo los protocolos de la Suprema Corte nos ayudan a nivelar la balanza y obligar al sistema a impartir justicia.
+            </p>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+        
+        <section class="fade-in">
+            <div class="text-center mb-10">
+                <h2 class="font-titulo1 font-bold text-3xl sm:text-4xl text-grisAntracita mb-4">Tus derechos en el proceso penal</h2>
+                <p class="font-texto text-gray-600 max-w-2xl mx-auto">La información es tu primera línea de defensa. Ya sea que acudas a denunciar una agresión o que estés enfrentando una imputación, la ley establece garantías que ninguna autoridad puede negarte.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-verdeEsperanza transition hover:shadow-lg">
+                    <div class="w-12 h-12 bg-teal-50 rounded-full flex items-center justify-center text-verdeEsperanza mb-4 text-xl">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="font-seccion font-bold text-xl text-grisAntracita mb-3">Derechos como víctima</h3>
+                    <ul class="space-y-3 font-texto text-sm text-gray-700">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-verdeEsperanza mt-1"></i> Tienes derecho a recibir <strong>asesoría jurídica gratuita</strong> en todo momento.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-verdeEsperanza mt-1"></i> A coadyuvar con el Ministerio Público y que se reciban todos los datos de prueba que aportes.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-verdeEsperanza mt-1"></i> A recibir trato digno, no ser revictimizada y exigir la reparación integral del daño (Art. 109 CNPP).</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-verdeEsperanza mt-1"></i> A tener acceso irrestricto a tu carpeta de investigación.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-moradoMedio transition hover:shadow-lg">
+                    <div class="w-12 h-12 bg-purple-50 rounded-full flex items-center justify-center text-moradoMedio mb-4 text-xl">
+                        <i class="fa-solid fa-hand-holding-heart"></i>
+                    </div>
+                    <h3 class="font-seccion font-bold text-xl text-grisAntracita mb-3">Derechos en delitos sexuales</h3>
+                    <ul class="space-y-3 font-texto text-sm text-gray-700">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-moradoMedio mt-1"></i> <strong>Resguardo de identidad:</strong> Tus datos personales deben mantenerse en absoluta confidencialidad.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-moradoMedio mt-1"></i> A recibir atención médica y psicológica de emergencia en cualquier hospital (NOM-046).</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-moradoMedio mt-1"></i> A que tus peritajes se realicen con perspectiva de género, sin juzgar tu vida sexual previa.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-xmark text-red-500 mt-1"></i> <strong>No puedes ser obligada/o</strong> a confrontarte físicamente (careo) con tu agresor en ningún momento.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-azulCielo transition hover:shadow-lg">
+                    <div class="w-12 h-12 bg-blue-50 rounded-full flex items-center justify-center text-azulCielo mb-4 text-xl">
+                        <i class="fa-solid fa-building-columns"></i>
+                    </div>
+                    <h3 class="font-seccion font-bold text-xl text-grisAntracita mb-3">¿Y si el Ministerio Público falla?</h3>
+                    <p class="font-texto text-sm text-gray-700 mb-3">El MP no es tu jefe, es tu representante. Si retrasa tu investigación, se niega a recibir tus pruebas, no solicita órdenes de aprehensión o intenta archivar tu caso, no es el fin del camino.</p>
+                    <ul class="space-y-3 font-texto text-sm text-gray-700">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-azulCielo mt-1"></i> Tienes derecho a impugnar sus omisiones ante un Juez de Control (Art. 258 CNPP) para obligarlo a hacer su trabajo.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-azulCielo mt-1"></i> Puedes interponer quejas ante la Visitaduría General o Derechos Humanos por negligencia.</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-md border-t-4 border-doradoSuave transition hover:shadow-lg">
+                    <div class="w-12 h-12 bg-yellow-50 rounded-full flex items-center justify-center text-yellow-600 mb-4 text-xl">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="font-seccion font-bold text-xl text-grisAntracita mb-3">Si eres imputada, tus derechos</h3>
+                    <p class="font-texto text-sm text-gray-700 mb-3">El sistema frecuentemente criminaliza a las mujeres y disidencias que se defienden de la violencia. Si te acusan de un delito, tus derechos son inalienables:</p>
+                    <ul class="space-y-3 font-texto text-sm text-gray-700">
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-yellow-600 mt-1"></i> Derecho a la <strong>presunción de inocencia</strong> y a no ser incomunicada.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-yellow-600 mt-1"></i> Tienes derecho a guardar silencio, y ese silencio <strong>no puede usarse en tu contra</strong>.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-yellow-600 mt-1"></i> A saber exactamente de qué se te acusa y quién te acusa.</li>
+                        <li class="flex items-start gap-2"><i class="fa-solid fa-check text-yellow-600 mt-1"></i> A contar con una <strong>defensa técnica adecuada</strong>, libre de prejuicios morales.</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="fade-in pt-8">
+            
+            <div class="bg-white rounded-2xl shadow-md border border-gray-200 p-8 sm:p-10 relative overflow-hidden mb-10">
+                <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-azulOceano to-verdeEsperanza"></div>
+                <div class="flex items-center gap-4 mb-4">
+                    <div class="w-12 h-12 bg-gray-100 rounded-full flex items-center justify-center text-azulOceano text-xl flex-shrink-0">
+                        <i class="fa-solid fa-book-open"></i>
+                    </div>
+                    <div>
+                        <h2 class="font-subtitulo font-bold text-xl sm:text-2xl text-grisAntracita">Las herramientas contra los sesgos</h2>
+                        <p class="font-texto text-sm text-gray-500">Protocolos de actuación de la SCJN</p>
+                    </div>
+                </div>
+                <div class="font-texto text-gray-700 leading-relaxed space-y-4">
+                    <p>
+                        Los cuatro protocolos emitidos por la Suprema Corte de Justicia de la Nación (SCJN) — <strong>Género, Infancia, Vejez y Discapacidad</strong> — comparten una premisa ineludible: <em>el sistema de justicia tiene sesgos estructurales que producen resultados injustos si no se corrigen activamente.</em>
+                    </p>
+                    <p>
+                        El derecho históricamente ha sido diseñado desde una perspectiva adulta, masculina, capacitista y sin tomar en cuenta el curso de vida. Aplicar estas perspectivas <strong>no es una concesión opcional ni un favor de la autoridad</strong>; es una obligación constitucional. Conocer estas metodologías es vital: al exigir su aplicación no pides un trato especial, exiges que el proceso se adapte a tu realidad.
+                    </p>
+                </div>
+            </div>
+
+            <div class="space-y-6">
+                
+                <details class="group bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-seccion font-bold text-xl cursor-pointer p-6 text-azulOceano hover:bg-purple-50 transition">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-purple-100 rounded-full flex items-center justify-center text-moradoMedio text-lg">
+                                <i class="fa-solid fa-venus-mars"></i>
+                            </div>
+                            <span>1. Perspectiva de Género</span>
+                        </div>
+                        <span class="transition group-open:rotate-180 text-gray-400"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="p-6 sm:p-8 border-t border-gray-100 bg-gray-50/50">
+                        <h3 class="font-titulo1 font-bold text-2xl text-moradoMedio mb-2">La justicia no es ciega ante la desigualdad</h3>
+                        <p class="font-texto text-sm text-gray-500 font-semibold mb-6 uppercase tracking-wide">El género importa en el estrado.</p>
+                        
+                        <div class="space-y-5 font-texto text-gray-700 leading-relaxed">
+                            <p><strong>¿Qué es?</strong> Es una herramienta analítica que obliga a las autoridades a identificar los impactos diferenciados que las normas, prácticas y estereotipos de género tienen sobre las personas. Su objetivo es detectar asimetrías de poder y situaciones de vulnerabilidad basadas en el género, la orientación sexual o la identidad, para evitar que el proceso judicial reproduzca la discriminación.</p>
+                            
+                            <div class="bg-purple-50 border-l-4 border-moradoMedio p-5 rounded-r-xl my-4">
+                                <p class="font-seccion font-bold text-purple-900 text-sm mb-1"><i class="fa-solid fa-circle-exclamation mr-2"></i>Aclaración crucial</p>
+                                <p class="text-sm text-purple-800">La perspectiva de género <strong>no aplica exclusivamente a las mujeres</strong>, ni es un mecanismo diseñado para beneficiar o poner en desventaja injustificada a nadie. Su único propósito es nivelar la balanza, identificando y corrigiendo asimetrías de poder y roles impuestos socialmente, para que el sistema sea verdaderamente equitativo.</p>
+                            </div>
+
+                            <p><strong>¿Por qué importa en casos de violencia?</strong> Porque el sistema judicial frecuentemente desacredita basándose en prejuicios. Cuando a una víctima de agresión sexual se le cuestiona por su vestimenta, su historial sexual o por "no haber gritado", el sistema está operando bajo estereotipos. Esta perspectiva obliga al juzgador a desechar esos prejuicios al valorar las pruebas.</p>
+                            
+                            <div class="bg-white p-5 rounded-xl border border-gray-200 mt-6">
+                                <h4 class="font-seccion font-bold text-grisAntracita text-sm mb-3">Fundamento Jurídico</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="fundamento-tag">CPEUM / Art. 1 y 4</span>
+                                    <span class="fundamento-tag">CEDAW</span>
+                                    <span class="fundamento-tag">Convención de Belém do Pará</span>
+                                    <span class="fundamento-tag">Protocolo SCJN (2020)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-seccion font-bold text-xl cursor-pointer p-6 text-azulOceano hover:bg-teal-50 transition">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-teal-100 rounded-full flex items-center justify-center text-verdeEsperanza text-lg">
+                                <i class="fa-solid fa-child-reaching"></i>
+                            </div>
+                            <span>2. Perspectiva de Infancia</span>
+                        </div>
+                        <span class="transition group-open:rotate-180 text-gray-400"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="p-6 sm:p-8 border-t border-gray-100 bg-gray-50/50">
+                        <h3 class="font-titulo1 font-bold text-2xl text-verdeEsperanza mb-2">Sujetos plenos de derechos, no objetos de protección</h3>
+                        <p class="font-texto text-sm text-gray-500 font-semibold mb-6 uppercase tracking-wide">La eliminación del adultocentrismo procesal.</p>
+                        
+                        <div class="space-y-5 font-texto text-gray-700 leading-relaxed">
+                            <p><strong>¿Qué es?</strong> Es la obligación de las autoridades de garantizar el <em>interés superior de la niñez</em> en cualquier proceso donde intervengan niñas, niños y adolescentes (NNA). Exige adaptar el entorno, el lenguaje y los tiempos judiciales a su nivel de desarrollo cognitivo y emocional, garantizando su derecho a ser escuchados sin manipulación ni presión.</p>
+                            
+                            <p><strong>¿Por qué importa en casos de violencia?</strong> La violencia sexual infantil suele ser desestimada bajo el sesgo adultocentrista de que "los niños inventan cosas" o "son manipulados por sus padres". La perspectiva de infancia prohíbe desacreditar el testimonio de un NNA únicamente por su edad y obliga a realizar las entrevistas en espacios seguros (como salas lúdicas o cámara Gesell), evitando interrogatorios repetitivos que generen revictimización institucional.</p>
+                            
+                            <div class="bg-white p-5 rounded-xl border border-gray-200 mt-6">
+                                <h4 class="font-seccion font-bold text-grisAntracita text-sm mb-3">Fundamento Jurídico</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="fundamento-tag">CPEUM / Art. 4</span>
+                                    <span class="fundamento-tag">Convención sobre los Derechos del Niño (CDN)</span>
+                                    <span class="fundamento-tag">Ley General de los Derechos de NNA</span>
+                                    <span class="fundamento-tag">Protocolo SCJN (2021)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-seccion font-bold text-xl cursor-pointer p-6 text-azulOceano hover:bg-yellow-50 transition">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-yellow-100 rounded-full flex items-center justify-center text-doradoSuave text-lg">
+                                <i class="fa-solid fa-person-cane"></i>
+                            </div>
+                            <span>3. Perspectiva de Vejez</span>
+                        </div>
+                        <span class="transition group-open:rotate-180 text-gray-400"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="p-6 sm:p-8 border-t border-gray-100 bg-gray-50/50">
+                        <h3 class="font-titulo1 font-bold text-2xl text-doradoSuave mb-2">Envejecer no reduce tus derechos.</h3>
+                        <p class="font-texto text-sm text-gray-500 font-semibold mb-6 uppercase tracking-wide">El sistema está obligado a verlo.</p>
+                        
+                        <div class="space-y-5 font-texto text-gray-700 leading-relaxed">
+                            <p>La edad avanzada es una categoría que el sistema de justicia con frecuencia invisibiliza o trata como sinónimo de incapacidad. La perspectiva de vejez corrige eso: exige que quien imparte justicia identifique cómo la edad genera condiciones específicas de vulnerabilidad estructural que afectan el acceso a la justicia y el ejercicio de los derechos.</p>
+                            
+                            <p><strong>¿Qué es?</strong><br>Es un método de análisis que obliga a las autoridades a identificar si la edad avanzada de alguna de las partes está generando una desigualdad estructural. No se trata de tratar a las personas mayores como incapaces o con lástima, sino de reconocer los sesgos etarios en su contra.</p>
+                            
+                            <p>En términos prácticos, aplicar esta perspectiva significa preguntarse:</p>
+                            <ul class="list-disc pl-6 space-y-2 text-sm">
+                                <li>¿Las condiciones del proceso (horarios, espacios, lenguaje) crean barreras de acceso para una persona mayor?</li>
+                                <li>¿Su testimonio está siendo desestimado por estereotipos sobre la memoria en la vejez en lugar de razones probatorias reales?</li>
+                                <li>¿Su situación de dependencia es relevante para entender los hechos de violencia intrafamiliar o patrimonial?</li>
+                            </ul>
+
+                            <p><strong>¿Por qué importa en casos de violencia?</strong><br>Porque el sistema tiende a no creer a las víctimas mayores o a tratar su situación como un "problema de salud" y no de justicia. Cuestionar un testimonio diciendo <em>"a su edad es normal confundirse"</em> es discriminación pura y dura.</p>
+
+                            <div class="bg-yellow-50 border-l-4 border-doradoSuave p-5 rounded-r-xl my-4">
+                                <p class="font-seccion font-bold text-yellow-800 text-sm mb-1"><i class="fa-solid fa-circle-info mr-2"></i>La Convención Interamericana</p>
+                                <p class="text-sm text-yellow-900">México ratificó en 2021 la <strong>Convención Interamericana sobre la Protección de los Derechos Humanos de las Personas Mayores (CIDHPM)</strong>. Es el primer tratado vinculante específico en la materia. Citarlo es fundamental para exigir el derecho de acceso a la justicia (Art. 31).</p>
+                            </div>
+                            
+                            <div class="bg-white p-5 rounded-xl border border-gray-200 mt-6">
+                                <h4 class="font-seccion font-bold text-grisAntracita text-sm mb-3">Fundamento Jurídico</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="fundamento-tag">CPEUM / Art. 1</span>
+                                    <span class="fundamento-tag">CIDHPM / Arts. 3, 4, 5, 9 y 31</span>
+                                    <span class="fundamento-tag">CADH / Arts. 1 y 24</span>
+                                    <span class="fundamento-tag">LGAMVLV / Art. 9, fracc. VII</span>
+                                    <span class="fundamento-tag">Protocolo SCJN (2023)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+                <details class="group bg-white rounded-2xl shadow-sm border border-gray-200 overflow-hidden">
+                    <summary class="flex justify-between items-center font-seccion font-bold text-xl cursor-pointer p-6 text-azulOceano hover:bg-cyan-50 transition">
+                        <div class="flex items-center gap-4">
+                            <div class="w-10 h-10 bg-cyan-100 rounded-full flex items-center justify-center text-turquesaClaro text-lg">
+                                <i class="fa-solid fa-wheelchair"></i>
+                            </div>
+                            <span>4. Perspectiva de Discapacidad</span>
+                        </div>
+                        <span class="transition group-open:rotate-180 text-gray-400"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <div class="p-6 sm:p-8 border-t border-gray-100 bg-gray-50/50">
+                        <h3 class="font-titulo1 font-bold text-2xl text-turquesaClaro mb-2">La barrera está en el sistema, no en la persona.</h3>
+                        <p class="font-texto text-sm text-gray-500 font-semibold mb-6 uppercase tracking-wide">La discapacidad no es una limitación legal.</p>
+                        
+                        <div class="space-y-5 font-texto text-gray-700 leading-relaxed">
+                            <p>El modelo social de la discapacidad parte de una premisa fundamental: la discapacidad no está en la persona, está en las barreras que el entorno construye. Cuando el sistema de justicia no hace los ajustes necesarios para que alguien pueda participar en igualdad de condiciones, el problema es del sistema, no de la persona.</p>
+                            
+                            <p><strong>¿Qué es?</strong><br>Es el análisis que exige identificar si la discapacidad física, sensorial, intelectual o psicosocial está generando barreras de acceso que deben eliminarse mediante <em>ajustes razonables</em> (como intérpretes de LSM, formatos de lectura fácil o espacios accesibles) y apoyo en la toma de decisiones sin sustituir la voluntad de la persona.</p>
+                            
+                            <p><strong>Un cambio de paradigma:</strong><br>La ley mexicana cambió el modelo de "sustitución de la voluntad" (donde un tutor decidía). Ahora, <strong>nadie puede sustituir la voluntad de una persona con discapacidad.</strong> El Estado debe proveer los apoyos para que ejerza su propia voluntad. Tienen derecho a declarar, a ser creídas y a participar activamente en su proceso penal.</p>
+
+                            <p><strong>¿Por qué importa en casos de violencia sexual?</strong><br>Porque las personas con discapacidad, especialmente mujeres y niñas, son víctimas de violencia sexual a tasas significativamente más altas en entornos de cuidado, y el sistema tiende a considerar que su testimonio "no tiene valor probatorio" por su discapacidad. Eso no es análisis jurídico, es discriminación punible.</p>
+                            
+                            <div class="bg-white p-5 rounded-xl border border-gray-200 mt-6">
+                                <h4 class="font-seccion font-bold text-grisAntracita text-sm mb-3">Fundamento Jurídico</h4>
+                                <div class="flex flex-wrap">
+                                    <span class="fundamento-tag">CPEUM / Art. 1</span>
+                                    <span class="fundamento-tag">Convención sobre los Derechos de las Personas con Discapacidad (CDPD)</span>
+                                    <span class="fundamento-tag">CNPP / Art. 109, fracc. XII</span>
+                                    <span class="fundamento-tag">LGAMVLV / Art. 9, fracc. V</span>
+                                    <span class="fundamento-tag">Protocolo SCJN (2021)</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </details>
+
+            </div>
+        </section>
+        
+        <section class="mt-16 bg-gradient-to-br from-azulOceano to-grisAntracita p-10 rounded-3xl shadow-xl text-center fade-in">
+            <h2 class="font-titulo1 font-bold text-3xl text-white mb-4">No estás sola frente al sistema</h2>
+            <p class="font-texto text-lavandaSuave text-lg max-w-2xl mx-auto mb-8">
+                Si percibes que estas perspectivas no están siendo respetadas en tu proceso, o si necesitas iniciar una denuncia y asegurar que tus derechos se respeten desde el día uno, en Cosiendo Alas podemos intervenir y acompañarte.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center items-center gap-4">
+                <a href="https://wa.me/525535538561" target="_blank" class="w-full sm:w-auto px-6 py-4 bg-green-500 text-white font-subtitulo font-bold rounded-xl hover:bg-green-600 transition shadow-lg flex items-center justify-center gap-2 active:scale-95">
+                    <i class="fa-brands fa-whatsapp text-2xl"></i> Asesoría vía WhatsApp
+                </a>
+                <a href="URL_YOUTUBE" target="_blank" class="w-full sm:w-auto px-6 py-4 bg-red-600 text-white font-subtitulo font-bold rounded-xl hover:bg-red-700 transition shadow-lg flex items-center justify-center gap-2 active:scale-95">
+                    <i class="fa-brands fa-youtube text-2xl"></i> Nuestro YouTube
+                </a>
+                <a href="URL_TIKTOK" target="_blank" class="w-full sm:w-auto px-6 py-4 bg-black text-white font-subtitulo font-bold rounded-xl hover:bg-gray-800 transition shadow-lg flex items-center justify-center gap-2 active:scale-95">
+                    <i class="fa-brands fa-tiktok text-2xl"></i> Nuestro TikTok
+                </a>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contacto" class="bg-grisAntracita text-white pt-16 pb-24 lg:pb-8 border-t-4 border-doradoSuave mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                         <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                             <img src="home.svg" alt="Icon" class="w-8 h-8 object-contain" onerror="this.src='https://placehold.co/100x100?text=CA';">
+                         </div>
+                        <h2 class="font-subtitulo font-bold text-2xl">Cosiendo Alas</h2>
+                    </div>
+                    <p class="font-texto text-lavandaSuave text-lg mb-6 max-w-md">
+                        Organización dedicada a la prevención de la violencia sexual y la atención integral de víctimas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                           <i class="fa-brands fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="URL_TIKTOK" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-xl italic mb-4 text-doradoSuave">Contacto Institucional</h3>
+                    <ul class="space-y-3 font-texto text-lavandaSuave text-lg">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-verdeEsperanza"></i>
+                            <a href="mailto:cosiendo.tus.alas@gmail.com" class="hover:text-white transition break-all">cosiendo.tus.alas@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp mt-1 text-verdeEsperanza"></i>
+                            <a href="https://wa.me/525535538561" target="_blank" class="hover:text-white transition">55 3553 8561</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-moradoMedio border-opacity-30 pt-8 text-center text-lavandaSuave text-sm font-texto">
+                <p>&copy; 2024 Cosiendo Alas. Todos los derechos reservados. Textos bajo licencia de uso libre con atribución.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const sideMenu = document.getElementById('side-menu');
+        const overlay = document.getElementById('overlay');
+        const navbar = document.getElementById('main-navbar');
+        const navLogo = document.getElementById('nav-logo');
+        const menuLinks = document.querySelectorAll('#side-menu a');
+        
+        function toggleMenu() {
+            const isOpen = !sideMenu.classList.contains('translate-x-full');
+            if (isOpen) {
+                sideMenu.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => { overlay.classList.add('hidden'); }, 300);
+                document.body.style.overflow = '';
+            } else {
+                overlay.classList.remove('hidden');
+                void overlay.offsetWidth; 
+                overlay.classList.remove('opacity-0');
+                sideMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function harmonizeGraphics() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-compact');
+                navLogo.classList.add('logo-compact');
+            } else {
+                navbar.classList.remove('nav-compact');
+                navLogo.classList.remove('logo-compact');
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        menuLinks.forEach(link => { link.addEventListener('click', toggleMenu); });
+        
+        window.addEventListener('scroll', harmonizeGraphics);
+        window.addEventListener('resize', harmonizeGraphics);
+        harmonizeGraphics();
+        
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") { window.location.href = "https://www.google.com"; }
+        });
+    </script>
+</body>
+</html>

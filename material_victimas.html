@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Herramientas y Evidencia Legal | Cosiendo Alas</title>
+    <meta name="description" content="Toma el control de tu proceso. Guía para resguardar evidencia digital, prepararte para declarar y ejercer tu agencia ante el Ministerio Público.">
+    <meta name="keywords" content="evidencia digital delito sexual, peritaje informático, fe de hechos notarial, preparación declaración ministerio público, bitácora de acoso">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azulOceano: '#653a82',     
+                        verdeEsperanza: '#42c3d9', 
+                        doradoSuave: '#fcc352',    
+                        grisAntracita: '#2b1045',  
+                        moradoMedio: '#8e62b1',
+                        azulCielo: '#53a0cc',
+                        turquesaClaro: '#5dcad4',
+                        lavandaSuave: '#afb0de',
+                        fondoPagina: '#f8f6fb', 
+                    },
+                    fontFamily: {
+                        titulo1: ['Playfair Display', 'serif'],
+                        subtitulo: ['Montserrat', 'sans-serif'],
+                        texto: ['Source Sans Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-gradient { background: linear-gradient(135deg, #2b1045 0%, #653a82 50%, #42c3d9 100%); }
+        html { scroll-behavior: smooth; }
+        .nav-compact { height: 4rem !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); }
+        .logo-compact { height: 2.5rem !important; width: 2.5rem !important; }
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(101, 58, 130, 0.15); }
+    </style>
+</head>
+<body class="text-grisAntracita font-texto antialiased bg-fondoPagina overflow-x-hidden">
+
+    <a href="https://www.google.com" id="safe-exit" class="fixed bottom-6 right-4 z-[100] bg-red-600 text-white px-4 py-3 rounded-full shadow-2xl flex items-center justify-center hover:bg-red-700 transition-all font-bold tracking-wide border-2 border-white sm:right-6 sm:px-5 active:scale-95" title="Cerrar página inmediatamente">
+        <i class="fa-solid fa-person-running text-xl mr-2"></i> <span class="text-sm sm:text-base">SALIDA RÁPIDA</span>
+    </a>
+
+    <nav id="main-navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between h-full items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img id="nav-logo" class="h-10 w-10 sm:h-12 sm:w-12 object-contain transition-all duration-300" src="home.svg" alt="Logo Cosiendo Alas" onerror="this.src='https://placehold.co/100x100?text=CA'; this.style.borderRadius='50%'">
+                    <div>
+                        <span class="block font-subtitulo font-bold text-lg sm:text-xl sm:font-extrabold text-azulOceano tracking-wide">COSIENDO ALAS</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <a href="https://wa.me/525535538561" target="_blank" class="hidden sm:flex px-5 py-2 bg-azulOceano text-white font-subtitulo font-bold rounded-full hover:bg-moradoMedio transition shadow-lg items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span>55 3553 8561</span>
+                    </a>
+                    <button id="menu-btn" class="text-azulOceano hover:text-verdeEsperanza focus:outline-none ml-2 p-2 active:bg-gray-100 rounded-full transition">
+                        <i class="fa-solid fa-bars text-2xl sm:text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="overlay" class="fixed inset-0 bg-black/50 opacity-0 z-[45] hidden transition-opacity duration-300"></div>
+
+    <div id="side-menu" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl z-[55] overflow-y-auto transform translate-x-full transition-transform duration-300">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-subtitulo font-bold text-azulOceano text-lg">Menú</span>
+                <button id="close-menu-btn" class="text-gray-400 hover:text-azulOceano transition p-2"><i class="fa-solid fa-xmark text-2xl"></i></button>
+            </div>
+            <nav class="space-y-6 pb-20">
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Organización</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="index.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Inicio</a></li>
+                        <li><a href="somos.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">¿Quiénes somos?</a></li>
+                        <li><a href="directorio.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Directorio Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Servicios Corporativos</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="empresas.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Prevención Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Asistencia y Recursos</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="que_hacer.html" class="block font-subtitulo font-bold text-red-600 hover:text-red-700 transition py-1"><i class="fa-solid fa-triangle-exclamation mr-2"></i>¿Qué hacer tras una agresión?</a></li>
+                        <li><a href="orientacion_juridica.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Orientación y Defensa Legal</a></li>
+                        <li><a href="material_victimas.html" class="block font-subtitulo font-bold text-verdeEsperanza transition py-1"><i class="fa-solid fa-folder-open mr-2"></i>Material para víctimas</a></li>
+                        <li><a href="material_acompañantes.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para acompañantes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Comunidad y Cultura</h3>
+                    <ul class="space-y-3 pl-2 text-sm">
+                        <li><a href="recomendaciones.html" class="block font-subtitulo font-semibold text-verdeEsperanza hover:text-azulOceano transition py-1"><i class="fa-solid fa-heart-circle-check mr-2"></i>Recomendaciones Culturales</a></li>
+                        <li><a href="cult_viol.html" class="block font-subtitulo font-semibold text-red-500 hover:text-red-700 transition py-1"><i class="fa-solid fa-eye mr-2"></i>Cultura de la Violencia</a></li>
+                        <li><a href="tienda.html" class="block font-subtitulo font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1 mt-2 border-t border-gray-100 pt-2"><i class="fa-solid fa-store mr-2"></i>Tienda con Causa</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <header class="hero-gradient pt-32 pb-16 lg:pt-40 lg:pb-24 px-4 sm:px-6 lg:px-8 text-center relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 lg:w-96 lg:h-96 bg-turquesaClaro opacity-20 rounded-full blur-3xl"></div>
+        <div class="max-w-4xl mx-auto relative z-10">
+            <span class="text-doradoSuave font-bold tracking-widest uppercase text-sm mb-4 block">Herramientas de Agencia Legal</span>
+            <h1 class="font-titulo1 font-bold text-3xl sm:text-4xl lg:text-5xl text-white mb-6 leading-tight">
+                Toma el control de <span class="text-doradoSuave italic">tu proceso</span>
+            </h1>
+            <p class="font-subtitulo text-lg text-gray-100 max-w-3xl mx-auto">
+                Quien denuncia es quien tiene el poder. En esta sección encontrarás los conocimientos técnicos y legales para proteger tu evidencia, prepararte para declarar y marcar tus propias reglas frente a las instituciones.
+            </p>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-20">
+
+        <section>
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-14 h-14 bg-blue-100 rounded-full flex items-center justify-center text-azulOceano flex-shrink-0">
+                    <i class="fa-solid fa-mobile-screen-button text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="font-subtitulo font-bold text-2xl sm:text-3xl text-grisAntracita">El dispositivo es tu mejor testigo</h2>
+                    <p class="text-gray-500 mt-1">Conoce cómo funciona la evidencia digital en el Sistema Penal Acusatorio.</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 sm:p-10 rounded-2xl shadow-md border border-gray-100">
+                <p class="text-lg text-gray-700 leading-relaxed mb-8">
+                    Tu primer instinto al recibir mensajes o imágenes violentas puede ser bloquear a la persona o borrar la conversación para no verla. <strong>No lo hagas.</strong> Conservar ese registro intacto es una ventaja legal. Un "screenshot" (captura de pantalla) por sí solo puede ser desestimado por la defensa de la persona agresora bajo el argumento de que una imagen se puede alterar. 
+                </p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-azulOceano">
+                        <h3 class="font-bold text-azulOceano text-xl mb-3">La Extracción Oficial (Fiscalía)</h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Para que un chat de WhatsApp, un audio o un correo tengan validez plena ante un juez, el dispositivo original debe ser analizado por un <strong>Perito en Informática de la Fiscalía</strong>. Ellos utilizan software especializado para extraer los códigos internos (metadata) que demuestran que el mensaje es real y no fue manipulado.
+                        </p>
+                        <p class="text-sm font-semibold text-grisAntracita"><i class="fa-solid fa-shield-halved text-verdeEsperanza mr-2"></i> Tu poder: Resguarda el celular original sin borrar absolutamente nada hasta entregarlo al peritaje oficial.</p>
+                    </div>
+
+                    <div class="bg-gray-50 p-6 rounded-xl border-l-4 border-doradoSuave">
+                        <h3 class="font-bold text-doradoSuave text-xl mb-3">La "Fe de Hechos" (Estrategia Preventiva)</h3>
+                        <p class="text-sm text-gray-600 mb-4">
+                            Si existe el riesgo de que quien te agredió utilice funciones como "eliminar para todos" antes de que llegues a la fiscalía, puedes tomar acción preventiva. Consiste en acudir con un <strong>Notario Público</strong>.
+                        </p>
+                        <p class="text-sm text-gray-600 mb-4">
+                            El notario certificará en un documento oficial (Fe de Hechos) que tuvo tu teléfono a la vista y constató que desde un número específico se enviaron ciertos mensajes en una fecha y hora exacta. 
+                        </p>
+                        <p class="text-sm font-semibold text-grisAntracita"><i class="fa-solid fa-gavel text-verdeEsperanza mr-2"></i> Tu poder: Este documento se convierte en un instrumento público con el que podermos buscar validez en un juicio.</p>
+                    </div>
+                </div>
+
+                <div class="mt-8 bg-red-50 p-4 rounded-lg flex items-start gap-3 border border-red-100">
+                    <i class="fa-solid fa-triangle-exclamation text-red-500 mt-1"></i>
+                    <p class="text-sm text-gray-700"><strong>Medida de urgencia:</strong> Si ves que la persona que te agredió está borrando los mensajes en tiempo real, activa inmediatamente el <strong>Modo Avión</strong> en tu celular. Esto cortará la conexión a internet y evitará que la orden de borrado llegue a tu dispositivo, congelando la evidencia tal como está.</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-14 h-14 bg-green-100 rounded-full flex items-center justify-center text-verdeEsperanza flex-shrink-0">
+                    <i class="fa-solid fa-microphone-lines text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="font-subtitulo font-bold text-2xl sm:text-3xl text-grisAntracita">Tu declaración, tus reglas</h2>
+                    <p class="text-gray-500 mt-1">Preparación emocional y jurídica ante el Ministerio Público.</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-verdeEsperanza card-hover">
+                    <h3 class="font-bold text-lg text-grisAntracita mb-3">Tú marcas los tiempos</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Nadie puede obligarte a declarar antes de que estés lista/o/e. Si al llegar a la institución te sientes abrumada/o, tienes el derecho de pedir un receso, solicitar agua, o posponer la entrevista hasta que te sientas en condiciones de hablar. El tiempo de tu sanación y de tu relato te pertenece.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-azulOceano card-hover">
+                    <h3 class="font-bold text-lg text-grisAntracita mb-3">Derecho a estar acompañada/o</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Tienes derecho absoluto a que tu asesoría jurídica (como el equipo de Cosiendo Alas) o una persona de tu entera confianza esté presente durante toda tu declaración. No permitas que el personal del Ministerio Público te aísle o te intente entrevistar a solas si no lo deseas.
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-xl shadow-sm border-t-4 border-doradoSuave card-hover">
+                    <h3 class="font-bold text-lg text-grisAntracita mb-3">Límites a la revictimización</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        Tú posees el derecho a negarte a responder preguntas que justifiquen la agresión. Preguntas sobre tu historial sexual previo, la ropa que vestías o si habías consumido alcohol son irrelevantes para el delito y constituyen violencia institucional. Tu asesor jurídico está ahí para objetar y frenar ese tipo de interrogatorios.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="flex items-center gap-4 mb-8">
+                <div class="w-14 h-14 bg-purple-100 rounded-full flex items-center justify-center text-moradoMedio flex-shrink-0">
+                    <i class="fa-solid fa-language text-2xl"></i>
+                </div>
+                <div>
+                    <h2 class="font-subtitulo font-bold text-2xl sm:text-3xl text-grisAntracita">Traductor Legal y Proceso Penal</h2>
+                    <p class="text-gray-500 mt-1">Conoce las etapas de tu denuncia y domina el lenguaje jurídico.</p>
+                </div>
+            </div>
+
+            <div class="bg-white p-8 sm:p-10 rounded-2xl shadow-md border border-gray-100 relative overflow-hidden flex flex-col lg:flex-row items-center gap-10">
+                <div class="absolute -right-16 -top-16 w-48 h-48 bg-turquesaClaro opacity-10 rounded-full blur-2xl"></div>
+                
+                <div class="lg:w-3/5 relative z-10">
+                    <h3 class="font-bold text-xl text-grisAntracita mb-4">Glosario Audiovisual para Víctimas</h3>
+                    <p class="text-gray-700 leading-relaxed mb-6 text-sm sm:text-base">
+                        El lenguaje del Ministerio Público suele ser confuso e intimidante. Entender los términos legales y las fases del Sistema Penal Acusatorio te devuelve el control y reduce la ansiedad frente a lo desconocido. Explora nuestras cápsulas explicativas o descarga nuestro diccionario diseñado con empatía y claridad.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row flex-wrap gap-4">
+                        <a href="URL_YOUTUBE" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-red-600 text-white font-bold rounded-lg hover:bg-red-700 transition shadow flex items-center justify-center gap-2 w-full sm:w-auto">
+                            <i class="fa-brands fa-youtube text-xl"></i> YouTube
+                        </a>
+                        <a href="URL_TIKTOK" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-black text-white font-bold rounded-lg hover:bg-gray-800 transition shadow flex items-center justify-center gap-2 w-full sm:w-auto">
+                            <i class="fa-brands fa-tiktok text-xl"></i> TikTok
+                        </a>
+                        <a href="https://drive.google.com/file/d/1hzm5TfMyzo_gJltv7ZM6nulvq-d2jmSu/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-azulOceano text-white font-bold rounded-lg hover:bg-moradoMedio transition shadow flex items-center justify-center gap-2 w-full sm:w-auto">
+                            <i class="fa-solid fa-file-pdf text-xl"></i> Descargar Diccionario
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="lg:w-2/5 relative z-10 w-full">
+                    <div class="bg-gray-50 border-2 border-dashed border-gray-200 rounded-xl p-8 flex flex-col items-center justify-center text-center shadow-sm h-full">
+                        <i class="fa-solid fa-book-open-reader text-5xl text-azulCielo mb-4"></i>
+                        <p class="font-subtitulo font-bold text-grisAntracita text-lg mb-2">Diccionario Legal</p>
+                        <p class="font-texto text-sm text-gray-500">Términos del proceso penal explicados de forma humana, directa y sin revictimización.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bg-grisAntracita rounded-3xl p-8 sm:p-12 shadow-xl text-white relative overflow-hidden">
+            <div class="absolute right-0 bottom-0 opacity-5 transform translate-x-1/4 translate-y-1/4">
+                <i class="fa-solid fa-book-journal-whills text-9xl"></i>
+            </div>
+            <div class="relative z-10 max-w-3xl">
+                <span class="text-doradoSuave font-bold tracking-widest uppercase text-sm mb-2 block">Herramienta Activa</span>
+                <h2 class="font-titulo1 italic text-3xl md:text-4xl text-white mb-4">Bitácora de Documentación</h2>
+                <p class="text-lg text-gray-300 mb-6 leading-relaxed">
+                    Si estás enfrentando una situación de acoso constante, hostigamiento laboral o escolar, documentar cada evento de forma estructurada transforma episodios aislados en un patrón probatorio sólido para tu denuncia.
+                </p>
+                <ul class="space-y-3 font-texto text-gray-200 mb-8 text-sm sm:text-base">
+                    <li><i class="fa-solid fa-check text-verdeEsperanza mr-2"></i>Registra fecha, hora y ubicación exacta de cada acercamiento no deseado.</li>
+                    <li><i class="fa-solid fa-check text-verdeEsperanza mr-2"></i>Anota los nombres completos de las personas que estuvieron presentes (posibles testigos).</li>
+                    <li><i class="fa-solid fa-check text-verdeEsperanza mr-2"></i>Describe con precisión las palabras dichas o las acciones físicas realizadas.</li>
+                </ul>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                <a href="https://drive.google.com/file/d/17FibaCRuq0yHQHuNmVrQiHrVb7OYx0ym/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="px-6 py-3 bg-azulOceano text-white font-bold rounded-lg hover:bg-moradoMedio transition shadow flex items-center gap-2 whitespace-nowrap w-fit">
+                <i class="fa-solid fa-file-pdf"></i> Descargar PDF
+                </a>
+                    <a href="orientacion_juridica.html" class="px-6 py-3 bg-transparent border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-azulOceano transition text-center">
+                        Contactar Asesoría Jurídica
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contacto" class="bg-grisAntracita text-white pt-16 pb-24 lg:pb-8 border-t-4 border-doradoSuave">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                         <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                             <img src="home.svg" alt="Icon" class="w-8 h-8 object-contain" onerror="this.src='https://placehold.co/100x100?text=CA';">
+                         </div>
+                        <h3 class="font-subtitulo font-bold text-2xl">Cosiendo Alas</h3>
+                    </div>
+                    <p class="font-texto text-lavandaSuave text-lg mb-6 max-w-md">
+                        Organización dedicada a la prevención de la violencia sexual y la atención integral de víctimas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                           <i class="fa-brands fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="ENLACE_TIKTOK" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-titulo1 text-xl italic mb-4 text-doradoSuave">Contacto</h4>
+                    <ul class="space-y-3 font-texto text-lavandaSuave text-lg">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-verdeEsperanza"></i>
+                            <a href="mailto:cosiendo.tus.alas@gmail.com" class="hover:text-white transition break-all">cosiendo.tus.alas@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp mt-1 text-verdeEsperanza"></i>
+                            <a href="https://wa.me/525535538561" target="_blank" class="hover:text-white transition">55 3553 8561</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-moradoMedio border-opacity-30 pt-8 text-center text-lavandaSuave text-sm font-texto">
+                <p>&copy; 2024 Cosiendo Alas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const sideMenu = document.getElementById('side-menu');
+        const overlay = document.getElementById('overlay');
+        const menuLinks = document.querySelectorAll('#side-menu a');
+        const navbar = document.getElementById('main-navbar');
+        const navLogo = document.getElementById('nav-logo');
+
+        function toggleMenu() {
+            const isOpen = !sideMenu.classList.contains('translate-x-full');
+            if (isOpen) {
+                sideMenu.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => { overlay.classList.add('hidden'); }, 300);
+                document.body.style.overflow = '';
+            } else {
+                overlay.classList.remove('hidden');
+                void overlay.offsetWidth; 
+                overlay.classList.remove('opacity-0');
+                sideMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function harmonizeGraphics() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-compact');
+                navLogo.classList.add('logo-compact');
+            } else {
+                navbar.classList.remove('nav-compact');
+                navLogo.classList.remove('logo-compact');
+            }
+        }
+
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") { window.location.href = "https://www.google.com"; }
+        });
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        menuLinks.forEach(link => { link.addEventListener('click', toggleMenu); });
+        window.addEventListener('scroll', harmonizeGraphics);
+        window.addEventListener('resize', harmonizeGraphics);
+        harmonizeGraphics();
+    </script>
+</body>
+</html>

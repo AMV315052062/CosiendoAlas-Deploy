@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Reseña: Atleta A | Botiquín Cultural | Cosiendo Alas</title>
+    <meta name="description" content="Reseña del documental Atleta A (2020) por Karen Socorro. Un análisis sobre el encubrimiento institucional, la cultura del abuso en el deporte y el poder del periodismo.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        verdeEsperanza: '#42c3d9',
+                        moradoMedio: '#8e62b1',
+                        doradoSuave: '#fcc352',
+                        turquesaClaro: '#5dcad4',
+                        cyanVibrante: '#35d4da',
+                        azulCielo: '#53a0cc',
+                        lilaApagado: '#8a6eb4',
+                        azulOceano: '#653a82',
+                        lavandaSuave: '#afb0de',
+                        rosaOscuro: '#936479',
+                        grisAntracita: '#2b1045',
+                        fondoPagina: '#f8f6fb', 
+                    },
+                    fontFamily: {
+                        titulo1: ['Playfair Display', 'serif'],
+                        subtitulo: ['Montserrat', 'sans-serif'],
+                        seccion: ['Montserrat', 'sans-serif'],
+                        texto: ['Source Sans Pro', 'sans-serif'],
+                        cita: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Fondo suave y luminoso para el Botiquín Cultural */
+        .hero-review { background: linear-gradient(135deg, #f8f6fb 0%, #e0f2fe 100%); }
+        html { scroll-behavior: smooth; }
+        .nav-compact { height: 4rem !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); }
+        .logo-compact { height: 2.5rem !important; width: 2.5rem !important; }
+        
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .drop-cap::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #53a0cc;
+            float: left;
+            line-height: 1;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+    </style>
+</head>
+<body class="text-grisAntracita font-texto antialiased bg-fondoPagina overflow-x-hidden flex flex-col min-h-screen">
+
+    <a href="https://www.google.com" id="safe-exit" class="fixed bottom-6 right-4 z-[100] bg-red-600 text-white px-4 py-3 rounded-full shadow-2xl flex items-center justify-center hover:bg-red-700 transition-all font-subtitulo font-bold tracking-wide border-2 border-white sm:right-6 sm:px-5 active:scale-95" title="Cerrar página inmediatamente">
+        <i class="fa-solid fa-person-running text-xl mr-2"></i> <span class="text-sm sm:text-base">SALIDA RÁPIDA</span>
+    </a>
+
+    <nav id="main-navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between h-full items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img id="nav-logo" class="h-10 w-10 sm:h-12 sm:w-12 object-contain transition-all duration-300" src="home.svg" alt="Logo Cosiendo Alas" onerror="this.src='https://placehold.co/100x100?text=CA'; this.style.borderRadius='50%'">
+                    <div>
+                        <span class="block font-subtitulo font-bold text-lg sm:text-xl sm:font-extrabold text-azulOceano tracking-wide">COSIENDO ALAS</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <a href="https://wa.me/525535538561" target="_blank" class="hidden sm:flex px-5 py-2 bg-azulOceano text-white font-subtitulo font-bold rounded-full hover:bg-moradoMedio transition shadow-lg items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span>55 3553 8561</span>
+                    </a>
+                    <button id="menu-btn" class="text-azulOceano hover:text-verdeEsperanza focus:outline-none ml-2 p-2 active:bg-gray-100 rounded-full transition">
+                        <i class="fa-solid fa-bars text-2xl sm:text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="overlay" class="fixed inset-0 bg-black/50 opacity-0 z-[45] hidden transition-opacity duration-300"></div>
+
+    <div id="side-menu" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl z-[55] overflow-y-auto transform translate-x-full transition-transform duration-300">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-subtitulo font-bold text-azulOceano text-lg">Menú</span>
+                <button id="close-menu-btn" class="text-gray-400 hover:text-azulOceano transition p-2"><i class="fa-solid fa-xmark text-2xl"></i></button>
+            </div>
+            <nav class="space-y-6 pb-20">
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Organización</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="index.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Inicio</a></li>
+                        <li><a href="somos.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">¿Quiénes somos?</a></li>
+                        <li><a href="directorio.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Directorio Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Servicios Corporativos</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="empresas.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Prevención Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Asistencia y Recursos</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="que_hacer.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">¿Qué hacer tras una agresión?</a></li>
+                        <li><a href="orientacion_juridica.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Orientación y Defensa Legal</a></li>
+                        <li><a href="material_victimas.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para víctimas</a></li>
+                        <li><a href="material_acompañantes.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para acompañantes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Comunidad y Cultura</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="recomendaciones.html" class="block font-bold text-verdeEsperanza transition py-1"><i class="fa-solid fa-heart-circle-check mr-2"></i>Recomendaciones Culturales</a></li>
+                        <li><a href="cult_viol.html" class="block font-semibold text-rosaOscuro hover:text-red-700 transition py-1"><i class="fa-solid fa-eye mr-2"></i>Cultura de la Violencia</a></li>
+                        <li><a href="tienda.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1 mt-2 border-t border-gray-100 pt-2">Tienda con Causa</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <main class="flex-grow pt-32 pb-16 lg:pt-40 lg:pb-24 hero-review relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 lg:w-96 lg:h-96 bg-white opacity-60 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 lg:w-96 lg:h-96 bg-azulCielo opacity-10 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 fade-in">
+            
+            <nav class="mb-8 text-sm font-subtitulo text-gray-500 flex items-center gap-2">
+                <a href="recomendaciones.html" class="hover:text-azulOceano transition"><i class="fa-solid fa-arrow-left mr-1"></i> Botiquín Cultural</a>
+                <i class="fa-solid fa-chevron-right text-xs"></i>
+                <span class="text-azulCielo font-bold">Documental</span>
+            </nav>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                <div class="flex flex-col lg:flex-row">
+                    
+                    <div class="lg:w-1/3 bg-gray-50 p-8 flex flex-col items-center justify-start border-r border-gray-100 relative">
+                        <div class="absolute top-6 left-6 flex gap-2">
+                            <span class="bg-azulCielo text-white text-xs font-subtitulo font-bold px-3 py-1 rounded-full shadow-sm">Documental</span>
+                        </div>
+                        
+                        <img src="data:image/jpeg;base64,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" alt="Póster Atleta A" class="w-48 sm:w-64 rounded-xl shadow-lg mb-8 mt-8 border border-gray-200">
+                        
+                        <div class="w-full space-y-4 font-texto text-sm text-gray-700 bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                            <h3 class="font-seccion font-bold text-azulOceano text-base border-b border-gray-100 pb-2 mb-3">Ficha Técnica</h3>
+                            <p class="flex justify-between">
+                                <span class="font-bold text-grisAntracita">Directores:</span> <span class="text-right">Bonni Cohen, Jon Shenk</span>
+                            </p>
+                            <p class="flex justify-between">
+                                <span class="font-bold text-grisAntracita">Año:</span> <span>2020</span>
+                            </p>
+                            <p class="flex justify-between">
+                                <span class="font-bold text-grisAntracita">Protagonistas:</span> <span class="text-right">Maggie Nichols, Equipo IndyStar</span>
+                            </p>
+                            <p class="flex justify-between">
+                                <span class="font-bold text-grisAntracita">Género:</span> <span class="text-right">Documental / Periodismo</span>
+                            </p>
+                        </div>
+
+                        <div class="w-full mt-6 flex flex-wrap gap-2 justify-center">
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-seccion font-bold tracking-wider"><i class="fa-solid fa-building-shield mr-1"></i> Violencia Institucional</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-seccion font-bold tracking-wider"><i class="fa-solid fa-newspaper mr-1"></i> Periodismo</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-seccion font-bold tracking-wider"><i class="fa-solid fa-person-running mr-1"></i> Abuso Deportivo</span>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-2/3 p-8 sm:p-12 lg:p-14 flex flex-col">
+                        
+                        <div class="mb-10 border-b border-gray-200 pb-8">
+                            <h1 class="font-titulo1 font-bold text-4xl sm:text-5xl text-azulCielo mb-4 leading-tight">Atleta A (2020)</h1>
+                            <p class="text-xl text-gray-500 font-cita italic">Una visión desgarradora pero esencial que arroja luz implacable sobre el abuso y el sistema que lo protegió.</p>
+                            
+                            <div class="flex items-center gap-3 mt-6">
+                                <div class="w-10 h-10 rounded-full bg-verdeEsperanza text-white flex items-center justify-center font-bold text-sm">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div>
+                                    <p class="font-subtitulo font-bold text-grisAntracita text-sm">Por Karen Socorro</p>
+                                    <p class="font-texto text-gray-500 text-xs">Curaduría · Botiquín Cultural</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <article class="space-y-6 flex-grow font-texto text-gray-800 text-lg leading-relaxed text-justify">
+                            
+                            <p class="drop-cap">
+                                <em>Atleta A</em> (<em>Athlete A</em>, 2020), dirigido por Bonni Cohen y Jon Shenk, es un documental en formato tradicional que narra la problemática de violencia sexual dentro del ecosistema de la gimnasia artística olímpica en Estados Unidos. Cuenta con un índice de aprobación del 100% en Rotten Tomatoes, cuyo consenso lo describe como "visión desgarradora pero esencial que arroja una luz implacable sobre los abusos horribles, así como la cultura que les permitió continuar sin cesar durante años".
+                            </p>
+
+                            <p>
+                                Muestra el caso que comenzó la investigación periodística minuciosa contra Larry Nassar, médico de las atletas durante 29 años, quien fue acusado de conducta sexual inapropiada por parte de una menor de edad. El título del documental proviene de Maggie Nichols, identificada en los documentos judiciales como "Atleta A": una gimnasta que era considerada una estrella en ascenso y estaba en camino a los Juegos Olímpicos cuando sus sueños se derrumbaron después de reportar el abuso de Nassar en 2015. 
+                            </p>
+
+                            <p>
+                                Conforme avanza el caso, además de mostrar las repercusiones en la víctima Maggie, se adentra en la avalancha de acusaciones que comienzan a salir a la luz a raíz de la chispa que encendió con sus palabras. Para cuando Nassar fue a juicio, 125 mujeres habían aceptado comparecer en la corte para presentar sus testimonios de impacto.
+                            </p>
+
+                            <h3 class="font-seccion font-bold text-2xl text-azulCielo mt-10 mb-3">El contexto: la Guerra Fría y el modelo Károlyi</h3>
+                            
+                            <p>
+                                Es interesante porque se adentra en el contexto social y político de EE. UU. que llevó a la gimnasia a ser lo que es. Entre tensiones con la URSS durante la Guerra Fría y el desenvolvimiento de la gimnasia como producto comercial para las marcas y producto cultural para el Estado y el nacionalismo. El documental traza la disfunción hasta Béla y Márta Károlyi, quienes habían alcanzado la fama con el triunfo de su gimnasta rumana de 14 años, Nadia Comăneci.
+                            </p>
+
+                            <p>
+                                Los Károlyi salieron de la Rumania de Ceaușescu y trajeron a Estados Unidos un modelo de entrenamiento con una severidad que rayaba en la crueldad. El campamento en Texas parecía idílico, pero ningún padre tenía permitido poner un pie ahí — lo cual debería haber sido una señal de alarma. Adentro, los Károlyi atormentaban a las gimnastas adolescentes sobre su peso, las llamaban perezosas, las trataban como máquinas que debían empujarse al límite y más allá. Esa información contextual no es accesoria: <strong>es la arquitectura que hizo posible a Nassar.</strong>
+                            </p>
+
+                            <h3 class="font-seccion font-bold text-2xl text-azulCielo mt-10 mb-3">La fachada de la confianza</h3>
+
+                            <p>
+                                Dentro de esa fortaleza militar de entrenamiento, Nassar era, según el documental, la única figura de autoridad amigable para las niñas — un tipo amable y torpe que a veces les pasaba comida y dulces a escondidas. Nunca les daba amenazas explícitas. Siempre mantuvo la ficción de que era su amigo. Y ahí radica lo más perturbador: el abuso no se ejerció desde la intimidación sino desde la confianza. 
+                            </p>
+
+                            <blockquote class="font-cita italic text-xl text-moradoMedio border-l-4 border-moradoMedio pl-6 my-6 leading-snug bg-purple-50 py-4 pr-4 rounded-r-lg">
+                                "El error es pensar que nadie habló antes. Durante casi 20 años, las víctimas se acercaron a sus padres, a la policía, a sus entrenadores y a los líderes de las organizaciones donde entrenaban. Nadie les creyó. Nadie las escuchó. Esa ha sido nuestra cultura: silenciamos, minimizamos e investigamos a las sobrevivientes, no a los agresores."<br>
+                                <span class="font-texto text-sm text-gray-500 font-normal mt-2 block">— Productora del documental.</span>
+                            </blockquote>
+
+                            <h3 class="font-seccion font-bold text-2xl text-azulCielo mt-10 mb-3">Violencia estructural y encubrimiento institucional</h3>
+
+                            <p>
+                                En este sentido, lo valioso del documental radica en la visibilización de una estructura violenta que alienta y permite la sexualización de niñas y adolescentes gimnastas. Si bien se enfoca en el caso de Nassar, tampoco lo muestra como un chivo expiatorio aislado, sino que señala que la violencia que este hombre ejerció fue posible debido a una serie de condiciones y personas que permitieron y escondieron estas conductas. 
+                            </p>
+
+                            <p>
+                                Lo más importante para los realizadores fue que la película no fuera simplemente una pieza sensacionalista, sino que contara esa historia con claridad y la vinculara con la cultura más amplia de abuso. La analogía que el documental construye es directa: el encubrimiento de los crímenes de Nassar fue análogo a los escándalos de abuso sexual de la Iglesia Católica — la protección sistemática de abusadores por parte de una organización de extraordinario poder.
+                            </p>
+
+                            <p>
+                                Y un detalle que revela el funcionamiento de la maquinaria institucional: cuando la madre de Maggie alertó a un oficial de USA Gymnastics, la noticia llegó a Steve Penny, el CEO de la organización, quien estaba legalmente obligado a alertar a las autoridades. En vez de eso, contrató a una firma externa para conducir una investigación privada. Penny estaba protegiendo a Nassar, pero lo que realmente protegía era la marca de USA Gymnastics, que generaba 12 millones de dólares al año.
+                            </p>
+
+                            <h3 class="font-seccion font-bold text-2xl text-azulCielo mt-10 mb-3">El papel del periodismo y las secuelas invisibles</h3>
+
+                            <p>
+                                El papel del periodismo de investigación es central en la narrativa. Los reporteros del <em>Indianapolis Star</em> son presentados no como héroes abstractos sino como profesionales meticulosos que conectaron puntos durante meses. El documental muestra cómo periodistas, investigadores y abogados pueden convertirse en aliados, exponiendo y procesando a los perpetradores a pesar de las potenciales amenazas a su seguridad. 
+                            </p>
+
+                            <p>
+                                El documental también señala que, para muchas de estas gimnastas, el abuso de Nassar fue su primera experiencia con actos sexuales, y expone cómo ese tipo de abuso puede dañar la capacidad de disfrutar la sexualidad con sus parejas en el futuro. Ese apunte — mencionado brevemente por un abogado en el documental — es una de las dimensiones menos discutidas de la violencia sexual infantil y merece ser subrayado.
+                            </p>
+
+                            <h3 class="font-seccion font-bold text-2xl text-azulCielo mt-10 mb-3">Lo que falta: el camino de la denuncia y la prevención</h3>
+
+                            <div class="bg-red-50 border-l-4 border-red-500 p-5 rounded-r-xl my-6">
+                                <p class="font-texto text-sm text-gray-700">
+                                    <i class="fa-solid fa-triangle-exclamation text-red-500 mr-2"></i><strong>Advertencia:</strong> Considero que este documental puede ser especialmente difícil para mujeres que fueron agredidas en el ámbito deportivo, por lo que no recomiendo verlo en un momento de crisis. 
+                                </p>
+                            </div>
+
+                            <p>
+                                Sin embargo, considero que es necesario, puesto que muestra que la mejor resistencia es la palabra y, tomando prestada una consigna feminista, hacer que el miedo cambie de bando. Pues <strong>la vergüenza debe corresponder al agresor y nunca a las víctimas.</strong> Lo que resulta llamativo del tono del documental es su calidez redentora. Aunque los detalles son escalofriantes, es como si se hubiera abierto un espacio catártico para estas jóvenes y sus familias para explicar lo que vivieron.
+                            </p>
+
+                            <p>
+                                Al enfocarse en el caso en general, no muestra el proceso de denuncia de las víctimas además del apoyo por parte de los medios. Si bien no era la intención y el documental cumple con sus objetivos, es importante para las expectativas como espectadoras, pues puede generar cierta sensibilidad si se está en un proceso penal. 
+                            </p>
+
+                            <div class="bg-blue-50 border border-blue-100 p-6 rounded-2xl mt-8 mb-6">
+                                <p class="font-texto text-lg text-azulOceano font-semibold italic text-center">
+                                    Una crítica válida es que el documental mantiene un foco que es todavía demasiado estrecho: nunca aborda ni informa a la audiencia sobre qué se puede hacer para asegurar que las organizaciones que trabajan con jóvenes protejan a los niños.
+                                </p>
+                            </div>
+
+                            <p>
+                                Es una observación importante: el documental es extraordinario en lo que muestra, pero lo que no muestra — las herramientas concretas de prevención, los mecanismos de denuncia accesibles, el acompañamiento posterior — es precisamente el espacio que organizaciones como Cosiendo Alas pueden y deben llenar.
+                            </p>
+
+                        </article>
+
+                        <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-azulOceano rounded-full flex items-center justify-center text-white font-bold text-sm">
+                                    <i class="fa-solid fa-feather-pointed"></i>
+                                </div>
+                                <span class="text-sm font-subtitulo font-bold text-grisAntracita">Análisis por Karen Socorro</span>
+                            </div>
+                            <a href="recomendaciones.html" class="text-azulOceano font-subtitulo font-bold hover:text-moradoMedio transition text-sm flex items-center px-4 py-2 border border-gray-200 rounded-full hover:bg-gray-50">
+                                <i class="fa-solid fa-arrow-left mr-2"></i> Volver al Botiquín Cultural
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contacto" class="bg-grisAntracita text-white pt-16 pb-24 lg:pb-8 border-t-4 border-doradoSuave mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                         <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                             <img src="home.svg" alt="Icon" class="w-8 h-8 object-contain" onerror="this.src='https://placehold.co/100x100?text=CA';">
+                         </div>
+                        <h2 class="font-subtitulo font-bold text-2xl">Cosiendo Alas</h2>
+                    </div>
+                    <p class="font-texto text-lavandaSuave text-lg mb-6 max-w-md">
+                        Organización dedicada a la prevención de la violencia sexual y la atención integral de víctimas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                           <i class="fa-brands fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="ENLACE_TIKTOK" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-xl italic mb-4 text-doradoSuave">Contacto Institucional</h3>
+                    <ul class="space-y-3 font-texto text-lavandaSuave text-lg">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-verdeEsperanza"></i>
+                            <a href="mailto:cosiendo.tus.alas@gmail.com" class="hover:text-white transition break-all">cosiendo.tus.alas@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp mt-1 text-verdeEsperanza"></i>
+                            <a href="https://wa.me/525535538561" target="_blank" class="hover:text-white transition">55 3553 8561</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-moradoMedio border-opacity-30 pt-8 text-center text-lavandaSuave text-sm font-texto">
+                <p>&copy; 2024 Cosiendo Alas. Todos los derechos reservados. Textos del Botiquín Cultural bajo licencia de uso libre con atribución.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const sideMenu = document.getElementById('side-menu');
+        const overlay = document.getElementById('overlay');
+        const navbar = document.getElementById('main-navbar');
+        const navLogo = document.getElementById('nav-logo');
+        const menuLinks = document.querySelectorAll('#side-menu a');
+        
+        function toggleMenu() {
+            const isOpen = !sideMenu.classList.contains('translate-x-full');
+            if (isOpen) {
+                sideMenu.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => { overlay.classList.add('hidden'); }, 300);
+                document.body.style.overflow = '';
+            } else {
+                overlay.classList.remove('hidden');
+                void overlay.offsetWidth; 
+                overlay.classList.remove('opacity-0');
+                sideMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function harmonizeGraphics() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-compact');
+                navLogo.classList.add('logo-compact');
+            } else {
+                navbar.classList.remove('nav-compact');
+                navLogo.classList.remove('logo-compact');
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        menuLinks.forEach(link => { link.addEventListener('click', toggleMenu); });
+        
+        window.addEventListener('scroll', harmonizeGraphics);
+        window.addEventListener('resize', harmonizeGraphics);
+        harmonizeGraphics();
+        
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") { window.location.href = "https://www.google.com"; }
+        });
+    </script>
+</body>
+</html>

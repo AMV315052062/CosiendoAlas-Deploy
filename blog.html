@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Representaciones Culturales | Cosiendo Alas A.C.</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azulOceano: '#653a82',     
+                        verdeEsperanza: '#42c3d9', 
+                        doradoSuave: '#fcc352',    
+                        grisAntracita: '#2b1045',  
+                        moradoMedio: '#8e62b1',
+                        azulCielo: '#53a0cc',
+                        turquesaClaro: '#5dcad4',
+                        lavandaSuave: '#afb0de',
+                        fondoPagina: '#f8f6fb', 
+                    },
+                    fontFamily: {
+                        titulo1: ['Playfair Display', 'serif'],
+                        subtitulo: ['Montserrat', 'sans-serif'],
+                        texto: ['Source Sans Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .hero-gradient { background: linear-gradient(135deg, #2b1045 0%, #653a82 50%, #42c3d9 100%); }
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .line-clamp-3 {
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        html { scroll-behavior: smooth; }
+        
+        /* Efecto hover para las tarjetas estáticas */
+        .card-hover { transition: transform 0.3s ease, box-shadow 0.3s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(101, 58, 130, 0.15); }
+    </style>
+</head>
+<body class="text-grisAntracita font-texto antialiased bg-fondoPagina overflow-x-hidden flex flex-col min-h-screen">
+
+    <nav class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between h-full items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                    <img class="h-10 w-10 object-contain transition-transform group-hover:scale-110" src="home.svg" alt="Logo" onerror="this.src='https://placehold.co/100x100?text=CA'; this.style.borderRadius='50%'">
+                    <div>
+                        <span class="block font-subtitulo font-extrabold text-xl text-azulOceano tracking-wide">COSIENDO ALAS</span>
+                        <span class="block text-xs font-bold text-verdeEsperanza tracking-widest uppercase">Blog</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-4">
+                    <a href="index.html" class="px-4 py-2 border-2 border-azulOceano text-azulOceano font-bold rounded-full hover:bg-azulOceano hover:text-white transition text-sm">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Volver al Inicio
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-gradient pt-32 pb-16 relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 bg-turquesaClaro opacity-20 rounded-full blur-3xl"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+            <h1 class="font-titulo1 font-bold text-4xl sm:text-5xl text-white mb-4">Representaciones culturales</h1>
+            <p class="font-subtitulo text-lg text-gray-100 max-w-2xl mx-auto">
+                Explora nuestras recomendaciones, críticas y descubre recursos que inspiran y sanan.
+            </p>
+        </div>
+    </header>
+
+    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full space-y-20">
+        
+        <section id="novedades" class="fade-in scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8">
+                <h2 class="font-subtitulo font-bold text-3xl text-grisAntracita">
+                    <i class="fa-solid fa-star text-doradoSuave mr-2"></i>Novedades
+                </h2>
+                <div class="h-1 bg-gray-200 flex-grow rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <article class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/fcc352/ffffff?text=Novedad" alt="Imagen Novedad" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-doradoSuave text-grisAntracita text-xs font-bold px-3 py-1 rounded-full shadow-sm">Novedad</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <span class="text-xs text-gray-400 font-texto mb-2"><i class="fa-regular fa-calendar mr-1"></i>25 de Febrero, 2026</span>
+                        <h3 class="font-subtitulo font-bold text-xl text-azulOceano mb-3 leading-snug">Pendiente Novedades</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-grow">
+                            Aquí puedes escribir el resumen de la novedad. El texto empujará el botón hacia abajo automáticamente, manteniendo un diseño limpio y ordenado en todas las tarjetas.
+                        </p>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-100 mt-auto">
+                            <a href="novedad-detalle.html" class="text-verdeEsperanza font-bold text-sm hover:text-azulOceano transition inline-flex items-center">
+                                Leer más <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="noticias" class="fade-in scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8 cursor-pointer group" onclick="toggleSection('noticias-content', 'noticias-icon')">
+                <h2 class="font-subtitulo font-bold text-3xl text-grisAntracita group-hover:opacity-80 transition-opacity">
+                    <i class="fa-regular fa-newspaper text-verdeEsperanza mr-2"></i>Noticias
+                </h2>
+                <div class="h-1 bg-gray-200 flex-grow rounded-full"></div>
+                <i id="noticias-icon" class="fa-solid fa-chevron-down text-xl text-grisAntracita transition-transform duration-300"></i>
+            </div>
+
+            <div id="noticias-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
+                <article class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/42c3d9/ffffff?text=Noticia" alt="Imagen Noticia" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-verdeEsperanza text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Noticia</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <span class="text-xs text-gray-400 font-texto mb-2"><i class="fa-regular fa-calendar mr-1"></i>10 de Febrero, 2026</span>
+                        <h3 class="font-subtitulo font-bold text-xl text-azulOceano mb-3 leading-snug">Avances en protocolos escolares</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-grow">
+                            Breve resumen sobre las actualizaciones o noticias recientes que quieras destacar. Este espacio está diseñado para dar un panorama rápido antes de que la persona lea la nota completa.
+                        </p>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-100 mt-auto">
+                            <a href="noticia-detalle.html" class="text-verdeEsperanza font-bold text-sm hover:text-azulOceano transition inline-flex items-center">
+                                Leer nota completa <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="musica" class="fade-in scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8 cursor-pointer group" onclick="toggleSection('musica-content', 'musica-icon')">
+                <h2 class="font-subtitulo font-bold text-3xl text-grisAntracita group-hover:opacity-80 transition-opacity">
+                    <i class="fa-solid fa-music text-azulCielo mr-2"></i>Música
+                </h2>
+                <div class="h-1 bg-gray-200 flex-grow rounded-full"></div>
+                <i id="musica-icon" class="fa-solid fa-chevron-down text-xl text-grisAntracita transition-transform duration-300"></i>
+            </div>
+
+            <div id="musica-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
+                <article class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://placehold.co/600x400/53a0cc/ffffff?text=Música" alt="Portada de Música" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-azulCielo text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Playlist</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-subtitulo font-bold text-xl text-azulOceano mb-2 leading-snug">Nombre de la Playlist o Álbum</h3>
+                        <p class="text-xs font-bold text-gray-500 mb-3">Recomendación Musical</p>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-grow">
+                            Aquí puedes colocar un resumen sobre por qué recomiendas este material auditivo, qué temas aborda o el ambiente sonoro que ofrece.
+                        </p>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-100 mt-auto flex flex-col gap-2">
+                            <a href="musica-detalle.html" class="text-azulCielo font-bold text-sm hover:text-azulOceano transition inline-flex items-center">
+                                Leer reseña <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                            <a href="#" target="_blank" class="inline-flex items-center justify-center w-full mt-2 text-xs bg-azulCielo text-white px-4 py-2 rounded-full font-bold hover:bg-azulOceano transition">
+                                <i class="fa-brands fa-spotify mr-1"></i> Escuchar en Spotify
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="cine" class="fade-in scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8 cursor-pointer group" onclick="toggleSection('cine-content', 'cine-icon')">
+                <h2 class="font-subtitulo font-bold text-3xl text-grisAntracita group-hover:opacity-80 transition-opacity">
+                    <i class="fa-solid fa-film text-turquesaClaro mr-2"></i>Cine y Documentales
+                </h2>
+                <div class="h-1 bg-gray-200 flex-grow rounded-full"></div>
+                <i id="cine-icon" class="fa-solid fa-chevron-down text-xl text-grisAntracita transition-transform duration-300"></i>
+            </div>
+
+            <div id="cine-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
+                <article class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKmtjoTHfCGsrH9fUMvFPlzfI0FdWBNa-gxw&s" alt="Película recomendada" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-moradoMedio text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Película</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-subtitulo font-bold text-xl text-azulOceano mb-2 leading-snug">Un actor malo</h3>
+                        <p class="text-xs font-bold text-gray-500 mb-3">Dir: Jorge Cuchi (2024)</p>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-grow">En un rodaje, una actriz acusa a su co-protagonista de mala conducta durante una escena íntima. Mientras ella emprende acciones legales, la producción intenta contener las repercusiones y evitar un escándalo público.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-100 mt-auto">
+                            <a href="cine-actor-malo.html" class="text-moradoMedio font-bold text-sm hover:text-azulOceano transition inline-flex items-center">
+                                Leer análisis completo <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://m.media-amazon.com/images/I/51+uKBCoPzL._UF1000,1000_QL80_.jpg" alt="Película recomendada" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-moradoMedio text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Película</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-subtitulo font-bold text-xl text-azulOceano mb-2 leading-snug">Perfume de violetas</h3>
+                        <p class="text-xs font-bold text-gray-500 mb-3">Dir: Maryse Sistach (2001)</p>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-grow">Yessica y Miriam, dos adolescentes de la Ciudad de México, inician una fuerte amistad a pesar de sus distintas personalidades. Todo cambia cuando un joven chofer de microbús viola a Yessica con la ayuda de Jorge, el hermanastro de ella.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-100 mt-auto">
+                            <a href="cine_perfume_violetas.html" class="text-moradoMedio font-bold text-sm hover:text-azulOceano transition inline-flex items-center">
+                                Leer análisis completo <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://upload.wikimedia.org/wikipedia/en/5/5c/Sorry%2C_Baby_poster.jpg" alt="Película recomendada" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-moradoMedio text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Película</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-subtitulo font-bold text-xl text-azulOceano mb-2 leading-snug">Lo siento, cariño (Sorry, baby)</h3>
+                        <p class="text-xs font-bold text-gray-500 mb-3">Dir: Eva Victor (2025)</p>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-grow">Algo malo le pasó a Agnes, pero la vida sigue para todos los demás. Cuando una querida amiga, a punto de alcanzar un hito importante, la visita, Agnes empieza a darse cuenta de lo estancada que ha estado y empieza a pensar en cómo seguir adelante.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-100 mt-auto">
+                            <a href="sorry_baby.html" class="text-moradoMedio font-bold text-sm hover:text-azulOceano transition inline-flex items-center">
+                                Leer análisis completo <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://pics.filmaffinity.com/Promising_Young_Woman-444938219-large.jpg" alt="Película recomendada" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-moradoMedio text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Película</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-subtitulo font-bold text-xl text-azulOceano mb-2 leading-snug">Hermosa venganza (Promising Young Woman)</h3>
+                        <p class="text-xs font-bold text-gray-500 mb-3">Dir: Emerald Fennell (2020)</p>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-grow">Una joven, traumatizada por un evento trágico en su pasado, busca venganza contra aquellos que se cruzan en su camino.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-100 mt-auto">
+                            <a href="promising_young_woman.html" class="text-moradoMedio font-bold text-sm hover:text-azulOceano transition inline-flex items-center">
+                                Leer análisis completo <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+                
+                <article class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://pics.filmaffinity.com/Caza_de_brujas-341610238-large.jpg" alt="Película recomendada" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-moradoMedio text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Película</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-subtitulo font-bold text-xl text-azulOceano mb-2 leading-snug">Cacería de brujas (After the hunt)</h3>
+                        <p class="text-xs font-bold text-gray-500 mb-3">Dir: Luca Guadagnino (2025)</p>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-grow">Una profesora universitaria se encuentra en una encrucijada personal y profesional cuando una alumna estrella lanza una acusación contra uno de sus colegas y un oscuro secreto de su propio pasado amenaza con salir a la luz.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-100 mt-auto">
+                            <a href="after_hunt.html" class="text-moradoMedio font-bold text-sm hover:text-azulOceano transition inline-flex items-center">
+                                Leer análisis completo <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://mx.web.img3.acsta.net/img/cc/99/cc995b687397fe6bf5600f4c08c34fa5.png" alt="Película recomendada" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-moradoMedio text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Película</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-subtitulo font-bold text-xl text-azulOceano mb-2 leading-snug">Fue solo un accidente (It was just an accident)</h3>
+                        <p class="text-xs font-bold text-gray-500 mb-3">Dir: Jafar Panahi (2025)</p>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-grow">Vahid se ve forzado a rememorar su tiempo entre rejas a raíz de un encuentro casual con Eghbal, quien le recuerda a su sádico carcelero. Alarmado, Vahid reúne a sus antiguos compañeros de prisión para verificar la identidad de Eghbal.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-100 mt-auto">
+                            <a href="an_accident.html" class="text-moradoMedio font-bold text-sm hover:text-azulOceano transition inline-flex items-center">
+                                Leer análisis completo <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBxMTEhUSExMVFhUXGBoaGBgYGBgdGBcfHRodGBoaFxcYHiggGR0lHRgYITEiJSkrLi4uGB8zODMsNygtLisBCgoKDg0OGxAQGzImICUtKy0tLS0tKy8vLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLf/AABEIARIAuAMBIgACEQEDEQH/xAAbAAABBQEBAAAAAAAAAAAAAAAEAAIDBQYBB//EAEMQAAEDAgMFBQUFBgYBBQEAAAECAxEAIQQSMQVBUWFxBhMigZEyobHR8BQjQlLBB2KCkuHxFTNyorLSFkNTk6PiJP/EABoBAAIDAQEAAAAAAAAAAAAAAAECAAMEBQb/xAA0EQACAQIFAgMHAgYDAAAAAAAAAQIDEQQSITFRE0EUIvAyUmFxkaHRgeEFFUJTscEjM/H/2gAMAwEAAhEDEQA/AK1JuRMgWGtEqIVqb6+7+lDISD7MkW8vq1FpbFydBvPSwgc/jXTMgggwY063NqTDoP1v31Z7PQFgoGUq0RKspBKgEqk6gEi19Z6S47sriMOjvHAgJkAkKBIm0RrO+hmSdg2drlS85Fhy6aVFi1yg8N198VM6gQAdddPSgNoSEcvdTAMfg0w9PJR63IrVYN5QaSc0bhxjrWUwJlyeCT8TNaRWIAZSJG7X9elKiHMY+OJt9a1ldr43OQgTr5edFbTx4AI1Pujl51nwvf8AiV7voVVUqZUNBXZYpdEZR7KRc8T/AHqJx4jSx3kf8RwFDoPCY+r/AFxp6iCetc+Tu7mpBGGVlEyZ40zE4rMpKE7h6k3KvSPSoHXLWtFvX4x+tDtq9/w+vhUS7jNls3iCnxA/up6xA/UnnFXuzceUoIJsTccgP0yr91Y9a/ZA/Dm9TFWLToMJmMwyjlmQtI/50y0FYdsvHTcwTdcfmJOZQjjvHmN8VabNx3iUlSoBBIM6ZSYWOWVc9KxoeME6bhujpwOnpVwziFKQkpjvUquPzgXsOMzKd8W4ULjI2buNIytRCgAQE6KgEFKeWUkp5ADlVK7tWVrItGUDmTYx019KG2bjAod2s+HVlRMFCtMmaDxUL2uLREDPNFakqT7QcGZGi7EEjKfxC+kgi85pk3YGi3e20UYpsj2fElY4icpn+FNXaXrFqfZGZB6qkj4H+IbhWAW7Ls6wlR9Z+Yq2wGNJQFgkqaUARvIuAecpzDyFI2MkaVnaWYETCtAdJ0UkKHrflfiFWcLuVREyASsK3lJugk9CR60qRsdI1OHBkAG0DoM2/ru9a68mVQDYDfUbKQAAP06iI5yPOpV5SCZJNtd3HqdK7RzQ7ZTaxKwm5ACOKsygjwTqRfTfE8D6N2wxbDCm3nA4XDKEZCg5d5Xlc8I3DNBNx5Ynse04XEd2nMcyVCScoyk5iTOpANoPHdWm7dYdD7a3UIX3jCsivAfZKc8x+UEjxdd16zz1mky2OkTDbUfSVqWkKAUZAUrMTxlUAmST86ptoOymJix4/X9qncJHhUYPDkbj4g1W7RWMsxu9avKzP4QHOVDgAfOjNoOFKE8h9fXOouzqCtxwI8SgkGIsQBfnpNV20MaCkCbD39fOlbsgMrMS/mJudb8Khz7/AK+vlUR+JruasE3d3NMY2VifvDp9fU1IhW/6gfQFDJNSoVp9aa0gwl/IfqaaTr9aVKoR1io1pqBQwGJ+vrSpw5AEWISCOsTNDq0qTN8P6USEr6fEI0V4x53jyMjyqbMAUjkZ/wBsHyImm4ZMgjejTpvHkb+aqhfV7X19WFJ3H2iGs4gFCku2zEgqAvItKgNTfUaxedQWwCpaUrP3gykGbPJHswr86fwq3+zrZVS9dCTO6D1vB8wPdTsHiYISoBSZJynceKT+E+4xcGj2FLhbhWpSrKVAHiHtXG+xSv8AdmFbr6i7LxwbUJQACClcFcxPAq1BAPlRgCV94c27/MsDEWS8gmDwzzBtJqFxtSh94ElQkZxYboCxbLrZRHDcZCvYdbhb0lKk28AgRoUm6YOpgyOiqVD7KcnMgghSdATuO7p/SlVTdmWLY3uz8G0oKLpUkWAKZN5g7juJP8NHMYLC73HOuVXvOWBeI4zFtaEwriQpKlXGYZha4BE9bT1qzZ2oQsw2jISBBi+ULyqum3tg/wAEb67Uk+xzFYZlaCVgOOeH2NRm8M/lESox/DO8wUv7Gc3iWkSACnvIUCIykZZAFrnjapMLtAuq7tLKCcpgKWBEGTllOp8WmmtgKdiFOtoddLLakKgwFzAypywCi4gBQ0sdJikd+/8AkdFC8nC90guKX3hKSR4pUnOArdFkpMQd+s2qHah2cSAtahNlhIcSEeAmQFNzBUBA4K3U5XaeGwgtBSghKQpRBIhOWQCjjCuMjWIAou1vacPNFAYQgkg5hBPOfCCfWo0/TJoZ3s2tUumYJG4wRuOm6Kp8SIjn8OdWOwzBc/0H4VT4k2A3/UVJvygSvIiP6U2npGvSmCsRoHE1Mg35fU0PNPmKBCdJmTUjqZqBH60XHp4vjPwpJMsirgz6fr0riRTnh8fr41xGlMIGMEplQ1Bm/wBX0M1G+0MuZOh05cUnmP1B311B8B+rRTErsQbg+o1gjn86RFjRxBjLOmUSOIge/f5VxtrKoD0PEESD5/rXUnThEAjeIp+HGidSkyn968lM8TqOZI303wFsTtE5yUkg5dQTIMEWO69Wex9oiChxMgGZT4VJmQSmLAzcgQDeQaq5hQE6SPl+pqNl3KuTorXzsffceVI72HW5e4nDZHAoZVpNholYBvEJ8Lgg7pPIGlUiWO8aKTqm3y6g/rSqlVY7SL+m90z13D9jHxGYJtoSfjaaM/8ACHTqpPMyT53v/aqo9uMapNy0nUEZL8rEn6BoZ/tpjim7oTukITM62rtf8vwOT5DR4bsQ8gkpfQmbWQJiZ1IMXAOk2qbF9jHFpyuYq0EewgWkE6CwsBaBAA0tXn2K7U41UzinegIT/wAYqnxmOcWTmdcV/qcKretTJN7tfQl12N7iOwGFRdeJM8gn9apcX2P2cgQrFKHVTV76eIKtyEa1gsUkGTO7nf5VW4pCd9Nr3YDT7Y2Ps5pJOHxKQqCClSiqfTQ15w8aLeEHyO+gV1VUd1Ysgh6Rbyrg305n686SResbLkMApxTanJF6lKfAeX9fn7qFxkhiBb3+6i2DIj60PzqPDNlQqVkQYO/Sq5O+hdBWswTEa+f18Keyb8RvruKR4jzqJowadO6K5KzCEp8KgdRz9KjZ1jiP1/pUgXfrbr9G1D5oPShYN9jueCRFjqD9W6iplEEBST1G8bp59R7qixKwTPHWoQaO6A3Zh6nSsZj7QsrnAsrrEz1njUa7KuddDund5EW/tUTCrxMTv4Hd9c6KyZhB4x04fqPKg9CLUudjPWkWIFxyG629O7iK5QOzm3ULCkEGDoYBtxB18p+FKqZQi2Xxk0jf97KUpmTJF+ZnXdE1FiQb6GLAjzihUQCN593xpzrvCOJ/pXdOSQObp38v1qB0xoKe6b3NDOqBm+lAIHiHlfpQy9NR08qfi3bzG760oRu4+fSlIAYoXPQ0DFGun2uetC1VIticYNTuosFcfjv+dCzFStYkgEQCDuOnWqZRTLEyYsmJAtP0KJ+zKHiymDeYMc/cfea9v2D2fwysO24EJLagFpta4mffTMft/BMJiBAtICQOgUogelcqeKallUToRwycczZ4sw2tBGUa3HAjf+lTY3CqmQI3jjxj10616N/5RgFQnIiNwlG/gJirfDYfCYgABKc0aEQoj9eopJYmUXdxHjQjLSMjx/F4UqQHADb2t8bjI3C9VryYPxr3pnYTIWQUi4I6i4uN9rVldtfs8TI7tZgAi4uep40aeNhsyVMJJ6o8wB+vrdTck9fjXpWE7BoyjOSFbwCbxv8APhVgex2GSQrJcenpTvG01sVrBzPLG8CsyMpkbuPT41Y4Hs+XAFScpsYFx763zmDZn2Bwnlwqoe2sGj92Epk+0oSVckJF1daXxUp6RQ/h4x9oyuN7POo0BUkb70TgNjOqN0ETEn3zHkDRi+2DxUQkLURNoSk25ZTG+i8D2qeJju1mxNkhVhrYBJtvvVrdfLsipdG5d7K7LEpHegEx7Q1PUcYpVJsjtm2shNldCQr+VX6E0q51R1lLU6EFSa0AQmK4U6k6bqK+wuqAMEz9ChnGFCyq9geXAnBvmIuNTvFD4l9JUohMBW6ZjzNTPpPT6+FAuII+r0GEEcEyKjeJAyx7vWrBnZziySG1HXcqPWpFbCd0S0u+pJA9JNKEzbjd+tQKbFaBexHhaEp6n/rNF4LsuteqwBpMT6TS2GuZJbYjTSo1NxpXo6ew6LlS1K00AFWOA7GYaI7skj8yifdQyhzWCOyeIf8A8HDDacyiFKSpRgIBUSRO/kB7qX7P+zbGJL68VDz6SD49AFTHdpNgkERblxrXbNwASwhAFr286odqdm3m3UvYR3Ivf+vkbCPlXAq1bVpLY7FKlmoxZ5xtnsqrCLyrSHFCQoGQASIChFyAb87VpP2fbELjbruYoTn+6BUYEe1lmTEmJ18NXm1cJjn4GI7kwD4u7Tmtuk7qD+wKOVKlLOWwEkJjkkWHpTVK8XG1wQw8072saljESkZiCpJgnju9aPKpiqbZ2ADTcARJnzOtWs3rjzazaHWpp21OvNCfKgca1Y1YLNq4W5EUO4WtDBbZbKEqJmAJMfAU7scMA26lx15pbpAMqsG5BGRIPsxOu+tRtDAgpNprI47ZKc10j0roUaiRhq02wXtrsWcQtzDpHdqBIW0ZCgv20KCbggk8ikgbquuwBZwX3+KUAQkpQjVd9VEC44etVzewEK0lJ5T9cKsMF2fbSsEAnTUk6da0SxKSM6wzbFtDYze03w62whltJPiAha76ki2u65uaVbLZ7QQmAABwFKsviJGxYeKE92VaiFvPq/jHXhNAjsxhUCAhR45lrP6xQ+P7asqjIHBxkD/tSV2tYUIhyeg/7V6/pVODyiq0+SNzBYdJjuUeYn/lNJ3GJaQcqUjokD4UCNopUokZvQfOgNq4pKgQAoHmB86HSnwN1I8gmIxylqmjcHigBc1RNJUOFIqUDNqPRnwDrQ5NA60ldWeCwQMBIrN4HG5fanyrV7N7TYZCQClyd8JT/wBqnSnwDqw5Lo7O8ItQTaCFqjQVI52zwxFku/yp/wC1VKe0TeZXhXlPIT8aCpT4D1Icmvw6ZYQocVfE1A4aq8L2tYDPdlLkhRI8IiD/ABcZqJG32zoF+g+dedxmBryqNqDO5g8bQVJKUkmiyeRNDtYIAzUQ2yg7leg+dL/F2+CvQfOsngcT7jNix+G99BjiKjcTeokbUQdyvQfOnKxKVGQDpSv+H4jfIxo/xDD++iU11JqMvCNDUS8clOoV6D50PAYm/sMjx+G99E76ZEcarFYKdfKiFbSRwV6D51Craje/NbkPnTLA4pbQYvjsL76OtYKOFFIZi9A/460Ny/QfOmntG1wX6D50XgcW/wChk8fhF/Wi1CjSqo/8ja4L9B86VD+XYr+2w/zLCf3EYfJXpf7NdgYdeHUvENtrU6tSWwsAnKgAKKJuDmKpI4CvP0NHhXpY2clnE4IfasOj7MhKS0pwBzM5PeQj97MIr2+Ln5cqdr/6/ex4zCwWbNa/7nnrqSy840dULUgz+6SJ9013CbRLLpcCGlm4yuozovvyyL+daD9pOzCjHKWBZ1KV+YGQ/wDEH+Ks19lURMGrYSU4KT7oSd4SceGekbWxSW9mNYxGEwhdWG5BZBR49YSCFdBO/fWUxXYzFuqU4U4ZDq0959mQrIsJ0lLVwBP72p41vtnNp+w7PSuIzMa8QJT/ALgKr9s7Uw7G08/2fEOYjKlKSlScqgoQAlKlcyOEzXPp1ZRbUFrr/wCbm2pTjJJyemhjsJ2McVgVYzx5p8DQQcxTmCVKO/STYaDnTdm9jH3UoOdhsuJzNocchaxxSgAmPnWuxC3FbJxHtoUcQsZcxlIVibtyNwBKSNNa6zslrDYjCB8OYnFKyJSZhtlKNIgeLLJImdCbVb4mdnr3dv0RV0IafJfc8+2hs9xhxTTqcq06jUaSCDvBBqACtX+0FpRxzkCbI/4CqjY2y1OvNtZT4lAHp+I+QmtMKqcFJ8FE4tTcUbfBdnWDs4oCGzie5DpMDvUlUrRO8A5SnyPOshsbZDuIJ7tIhIlSlEJSkc1Gt9sQJG0HnBicOsOAoDaHAVjJASMu7KEqnqar9mNpwoxTD7JXhVOEEgTlB0ChqQU5Ta48656qyWbl2f13NcqSduy2M/idiPIUhEBfef5ZbOZK+iuVEYns882hSzkVk9tKVhSkf6gNKvBsssLw+Iwilvs5lw1OmdJzlJtfwnW4I5mnKwGGxaXncItTbqknvEezmzHMQocFEXKSRPnRVZ6cfL1YHRWvPr6lNjdjOMZAvLKwSADe0SDb94UeNiPIdDMBSsoUYNgCSJJMRcGrLtgwtbmFDaSokKEgGBJbIk7tCfI0ZtfH91iXCpouNFhAciDlGd0AkE3FzIodWTirbu/+Q9GKbvsrFR/higAUlCwowChQUJ4SN9N2xsFaFoQkFeYC8QM1/DrwE3qbG4ZkMDE4Vw90lYJRJABMI0sQoBQsdx6VYbZYU5jm20rUghrMFA+z4lJUUg2zEQJih1Hffn7E6cbPTj7mYd7POlC1oWy5knMltYUpJGoIiJEaTNV+D7M4l9vvW0DKZiVAFUflnnxitn2e7gfaW2G1ANjIXFG6ynMCI3AEeesaE0XawH/DsCEkgZUqt+YN2PUEk9RO6njVm5Zfiv8AAsqMFHN8Gd7c7Fn7Gyy0kOKC0kJAE5QjU8B4jJ51QPdjnw2t1C2HQ3OcNuZlJj2gbRIg2mbVvNvYF197BhDhaUEOqUsRmSIbCsoNpOaPOhOzTWGQ3jW8M0tKW0lCnFmS6UpWDA3AQeGsxxWFaUYK3rUadCM56+tDywClRqMNYUq6F0cuzCk4ZTa0uAA5VBQkSCQZE8rVDi8Ytx1Tyz41KzEgRfdHIAAb9KLaxZiFXFQrwm8XFTvdj30sg/bO3ncVkLob8AIBSlQJmJmVHhuA30Eh6uJwZ3VGWwDClpSdbmPj0NJeFNW2Q95zd9y0xvaB1xlGG8AbbKSCAQvw+z4s0CDew3CiVdr3yUqLeHU6kQl5TZLgHIhQE9IHKgDsswTcmJt+lZ3EbWyGCkxmIm2nLj0rNWqUads3rk0UlWnsbnZO30jDnDutd6CrOTnykqKs5JIG9V7RrpVmnb2JUEwpoEfiyFSwN6QpRjkTlkjnevNXNvJTEJJB0M1ZN9oG0kAqyk8az+Iw0n+S1RrpGw2k+t5QW6G5AIGRBST/AKiVEmNwtqaAYxi2V52gkKAIBUCQJETEi8VWN7dTmCZmd+7lfieFFfakK0N+G/0q+E6bVk1YqlnTzNakuzXFMqQpGqNJuNIuOlWv+LvqK1K7lQXGZBbJQYAAMFU5razwtaso/tFaSYTmuu0GICcybgb4I86nwm2FZ8pTAhV4MSCAIJ1BEny31ZOlfWwI1WtLlvitr4gFspUhtLRJQhtEJkgglWYkqsVDcPEbTehnu0DuVaW0MNFwQtbaCFkciVEJ1O70qpc2wtRjID4lCTO42JIHUafhoNeOXb7v3GLpza8jY00aK7oV1pdmacdrsYGw2laEgAALyS5bmolP+2oz2kxJcLiihWZAbUlSBkUkEnxJm5lStCNazmFxCicqgdDeCN4/Q+6msYlZN02JG42sJHkZpuhDhC9apyXmP206tsMhLTTWYKKG0kZiCCMxUTIkAwI0FWeO7XlSkvIYy4hICc5WSjLMqHdwM03F9JmZArIKxawSAi08+KhP+2fMUw4pyfZ3aQeZ98D1qdCL7EVaa7mvR23xQUVBLAB1SEGCd6ic0k+frrUDXad0pLa0YdSMxUkKbUUtnXwpCtLmxO83i1UHenPli0ax+tBt4pwEyknhaON+lhU6EOyD16nJs3O0z6nG3C83mbCwIaWAQoiQsTceEREaazeiEdsHgoqC2Eg/g7lcSblRIVJV5xy31hnMU5HsxfcCTqJtG8E+hphxKzHhOt7HnfpoaHhoPsHxE13LbFPZlqV4LknwJypv+VJNhSoVoSAfX6NKrLJGdttlwnZ6DoakRhUj8VVG0cWptOYfER5z+lZ13tU4AM2W4tluepG6slXFqnLK7minQc1dG6UlEEBQnrWQ25hsQJUCFAzYX+tBfmBSY2wVjMUlNxwH9Y036Gjntst5c0BQ3wRY9Du1vyrFUrUa+k3b1waIKpSeiM0jauLSCklYECAM0xxP18RQ2EfUFqBXdQMgzMzAmRrr6mr7au3MOpMZxkUVBWXKVEBNhr4QSAKy+1MhyllJSANZzHxXAJkxcmATNxxrPUowXsu5rpzb3VgxOI1zAcUwABY6geotz8wXcQopkxbeRc30nSx+J4VWd4sDpBvqI0101mjMNiFrIEDNutryG7nVeW2xaXmH2g33WqUKVNshJ4wFkGOX96dhNtBBJGsAakRrJFr3qpWsqShIFwLyD03C2vP4084TvPCkJCknjaOd4/sKW2zaFstTf7PxgcQFSLjiPhUq0c6qdkYWUgKTlW2Y4SPW4uTVwU128NKUoeb6nJrqKloQpbiwp+WnhFPCK1FJDlruWp0Mk6Anfb40u75UMwbEITXctTJbJMASToBv6U5LB4H0PGB77VLksDZaRTU+WuFNS5LA+WuFNTlFNipcDIctKpYpVLimU7SFOUgKUVbhlyj1i/61me6ctmVvFiJO/rflzrS7eD+JUD3R7sfiGmn7wBv5eVR7P7OOOQCvKjiCpJk3AiSVbrzNcV0s0vKtPkdeE1GPmKFOMWVZRAAMEkCfM6/2qbE4rInKLnRRvBnlVnjuyKg8tK1kwguAjLLgTZWtyrMtA0Iub6CicT2AxBMpcBE6K13XjQb980jwsr7D9aHJlm2VvETqTA5ybSd39OVXZ7H4ltJWowkC8KE++2739avcB2KxKTGZKRNzMkxvHl9CtfhtnrCcjqg4CIuBfy31bRptvzxYlSrb2WeJYVxGsSJ38NJtEkfrRTrS2zMeIAEEQUEHw6i0WOutepbV7MMuNqSlAQoixi0gGx5GYMcBwFUfYrZIUVPJ/wAstpbKVAnxgZnMs2hKlEaRM9as6DTsDrpxbMq32exKgFi8xMKuARIJvpHPdRD+xcQhRICpMSQZsZA1vePeK9TRh8ogDl6aUjh+VWvCQa3KFip32M12bwrgRDvtA2O/TSTreaue6o0NHhXe4PCtFOKhGyKJtzd2ABupcNhitaUDVSgkTpJMUWMOeFdQwQQRYi4O8U+YXLqI4fu0lxC8wzd2QUwbgkmxP5R61dLbfSpP3qfEtKLJtKwQTE3ylBHO53ma9WIdNiREzGRETe4GWxubinJxT0AZyY0kAkGSZBIkG5vzqmSb9fsXRaXr9wpGDcSUuB0Ql1aZKNDKi4qAbgBMjjMbqgXjn0h2VJzMq1gyZVlgXgDfpUa8W8ZGcwbmABxk2AgnMZI1mmd65KiSCVxmlKTMaSCIqKL72I5LtcObbdClDvE5i4QDksopbC738IgAWB9LUBiNkKKlkrJ8JWCQPGfEfCUkgghKjM7o1p6sU6Z8VzvCUgzGWZAmYtOsVwYh7cuI3AJAvMyAIOp140UpLYjcXvcp8lNU1R3cRUbiIq3MU5QEppVMUUqmYVxZoGNkpygKCV9Qq/WCBXF7CRIKQkEclQPLN76ukEVInzrzSq1I6qTO86cHukY3anZZbzrLneJAaUSUhJldwUgnNYApB50ccMsfhP8AIf0NaeOVd+rU6xNb3hXRp+6ecdre0yMAhJWhSlr9hF0yBqokjQW9RWA2Zi14rGM4t5ZKnHQENN5lKSGSlXscMpURe5zVQdqdsO4rFOvPZgoqIyK/9MAkBEbsunWTqa237E8C4vFKWo/dMJzATI7xxOVMRvyFzfaeJNbJSmqV5O7BCMYy8qRvsVjsqFKGHxZUEkgdzqYsLK4xVD2IZ+zYVKXWcSHlqWtz7hepPHT2QK9LAJPs241xba58JTHTl86xrEVH3HdKC7GUG0UzHdYj/wCFVFteLRLg6trHxFaFLa95T6cunGmFC+Kd31p9fButV95/UXpw4X0Kj7GqnjBmrNSFWgp52rhSvin6j+vrS9Sp7z+rGyQ7L7ASdn107Pqc4ogwViQb2Py+eorv2wwPEL20325c6maXJMq4BFYA037GaNOJIN1J04HhNra6etNL+/MOOh0Ezu+o51M0+SWXAOnBU/8Aw+pFYngoD+E8L7upqZpalSQpJ1i2/dqOlTPLkmVcASsAajODPCrT7z93y/tTFoURqJ6W+tKGaXJLLgqzhaiXg6t+5Ve45evThNIsq3lP15VLvuQojgaVWamDvInkK7RuKGt1KmmxThVJYOiuxUbrmVJVwBNB7P2sh1JUJABIuN4sfjS5knYZQbV0eE/tB2a2MdtANgEtlL6ze2dTSVJ653ZngTXqX7JMOgbMZWlKUqcU4pUCMxDikT/KgDyrBu4ZL2J244q33TgRIHiKVg+EzGrYvO8ca1P7MO0Ab2c2y6hSVoLgQkJUSoTmkpF/aUR6ca2VHeCXrYSKdz0eKaTAmCYqt2NtMrwrbzkBZRmWNIIF7bv6ijmHUOoChCknThWVSje1x3FoiDy5/wDyfnSU6vlOvsq0ieOtJ3AeKU5U/wAMnrM007PMyFJEbsg4devrVmghxOIXw6fdrt1vXBiHCdB5oX8Zp5wR3KSP4P0muHBH8yf5PKNaN0Q536iQIO6fAv3Hd50xt1wmIHUoVHrNO+wxwJ5IHzrgwu/J/tE/GpoTUch1zgD/AAq+dNL6zon1bX86cllX5T/Kn51ErDR+HdHsJO4j831NHQBKnELJjL/sV5X0rocVw/2qqNtoj8JvYju0+X4uNT/ZeY/lFB2DqNLivpJpinFxpf8A0q+dTHCW1T/LXF4IkG4/lHprU0IDJxC+H/1r+dOZfUTChbklQ95OlPOz9RmTB3ZBxnjyFPb2ekDxAG/CPdUdgEa00qLLQpUtyWOgcKQrqRUeJeyIUs3CQT1ikb0uOld2Atu4koaUEhRJEGEFUA26T13A2Nef4TCqQFAPLykmALQCTFwQJg6gVb7W2mt1ZyLltSQCJGU6yClWtD5jHtItuypMe61aMPTus0l9TuYTD9OOu7BkMQZDiweMkHSNyuGlT4YOoCsqnCXNF9JzQTNozEkX8PmJMOnMrLngXkhMxadLD30bgMKFrW0VlSAQVBQi4USCAZG4acdxijXlB+Tv/ourVIxWpJgsE+4lRccklRKCCU5RCQQQLEEjNHOte0mABVStcAqAnKCYHLhTGduTqk8rD9DSUqF15bI8/XxDlpbQvJpTVQnbYzhMG4G7+tqtUOAiUkEcQZHuqVKbhuyqMs3YY4lRNlRyia4ptf5x/KPnTdo4rumnHcql5EKVlT7SoEwJtNqqdm9pUu4H7b3K0CCe7VGaxiytCDqFWkGaS41rlhj3+6bU668lCEDMpRTYD64caj2Xjk4hpLrL6XEKmFBPAwZB0I0g1ke3TCNoYLDPod7pKxnAW4UjKtIBzJTIUpKijpeDe+g/Z8Ghs9ltrJ9yCheXUmT41Ddm9qDcZqeyt8Q5HbN2L2DETeNY39KjCF/nB0/CPPfU0VU4vbWTFNYXuyS4JC92ipjiQUpn/WOhS9iJX2LANr/9wfyiuBpz/wBz/aKnpRUuCxAEqOjgtYwBYx1txqRttQN1SOERXl3abYeKcdfVhC4lalmVtr7sLSohSblUKyyoGSN5jStV2Mx7ruALa1ODEsZmHSqM6XEixlWZK7KSQoyFa8aamupFOPNh6lNwNQ84E3IMb9LczJrPdoe06W2x3SgSop8Y8QAJAsEzmJJAA3meFeWYsqweOW03i30F3NlVAU0uZWJkkZlLhJATHimQKMw+1i6xiQFKUpsZkDLCARKgpZIsYCQCDcKVpqLp0Uqbb9ev1BS/7UnstfS7/Y3rfajErCC3hUqSQnMpToQpN4XmbUmURB13wN9KsF2Z2kvEtEuKUVONOpMEyCEqIKZ0nLpzPAUqrqUpwaV1sns/yW0+lNydu/qx7SBWe272gQluUBLiVKyXSSlRkgpFwbRrpaJq32risjZVBPGNQDadRHCSQBNYBt1snMFqAJJgIG+4/HrVUIOpK19F6sacFh87zPsJsCLN+9fzqXMLAJRPAEk+masz22289hiz3ChlXmBUsbwRGitADPnWl2c606C7h3UuZAqygAnOkSUglYBIsReDIM1unNQjdnSeJgpuD3X3Cmm2gCnMrvDlSpACk5c0kTJIUCBaIIN91E4zazGzsM0rEqVKjkSAMylR1MCBBMn1qLYTLrilOvRJyyfZzlN0q8M6CLEk6XNZ79s+2kJaZwa2c6lQ93hJGUBRSUpiJJGYG9gRviMdKLlLzbvf8HKxlZ+z37/g32BxjbjaH0n7txAWCRFjGo3VW4cEDSU6ggj3yZG7WiOz2MY+w4d1sgNpw6cqFKSVDKm4VG8ZTNh5Vm9k4Z19zN9+GluZQpsqygTdWaYEajhRjXjTllcbtmPpOaunZIJ21gy+l9hSg33jcBRUmEpj2jCojMIibzR37NtlnCMrw63u8cU4VnxAj2Up8NyYhI14Vl8Zs99pKsO4484tYSZ9oqhYCkqWsleWF2E6L61oOxeGWnE3aeRlQSpbndgKmwASlaiBPzmpKqqjvHb8D5MsdTU9oXgjCvLJyhLaiTuiL6XHCedeMbAxuJD+0Cl0d0qFkAhYXndCGkog2lKyeiQOFexdrcIvEYLEssgFxbSkpExJjSTa+nnXj3YTA4YNtpxIy95iiy941JWjKnOhCkyCgKUCMwg+0OjRXlf0Fh7SNp2JC+8eU4oPoWU5Cq6EFCZUUNqsiVFJkC8g1p/sDTSV4lptLb0gqKQBnSSMwVGoiT1Ao3CurIlwAXIHGNRNrbrchTsS3mSpMTINuPL3VbSpNwzS34EqV/PZbBx/WKrFrC3fChKnGichgFSSReN44f2rQbPxaHUAECfymCPfRrOHQicqUpm5gAT1ilVJPVMeFXI3oYztA9jGsI6622FPpQMqIkAki50mBNuNEdk1rxmzWn3yWXXELzluPDClIkBQMGEyRuJNTdsMee8ZYSCc6VrUoEZUhJQPFzJVA8+FQbF+7wfcpXdS3lEwAUd44tcADhmid/nV0qUcuYDcpSTtb5GVxu2Fd8WGmCloJBDpUYPi3AGQLG5gk8NTf7G2Vh14dSVrUh3EEham1XPhDQItA8KRFvnVJjWVIeWkkHLlAjTST8Y8qi272twWEb7pZWvEAJUW0JJIBIjMown2bxOlFJKKSOxiI0404tOyff8AQw/bLs81gkKDLnepwrragskKJUpQlskDKmMpJTB9oTqK0+BwT3fjBqLaA7nUoGHAZblCiRGa6FJjdltarnBON4plC1MoDTiULS2UpygQFJ8IsCDfSqfZqcWy93rmDJeUslLYebKilaVAAOBRCcoFgTebAXpa7caLtvpb53+P3MEqeWcXFvZ7fJlZtnDLwbzuHRkASiMyU5ZCkBV0g21I1pU3tk1tAd9j38H3bcJCgH2llAgNJJy3VeDbjSro0q8ZU4535rK/z77HG6LTdloazbOIeU+vLK0QEpjxIIKQTaYN53bqrjlSAjKlLxBKUBLWUpBANpnNcnTdTdkLOJL6W2Fzh3C25K2QAoEixUsZhY35VFjsD3bgedyNgJKfG9hQLkEavVyrRjZRsuT1cK1KMUotGP8A2oLOTDpUmDKyLAWhINxzIq07B7OcdQwlwZUJQtbeZIQDokkZQC5rN7HjYVS/tGfZW213bja1BSrJcbWUgi921ERIGtXWye3bOBwzDTmFcW73QKSVpSnIokp0CiJHEaRxq2prCy1MVWtCNec7p6K32PTdLDQcv0rzj9uWGJbwb0WBdbJ65FJHuXST+1N5w/8A8+zyZ09tz/iE1H23xWKxWDabeYfQVvthqWUNoLipSEn71bhGUr0AuBWenFwmrmCTui9/Zp2dwruzGXTh2y8sPIU4Uyr/ADFpE/wx5VdbC2oywHG3FQM0jICQD7JFrbhestsDYWIwrLbZxisqVqUtpt51ttUzGVXdpJObLIKgDfXQuxuEWhQu2ArWXGSOcp733ielToxnUzylsbMJTpyTVR2LLaDwfddePgyFAQDOY55TIy3iE5TvkjjUvYMud+424ZhK4vNsySnXkR6VmsXthphxH3qR4VpWUXsSmIFyuCJ4QK1PYjaTTuKxHd3hpBkRkuhvNlIN7xppEHWqp0FT9nbcOIUIzyxeljXrQQDkUEqixIkA8wCJ6SKouz3YtjB5nFw9iTCi4UAQqVnOQSSFEuHfuTwEXuYcTy/pNMZcjMFZrixgX33g7oF+dPRmk9TFUi7aCWuUg8/PfP6VIhfsniJ+dDNmEgXtO4778KjaxpGYd27AuPAqCf3dxn5VrVSPJQ4PgJbTkVI0JtwB4Tu6053aS++QklQED2rDS8xaKpNq4HELfS9h5HhE5jlEifwqF5Ee+pmnNpCyhhVc1Ei3Dw/Kuf1cs2kbaeiva+gbi2fCV94FcAn2Uj2on0prSkJIJdbbV+/Gk81C3yqsxuzce7JL7KCBCe7JygH2jlW2oExxpw7NKcIViHSpQEeHKLTMTA38qulir0sqTvcDjJzzSfYyPbHaGIbUt1t7OnvICglq4A/LBIGaADvjfR2M7AM4tffv45Lb2UJUlHdKCQmwMk6xWnHZzDxBnUQSpMyNCk5ZSeYNOVsPBAeJtCxvzgKFt5kXqiNWaS1L5zU4KD2Rj8B2pwrHd4XJiClJ7ttaUtlC0IUUBfthUQM1wYArTY7BH7agLfPibzJKUXCkrCQN4CSDcnhrerJrDYYEBDDMjSEIEe6wocrUccQhIKRh4VyVnOUDrlPLw+rVqrqJK2wISabafYKdwqlJUhb61oWClQKGSkgiCCCiDNKm4/GIYTnecS2D+Y3PJKd56UqMVJ7IrjRnJXUb/oNxHZnCLkrwjCt5ltJk8Ta5vVYrYGzgfFgWBcgHukQcupsNK1hNDOMrzKIcgECBGh/WfKomUsyeJ7MbMcgHBIAufCCjQEk+EgnSPoVZ4fCYVIQEsJgQlJWkGAQY8Sz+6RzMVcNNuiSpQVawiJO69LDMQSSjKTqQqZpr6bgK5vHIAlDYEwPC3BAkSbC4EzA4dKF2plxHdhZWnu3Eui2ihKAFQb/5hty6VoO4MEFRuOhHOomcIQZLijrYkR8KVJLUjZQpReCs3uPCqwy5hNzJ0Eb5pwMEixHmRa8mJHpPwnQoYNvGfTWuraMWUesCmzfElymXsd1U3byn8MSPhTsJsVSXCtS0knWExNoEmb2q17lUEFfCCAARSCF/m91KwqTGjDHjSOG6fXOpHUqKSkOFBMQpIBIgg6G1wI86M71NvEs3JgpavyMJ0HK99aiin3BmZWDCGZt6Uiyrh9etT4lCjGVwiBElKZPMgWHkKSkKzJOaw1G42Iv6z5UHFchzMGLS54e+kppUxf0t67qmLK5Pji+uvllNhHLWp8ttYsZsLkiAb6Qb1Mq5JmAVYdc/3+dqjGDcgyenH13nnR5bsPEZG+SPhaosSwsxkULTMzeooomYF+wqIA046X62M11zBqAkEyBuHK3XpU2Hw7gIKlJOsxNdxOASoKgAKI1OYjzAI4nhRyrYmZldh8I4ZlRBgEEokX4i09JrMHsdtNtRUxtQeLXO2oGJkAypUxJrapwKiqVlBEXCQoGZBBnObWFEpZCRAsL+8yffNGKyK17kVSXbQ8xX2E2lnK1O4N1R/E732Y9CJgUq9NIpVZ15I0RxuIirKTH1wUqVZCk6K5SpUSCmlSpVCDxXK5SqAFXKVKoERNKlSoIh2kK5SokFvpE0qVQg6bUqVKiA5SBpUqARGumlSpgDDXaVKgE//9k=" alt="Película recomendada" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-moradoMedio text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Película</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-subtitulo font-bold text-xl text-azulOceano mb-2 leading-snug">La teta asustada</h3>
+                        <p class="text-xs font-bold text-gray-500 mb-3">Dir: Claudia Llosa (2010)</p>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-grow">Una enfermedad que afecta a las mujeres violadas durante guerra contra el terrorismo. Sus hijos la absorben a través de la leche materna.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-100 mt-auto">
+                            <a href="teta_asustada.html" class="text-moradoMedio font-bold text-sm hover:text-azulOceano transition inline-flex items-center">
+                                Leer análisis completo <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="data:image/jpeg;base64,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"alt="Película recomendada" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-moradoMedio text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Película</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-subtitulo font-bold text-xl text-azulOceano mb-2 leading-snug">Cómo tener sexo (How to Have Sex)</h3>
+                        <p class="text-xs font-bold text-gray-500 mb-3">Dir: Molly Manning Walker (2023)</p>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-grow">Tres adolescentes británicas emprenden un viaje durante las vacaciones de verano que se convertirá en un rito iniciático para ellas, una suma de experiencias en las que el sexo, el alcohol y la fiesta resultan determinantes.</p>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-100 mt-auto">
+                            <a href="have_sex.html" class="text-moradoMedio font-bold text-sm hover:text-azulOceano transition inline-flex items-center">
+                                Leer análisis completo <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="literatura" class="fade-in scroll-mt-24">
+            <div class="flex items-center gap-4 mb-8 cursor-pointer group" onclick="toggleSection('literatura-content', 'literatura-icon')">
+                <h2 class="font-subtitulo font-bold text-3xl text-grisAntracita group-hover:opacity-80 transition-opacity">
+                    <i class="fa-solid fa-book-open text-turquesaClaro mr-2"></i>Literatura
+                </h2>
+                <div class="h-1 bg-gray-200 flex-grow rounded-full"></div>
+                <i id="literatura-icon" class="fa-solid fa-chevron-down text-xl text-grisAntracita transition-transform duration-300"></i>
+            </div>
+
+            <div id="literatura-content" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 hidden">
+                <article class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/5b/50/5b503ba1b64ab61bd5256703ecccf7ac.jpg" alt="Portada del libro" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-turquesaClaro text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Libro</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-subtitulo font-bold text-xl text-azulOceano mb-2 leading-snug">Tengo un nombre (Know my name)</h3>
+                        <p class="text-xs font-bold text-gray-500 mb-3">Autora: Chanel Miller</p>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-grow">
+                            La historia de Chanel Miller cambió el mundo para siempre. En 2016, Brock Turner, de diecinueve años, la violó en el campus de Stanford. Lo que llegó después fue vivir bajo un pseudónimo y uno de los juicios más mediáticos de la historia de EE. UU., tras el que Turner fue sentenciado a tan solo seis meses de cárcel.
+                        </p>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-100 mt-auto">
+                            <a href="tengo_un_nombre.html" class="text-turquesaClaro font-bold text-sm hover:text-azulOceano transition inline-flex items-center">
+                                Ver reseña <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="bg-white rounded-xl shadow-md overflow-hidden card-hover border border-gray-100 flex flex-col">
+                    <div class="h-48 overflow-hidden relative">
+                        <img src="https://www.catedra.com/imagenes/libros/grande/9788437640792-de-que-hablamos-cuando-hablamos-de-violacion.jpg" alt="Portada del libro" class="w-full h-full object-cover">
+                        <span class="absolute top-3 left-3 bg-turquesaClaro text-white text-xs font-bold px-3 py-1 rounded-full shadow-sm">Libro</span>
+                    </div>
+                    <div class="p-6 flex-grow flex flex-col">
+                        <h3 class="font-subtitulo font-bold text-xl text-azulOceano mb-2 leading-snug">De qué hablamos cuando hablamos de violación</h3>
+                        <p class="text-xs font-bold text-gray-500 mb-3">Autora: Sohaila Abdulali</p>
+                        <p class="text-gray-600 text-sm leading-relaxed flex-grow">
+                            Este libro revolucionario, profundo, provocador e inteligente, analiza la violación así como el discurso global sobre ésta desde el punto de vista de la superviviente de una violación en grupo en Bombay cuando era adolescente y a través de historias de sobrevivientes.
+                        </p>
+                        
+                        <div class="mt-4 pt-4 border-t border-gray-100 mt-auto">
+                            <a href="hablamos_violacion.html" class="text-turquesaClaro font-bold text-sm hover:text-azulOceano transition inline-flex items-center">
+                                Ver reseña <i class="fa-solid fa-arrow-right ml-1 text-xs"></i>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+    </main>
+
+    <footer id="contacto" class="bg-grisAntracita text-white pt-16 pb-24 lg:pb-8 border-t-4 border-doradoSuave">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                         <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                             <img src="home.svg" alt="Icon" class="w-8 h-8 object-contain" onerror="this.src='https://placehold.co/100x100?text=CA';">
+                         </div>
+                        <h3 class="font-subtitulo font-bold text-2xl">Cosiendo Alas</h3>
+                    </div>
+                    <p class="font-texto text-lavandaSuave text-lg mb-6 max-w-md">
+                        Organización dedicada a la prevención de la violencia sexual y la atención integral de víctimas.
+                    </p>
+
+
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                           <i class="fa-brands fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="ENLACE_TIKTOK" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+
+
+                </div>
+                <div>
+                    <h4 class="font-titulo1 text-xl italic mb-4 text-doradoSuave">Contacto</h4>
+                    <ul class="space-y-3 font-texto text-lavandaSuave text-lg">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-verdeEsperanza"></i>
+                            <a href="mailto:cosiendo.tus.alas@gmail.com" class="hover:text-white transition break-all">cosiendo.tus.alas@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp mt-1 text-verdeEsperanza"></i>
+                            <a href="https://wa.me/525535538561" target="_blank" class="hover:text-white transition">55 3553 8561</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-moradoMedio border-opacity-30 pt-8 text-center text-lavandaSuave text-sm font-texto">
+                <p>&copy; 2024 Cosiendo Alas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleSection(contentId, iconId) {
+            const content = document.getElementById(contentId);
+            const icon = document.getElementById(iconId);
+            
+            if (content.classList.contains('hidden')) {
+                content.classList.remove('hidden');
+                icon.classList.add('rotate-180'); // Gira la flecha hacia arriba
+            } else {
+                content.classList.add('hidden');
+                icon.classList.remove('rotate-180'); // Gira la flecha hacia abajo
+            }
+        }
+    </script>
+</body>
+</html>

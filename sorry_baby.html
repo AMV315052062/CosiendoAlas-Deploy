@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Reseña: Sorry, Baby | Botiquín Cultural | Cosiendo Alas</title>
+    <meta name="description" content="Reseña de la película Sorry, Baby (2025) por Karen Socorro. Una mirada empática a la reconstrucción de la vida y la sanación del trauma.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        verdeEsperanza: '#42c3d9',
+                        moradoMedio: '#8e62b1',
+                        doradoSuave: '#fcc352',
+                        turquesaClaro: '#5dcad4',
+                        cyanVibrante: '#35d4da',
+                        azulCielo: '#53a0cc',
+                        lilaApagado: '#8a6eb4',
+                        azulOceano: '#653a82',
+                        lavandaSuave: '#afb0de',
+                        rosaOscuro: '#936479',
+                        grisAntracita: '#2b1045',
+                        fondoPagina: '#f8f6fb', 
+                    },
+                    fontFamily: {
+                        titulo1: ['Playfair Display', 'serif'],
+                        subtitulo: ['Montserrat', 'sans-serif'],
+                        seccion: ['Montserrat', 'sans-serif'],
+                        texto: ['Source Sans Pro', 'sans-serif'],
+                        cita: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Fondo suave y luminoso para el Botiquín Cultural */
+        .hero-review { background: linear-gradient(135deg, #f8f6fb 0%, #e0f2fe 100%); }
+        html { scroll-behavior: smooth; }
+        .nav-compact { height: 4rem !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); }
+        .logo-compact { height: 2.5rem !important; width: 2.5rem !important; }
+        
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .drop-cap::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #53a0cc;
+            float: left;
+            line-height: 1;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+    </style>
+</head>
+<body class="text-grisAntracita font-texto antialiased bg-fondoPagina overflow-x-hidden flex flex-col min-h-screen">
+
+    <a href="https://www.google.com" id="safe-exit" class="fixed bottom-6 right-4 z-[100] bg-red-600 text-white px-4 py-3 rounded-full shadow-2xl flex items-center justify-center hover:bg-red-700 transition-all font-subtitulo font-bold tracking-wide border-2 border-white sm:right-6 sm:px-5 active:scale-95" title="Cerrar página inmediatamente">
+        <i class="fa-solid fa-person-running text-xl mr-2"></i> <span class="text-sm sm:text-base">SALIDA RÁPIDA</span>
+    </a>
+
+    <nav id="main-navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between h-full items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img id="nav-logo" class="h-10 w-10 sm:h-12 sm:w-12 object-contain transition-all duration-300" src="home.svg" alt="Logo Cosiendo Alas" onerror="this.src='https://placehold.co/100x100?text=CA'; this.style.borderRadius='50%'">
+                    <div>
+                        <span class="block font-subtitulo font-bold text-lg sm:text-xl sm:font-extrabold text-azulOceano tracking-wide">COSIENDO ALAS</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <a href="https://wa.me/525535538561" target="_blank" class="hidden sm:flex px-5 py-2 bg-azulOceano text-white font-subtitulo font-bold rounded-full hover:bg-moradoMedio transition shadow-lg items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span>55 3553 8561</span>
+                    </a>
+                    <button id="menu-btn" class="text-azulOceano hover:text-verdeEsperanza focus:outline-none ml-2 p-2 active:bg-gray-100 rounded-full transition">
+                        <i class="fa-solid fa-bars text-2xl sm:text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="overlay" class="fixed inset-0 bg-black/50 opacity-0 z-[45] hidden transition-opacity duration-300"></div>
+
+    <div id="side-menu" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl z-[55] overflow-y-auto transform translate-x-full transition-transform duration-300">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-subtitulo font-bold text-azulOceano text-lg">Menú</span>
+                <button id="close-menu-btn" class="text-gray-400 hover:text-azulOceano transition p-2"><i class="fa-solid fa-xmark text-2xl"></i></button>
+            </div>
+            <nav class="space-y-6 pb-20">
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Organización</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="index.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Inicio</a></li>
+                        <li><a href="somos.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">¿Quiénes somos?</a></li>
+                        <li><a href="directorio.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Directorio Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Servicios Corporativos</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="empresas.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Prevención Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Asistencia y Recursos</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="que_hacer.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">¿Qué hacer tras una agresión?</a></li>
+                        <li><a href="orientacion_juridica.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Orientación y Defensa Legal</a></li>
+                        <li><a href="material_victimas.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para víctimas</a></li>
+                        <li><a href="material_acompañantes.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para acompañantes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Comunidad y Cultura</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="recomendaciones.html" class="block font-bold text-verdeEsperanza transition py-1"><i class="fa-solid fa-heart-circle-check mr-2"></i>Recomendaciones Culturales</a></li>
+                        <li><a href="cult_viol.html" class="block font-semibold text-rosaOscuro hover:text-red-700 transition py-1"><i class="fa-solid fa-eye mr-2"></i>Cultura de la Violencia</a></li>
+                        <li><a href="tienda.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1 mt-2 border-t border-gray-100 pt-2">Tienda con Causa</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <main class="flex-grow pt-32 pb-16 lg:pt-40 lg:pb-24 hero-review relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 lg:w-96 lg:h-96 bg-white opacity-60 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 lg:w-96 lg:h-96 bg-azulCielo opacity-10 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 fade-in">
+            
+            <nav class="mb-8 text-sm font-subtitulo text-gray-500 flex items-center gap-2">
+                <a href="recomendaciones.html" class="hover:text-azulOceano transition"><i class="fa-solid fa-arrow-left mr-1"></i> Botiquín Cultural</a>
+                <i class="fa-solid fa-chevron-right text-xs"></i>
+                <span class="text-azulCielo font-bold">Cine</span>
+            </nav>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                <div class="flex flex-col lg:flex-row">
+                    
+                    <div class="lg:w-1/3 bg-gray-50 p-8 flex flex-col items-center justify-start border-r border-gray-100 relative">
+                        <div class="absolute top-6 left-6 flex gap-2">
+                            <span class="bg-azulCielo text-white text-xs font-subtitulo font-bold px-3 py-1 rounded-full shadow-sm">Película</span>
+                        </div>
+                        
+                        <img src="https://upload.wikimedia.org/wikipedia/en/5/5c/Sorry%2C_Baby_poster.jpg" alt="Póster Sorry, Baby" class="w-48 sm:w-64 rounded-xl shadow-lg mb-8 mt-8 border border-gray-200">
+                        
+                        <div class="w-full space-y-4 font-texto text-sm text-gray-700 bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                            <h3 class="font-seccion font-bold text-azulOceano text-base border-b border-gray-100 pb-2 mb-3">Ficha Técnica</h3>
+                            <p class="flex justify-between">
+                                <span class="font-bold text-grisAntracita">Directora:</span> <span class="text-right">Eva Victor</span>
+                            </p>
+                            <p class="flex justify-between">
+                                <span class="font-bold text-grisAntracita">Año:</span> <span>2025</span>
+                            </p>
+                            <p class="flex justify-between">
+                                <span class="font-bold text-grisAntracita">Protagonista:</span> <span class="text-right">Eva Victor</span>
+                            </p>
+                            <p class="flex justify-between">
+                                <span class="font-bold text-grisAntracita">Género:</span> <span>Drama / Cine Independiente</span>
+                            </p>
+                        </div>
+
+                        <div class="w-full mt-6 flex flex-wrap gap-2 justify-center">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-seccion font-bold tracking-wider"><i class="fa-solid fa-water mr-1"></i> Sanación</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-800 rounded-full text-xs font-seccion font-bold tracking-wider"><i class="fa-solid fa-user-group mr-1"></i> Amistad Femenina</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-seccion font-bold tracking-wider"><i class="fa-solid fa-seedling mr-1"></i> Reconstrucción</span>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-2/3 p-8 sm:p-12 lg:p-14 flex flex-col">
+                        
+                        <div class="mb-10 border-b border-gray-200 pb-8">
+                            <h1 class="font-titulo1 font-bold text-4xl sm:text-5xl text-azulCielo mb-4 leading-tight">Sorry, Baby (2025)</h1>
+                            <p class="text-xl text-gray-500 font-cita italic">Un entendimiento cálido que abraza al corazón con esperanza y resistencia.</p>
+                            
+                            <div class="flex items-center gap-3 mt-6">
+                                <div class="w-10 h-10 rounded-full bg-verdeEsperanza text-white flex items-center justify-center font-bold text-sm">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div>
+                                    <p class="font-subtitulo font-bold text-grisAntracita text-sm">Por Karen Socorro</p>
+                                    <p class="font-texto text-gray-500 text-xs">Curaduría · Botiquín Cultural</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <article class="space-y-6 flex-grow font-texto text-gray-800 text-lg leading-relaxed text-justify">
+                            
+                            <p class="drop-cap">
+                                <em>Sorry, Baby</em> (2025), ópera prima de Eva Victor —quien escribió, dirigió y protagonizó la película— sigue a Agnes, una estudiante universitaria brillante con sus conflictos académicos, hasta que es violada por su profesor. Lo que distingue a esta película de otras es el seguimiento a la dolorosa reconstrucción de Agnes. No se enfoca en qué sucederá al agresor ni en las consecuencias sociales, sino en las grietas emocionales que dejó. Pese a que todo permanece igual, el dolor de Agnes es latente en su día a día a lo largo de los años tras la agresión. Muestra cómo la lucha personal, muchas veces, es la peor de todas.
+                            </p>
+
+                            <p>
+                                El momento definitorio de la vida adulta de Agnes ocurre fuera de cámara, pero persigue prácticamente cada otra escena de la película. Victor toma una decisión narrativa radical: nunca nos muestra la agresión directamente. Lo que sí vemos es el después — el trauma cíclico y la depresión que el perpetrador nunca tendrá que sentir. Victor ha explicado que no quería que la película estuviera por delante de su personaje: 
+                            </p>
+
+                            <blockquote class="font-cita italic text-xl text-azulOceano border-l-4 border-azulCielo pl-6 my-6 leading-snug">
+                                "Cuando ella está lista para decirlo, cuando se siente segura, nosotros no sabemos qué le pasó antes de que ella lo sepa, porque se sentía cruel. Se sentía condescendiente decir 'nosotros sabemos lo que pasó y solo estamos esperando a que tú nos alcances'".
+                            </blockquote>
+
+                            <p>
+                                Esa decisión ética —darle privacidad al personaje incluso dentro de su propia película— es parte de lo que hace a <em>Sorry, Baby</em> tan diferente de otras representaciones cinematográficas de la violencia sexual.
+                            </p>
+
+                            <p>
+                                La película está dividida en cinco capítulos no cronológicos. Primero conocemos a Agnes y Lydie en la casa de Agnes en Nueva Inglaterra, donde Agnes ya es profesora de literatura en su antigua universidad y Lydie regresa para compartir la noticia de su embarazo. La estructura fragmentada no es un capricho formal: es un testimonio de los fragmentos de trauma que perduran incluso mientras una persona trabaja en reconstruir su vida — una mirada desviada aquí, un ataque de pánico allá.
+                            </p>
+
+                            <h3 class="font-seccion font-bold text-2xl text-azulCielo mt-10 mb-3">La alegría como contrapeso a la tragedia</h3>
+                            
+                            <p>
+                                Basada en la experiencia personal de la directora, quien escribió y protagonizó esta obra, habita de primera mano la crisis de identidad, los miedos adquiridos, los dolores escondidos, la evitación sutil y la dificultad para seguir adelante. Victor ha contado que lo primero que escribió fue la escena en la que Agnes le cuenta a Lydie lo que pasó, en la bañera. Después caminó y se alejó del guion por un tiempo. Luego escribió la llegada de Lydie, su fin de semana juntas, porque quería que la película comenzara con un estallido de alegría: <em>"Después de escribir esa escena muy triste en la bañera, pensé: ¿cuál es el contrapeso? ¿Dónde está su alegría? ¿Dónde está su rebelión contra la tragedia? Y eso es su relación, su amor, la cercanía que tienen".</em>
+                            </p>
+
+                            <p>
+                                Asimismo, pese a que Agnes cuenta con el apoyo de su mejor amiga Lydie, la película deja en claro que la mayoría de los demonios se enfrentan sola. Victor lo explica así: cuando Lydie está presente, sabes que Agnes estará bien; las cosas son mucho menos graciosas cuando Lydie no está ahí. Cuando Agnes está sola, no tiene a nadie con quien confirmar "eso fue raro, ¿verdad?". 
+                            </p>
+
+                            <p>
+                                Hay una escena devastadora en la que Agnes acude a dos abogadas que le dicen: <strong>"Somos mujeres. Sabemos cómo te sientes"</strong> — para luego pivotar de su simpatía superficial y enfatizar que no pueden hacer nada para ayudarla. La respuesta genérica disfrazada de sororidad es uno de los golpes más duros de la película, porque nadie puede saber indefinidamente cómo se siente Agnes. Y cuando Agnes intenta denunciar ante Recursos Humanos, la escena se vuelve aún más oscura precisamente porque está sola.
+                            </p>
+
+                            <h3 class="font-seccion font-bold text-2xl text-azulCielo mt-10 mb-3">El poder del lenguaje y las nuevas esperanzas</h3>
+
+                            <p>
+                                La película es cuidadosa en señalar las formas en que el lenguaje, para bien y para mal, tiene poder mientras las víctimas navegan las consecuencias del trauma. La propia Agnes se refiere a lo que le pasó como "algo malo" (<em>a bad thing</em>), sin nombrarlo. Cuando finalmente se atreve a decirle a Lydie que no quiere que su agresor sea arrestado, la frase cae como una piedra que revela la complejidad de la supervivencia: no es que no quiera justicia; es que el sistema la ha agotado antes de empezar. Se siente refrescante ver personajes discutir este tema tabú sin convertirlo en el foco definitorio de sus vidas.
+                            </p>
+
+                            <p>
+                                Personalmente, me pareció bella la contraposición central entre la destrucción de una vida y el inicio de otra. El cuidado como algo político y, sobre todo, la esperanza de poder comenzar de nuevo, sin importar lo que haya sucedido. Victor diseñó esta tensión deliberadamente: poner a alguien que ha tenido un enorme despertar —Lydie, que ha descubierto su queerness, que vive en Nueva York, que escribe un libro, que ha formado una familia— junto a alguien que en los últimos cinco años solo ha logrado mover una mesa al otro lado de la habitación. Esa es la distancia entre ambas: el tiempo avanza de maneras distintas para personas distintas.
+                            </p>
+
+                            <p>
+                                Esa contraposición culmina en el monólogo final, cuando Agnes le habla a Jane, la hija recién nacida de Lydie. Es un pequeño bolsillo de poesía — un momento exclusivo entre Agnes y Jane, donde nosotros, la audiencia, solo resultamos ser los testigos sutiles:
+                            </p>
+
+                            <blockquote class="font-cita italic text-xl text-moradoMedio border-l-4 border-moradoMedio pl-6 my-8 leading-snug bg-purple-50 py-4 pr-4 rounded-r-lg">
+                                "Cuando crezcas, me puedes contar lo que sea. Si tienes un pensamiento y piensas 'ese es un mal pensamiento', yo probablemente tuve ese mismo pensamiento pero diez veces peor. Así que puedes contármelo, nunca me vas a asustar. Si alguien te hace algo malo. Si alguien dice algo que da miedo. Si quieres matarte, con un lápiz o un cuchillo o lo que sea, solo dime. Nunca te voy a decir que me estás asustando. Solo voy a decir: 'Sí, lo sé. A veces es así'. Lamento que te vayan a pasar cosas malas. Espero que no. Pero a veces las cosas malas simplemente pasan. Aún puedo escuchar, y no asustarme. Así que eso es bueno, o algo, al menos."
+                            </blockquote>
+
+                            <h3 class="font-seccion font-bold text-2xl text-azulCielo mt-10 mb-3">La compasión como acto de resistencia</h3>
+
+                            <p>
+                                La película no da salidas fáciles ni consejos de supervivencia. No obstante, el simple retrato del dolor y la confusión te hacen sentir como en casa. Victor ha dicho que quería que el público se enamorara de Agnes y Lydie como personas antes de saber qué le pasó a Agnes, porque tenemos la desafortunada capacidad de alejar a las personas que han vivido esta clase de violencia, volverlas unidimensionales y decir "oh, esa es solo una figura trágica de la que quiero apartar la vista". La película te pide que las mires. Que las ames. Y que luego no puedas desestimar su dolor.
+                            </p>
+
+                            <p>
+                                Muestra que el éxito y el esfuerzo no son solo convencionales y que quien nos ama aprende a amar a la nueva versión — distinta, herida, pero viva. Hay una escena hacia el final donde Pete, el dueño de una tienda de sándwiches (interpretado por John Carroll Lynch), le dice a Agnes unas palabras amables mientras le regala comida. Es un momento especialmente conmovedor que demuestra que la ternura puede llegar de los lugares más inesperados. La película cree en el rol de la comunidad en la sanación; se vuelve excelente en su curiosidad por la manera en que las relaciones se quiebran, se doblan y florecen después de lo impensable.
+                            </p>
+
+                            <p>
+                                <em>Sorry, Baby</em> se siente, en cierto sentido, como <em>Manchester by the Sea</em> — desde su atmósfera del noreste hasta la noción subyacente de una vida descarrilada, donde el acto de avanzar es más importante que el revés en sí. Como anotaron algunas espectadoras: <em>"Sinceramente, estoy inmensamente agradecida por esta película de maneras que ni siquiera puedo poner en palabras ahora mismo"</em>, y <em>"Esta va a ser la película más importante que alguien vea, y espero que les ayude en su camino".</em>
+                            </p>
+
+                            <div class="bg-blue-50 border border-blue-100 p-6 rounded-2xl mt-8">
+                                <p class="font-texto text-lg text-azulOceano font-semibold italic text-center">
+                                    La recomiendo para todo momento, pues la percibo como un entendimiento cálido que abraza al corazón con esperanza y resistencia a través de la amabilidad y compasión. Como dijo Lydie al despedirse de Agnes: <strong>"No te mueras."</strong> Dos palabras tan simples como severas. Un comando que es a la vez lo más básico y lo más profundo que una amiga puede pedir.
+                                </p>
+                            </div>
+
+                        </article>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contacto" class="bg-grisAntracita text-white pt-16 pb-24 lg:pb-8 border-t-4 border-doradoSuave mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                         <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                             <img src="home.svg" alt="Icon" class="w-8 h-8 object-contain" onerror="this.src='https://placehold.co/100x100?text=CA';">
+                         </div>
+                        <h2 class="font-subtitulo font-bold text-2xl">Cosiendo Alas</h2>
+                    </div>
+                    <p class="font-texto text-lavandaSuave text-lg mb-6 max-w-md">
+                        Organización dedicada a la prevención de la violencia sexual y la atención integral de víctimas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                           <i class="fa-brands fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="ENLACE_TIKTOK" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-xl italic mb-4 text-doradoSuave">Contacto Institucional</h3>
+                    <ul class="space-y-3 font-texto text-lavandaSuave text-lg">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-verdeEsperanza"></i>
+                            <a href="mailto:cosiendo.tus.alas@gmail.com" class="hover:text-white transition break-all">cosiendo.tus.alas@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp mt-1 text-verdeEsperanza"></i>
+                            <a href="https://wa.me/525535538561" target="_blank" class="hover:text-white transition">55 3553 8561</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-moradoMedio border-opacity-30 pt-8 text-center text-lavandaSuave text-sm font-texto">
+                <p>&copy; 2024 Cosiendo Alas. Todos los derechos reservados. Textos del Botiquín Cultural bajo licencia de uso libre con atribución.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const sideMenu = document.getElementById('side-menu');
+        const overlay = document.getElementById('overlay');
+        const navbar = document.getElementById('main-navbar');
+        const navLogo = document.getElementById('nav-logo');
+        const menuLinks = document.querySelectorAll('#side-menu a');
+        
+        function toggleMenu() {
+            const isOpen = !sideMenu.classList.contains('translate-x-full');
+            if (isOpen) {
+                sideMenu.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => { overlay.classList.add('hidden'); }, 300);
+                document.body.style.overflow = '';
+            } else {
+                overlay.classList.remove('hidden');
+                void overlay.offsetWidth; 
+                overlay.classList.remove('opacity-0');
+                sideMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function harmonizeGraphics() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-compact');
+                navLogo.classList.add('logo-compact');
+            } else {
+                navbar.classList.remove('nav-compact');
+                navLogo.classList.remove('logo-compact');
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        menuLinks.forEach(link => { link.addEventListener('click', toggleMenu); });
+        
+        window.addEventListener('scroll', harmonizeGraphics);
+        window.addEventListener('resize', harmonizeGraphics);
+        harmonizeGraphics();
+        
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") { window.location.href = "https://www.google.com"; }
+        });
+    </script>
+</body>
+</html>

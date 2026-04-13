@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Título de la Entrada | Cosiendo Alas A.C.</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        azulOceano: '#653a82',     
+                        verdeEsperanza: '#42c3d9', 
+                        doradoSuave: '#fcc352',    
+                        grisAntracita: '#2b1045',  
+                        moradoMedio: '#8e62b1',
+                        azulCielo: '#53a0cc',
+                        turquesaClaro: '#5dcad4',
+                        lavandaSuave: '#afb0de',
+                        fondoPagina: '#f8f6fb', 
+                    },
+                    fontFamily: {
+                        titulo1: ['Playfair Display', 'serif'],
+                        subtitulo: ['Montserrat', 'sans-serif'],
+                        texto: ['Source Sans Pro', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-grisAntracita font-texto antialiased bg-fondoPagina overflow-x-hidden flex flex-col min-h-screen">
+
+    <nav class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between h-full items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3 group">
+                    <img class="h-10 w-10 object-contain transition-transform group-hover:scale-110" src="home.svg" alt="Logo" onerror="this.src='https://placehold.co/100x100?text=CA'; this.style.borderRadius='50%'">
+                    <div>
+                        <span class="block font-subtitulo font-extrabold text-xl text-azulOceano tracking-wide">COSIENDO ALAS</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-4">
+                    <a href="blog.html" class="px-4 py-2 border-2 border-verdeEsperanza text-verdeEsperanza font-bold rounded-full hover:bg-verdeEsperanza hover:text-white transition text-sm">
+                        <i class="fa-solid fa-arrow-left mr-2"></i> Volver
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-16 w-full fade-in">
+        
+<header class="mb-10 text-center">
+            <span class="inline-block bg-turquesaClaro text-white text-sm font-bold px-4 py-1 rounded-full mb-4 uppercase tracking-wider">Literatura</span>
+            
+            <h1 class="font-titulo1 font-bold text-4xl sm:text-5xl text-azulOceano mb-4 leading-tight">
+                Tengo un nombre (Know my name)
+            </h1>
+            
+            <div class="flex items-center justify-center gap-4 text-gray-500 font-subtitulo text-sm mb-6">
+                <span><i class="fa-solid fa-user mr-1"></i> Autora: Chanel Miller</span>
+                <span>|</span>
+                <span><i class="fa-regular fa-calendar mr-1"></i> Año: 2021</span>
+            </div>
+
+            <div class="inline-flex items-center bg-white px-6 py-2 rounded-full shadow-sm border border-gray-100">
+                <span class="font-bold text-grisAntracita mr-3 text-sm uppercase tracking-widest">Nuestra Calificación:</span>
+                <div class="flex gap-1 text-doradoSuave text-lg">
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-solid fa-star"></i>
+                    <i class="fa-regular fa-star text-gray-300"></i> </div>
+            </div>
+        </header>
+
+        <div class="w-full h-64 sm:h-96 rounded-2xl overflow-hidden shadow-lg mb-10">
+            <img src="https://images.cdn2.buscalibre.com/fit-in/360x360/5b/50/5b503ba1b64ab61bd5256703ecccf7ac.jpg" alt="Imagen representativa" class="w-full h-full object-cover">
+        </div>
+
+       <article class="prose prose-lg max-w-none text-gray-700 leading-relaxed mb-12 text-justify">
+            
+            <p class="mb-6 font-semibold text-xl text-grisAntracita">
+                <em>Tengo un nombre</em> es el tempestuoso camino de Chanel Miller tras haberse vuelto mediática cuando, Brock Turner, la violó atrás de unos contenedores de basura en la universidad de Stanford, California. 
+            </p>
+            
+            <p class="mb-6">
+                El título es poderoso, pues Chanel estuvo en el anonimato durante años hasta que tomó la decisión de revelar su identidad, mostrando que es más que una víctima. Chanel es una mujer con una historia de vida, sueños, dolencias, llena de amor y pasión. 
+            </p>
+
+            <p class="mb-6">
+                Si bien el libro cuenta una historia que se puede encontrar en notas periodísticas, <strong>es importante leerlo</strong> debido a que ella cuenta de primera mano cómo fue el día siguiente a su agresión, cómo fue ver a su agresor de frente, confrontarse al violento sistema penal (junto con la cultura de la violación), la exposición mediática y la respuesta de Stanford ante la agresión.
+            </p>
+
+            <p class="mb-6">
+                Las reflexiones son interesantes e intensas, tiene lucidez al hablar de las agresiones en general y el tono es amable para todas las sobrevivientes que leen su libro. Es escuchar a una víctima de primera mano e, incluso, poner nombre a las emociones que una como sobreviviente, muchas veces, siente y no tiene el lenguaje para nombrar.
+            </p>
+
+            <p class="mb-6">
+                Me parece valiosa la forma sencilla en la que está escrito; no busca ser pretenciosa y quiere llegar a audiencias grandes. Asimismo, creo que es un libro que puede ser de mucha utilidad para una persona que se encuentra en un proceso penal, pues <strong>es un espejo profundo y amargo.</strong>
+            </p>
+
+            <p class="mb-6">
+                Si bien es un libro necesario, sobre todo para la familia de los sobrevivientes, se debe matizar que es una mujer de Estados Unidos con muchos privilegios: de clase, debido a su educación universitaria, mediáticos, del sistema legal de EU que es más flexible, de apoyo familiar y, sobre todo, económicos. 
+            </p>
+
+            <p class="mb-6">
+                No todas las sobrevivientes tenemos la oportunidad de parar durante años a recuperarnos del golpe o para irnos de vacaciones a Indonesia. Suscitó en mí enojos no resueltos que, al final, sé que no borran la valentía que tuvo durante tanto tiempo y los logros enormes fruto de su resiliencia. Debo decir que, en ocasiones, considero que romantiza de cierta forma la sobrevivencia y a las víctimas. No obstante, es una valoración meramente personal.
+            </p>
+
+            <p class="mb-6">
+                En conclusión, es un libro difícil de leer, honesto en cuanto a la crudeza del dolor, que <strong>no tiene reparos en utilizar la palabra "violación"</strong>, que reta a las instituciones y pone en jaque a todos los cómplices de la cultura de violación. 
+            </p>
+
+            <p class="mb-6">
+                Es extraño encontrar voces tan extensas de la experiencia de una sobreviviente, aunque debo apuntar que sigue sin ser una vivencia de Latinoamérica, por lo que puede resultar complejo para las mujeres que vivimos acá no tener tantas facilidades como ella. 
+            </p>
+
+            <div class="my-10 pl-6 border-l-4 border-turquesaClaro bg-gray-50 p-6 rounded-r-xl italic text-gray-600">
+                <p class="mb-4">"Bajo la sangre derramada y los informes periciales hay una persona entera y bella que busca el modo de volver a formar parte del mundo".</p>
+                <p>"Las víctimas existen en una sociedad que nos dice que nuestro objetivo vital es ser una historia que inspire a los demás. Pero a veces lo máximo que podemos hacer es decirte que seguimos aquí y con eso debería bastar".</p>
+            </div>
+
+        </article>
+
+        <div class="mb-12 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+            <h3 class="font-subtitulo font-bold text-2xl text-azulOceano mb-6">
+                <i class="fa-brands fa-youtube text-red-600 mr-2"></i> Tráiler o Material Audiovisual
+            </h3>
+            <div class="aspect-video w-full rounded-xl overflow-hidden shadow-md">
+                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/LLmwjgXdwaI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+            </div>
+        </div>
+
+    </main>
+
+    <footer id="contacto" class="bg-grisAntracita text-white pt-16 pb-24 lg:pb-8 border-t-4 border-doradoSuave mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                         <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                             <img src="home.svg" alt="Icon" class="w-8 h-8 object-contain" onerror="this.src='https://placehold.co/100x100?text=CA';">
+                         </div>
+                        <h3 class="font-subtitulo font-bold text-2xl">Cosiendo Alas</h3>
+                    </div>
+                    <p class="font-texto text-lavandaSuave text-lg mb-6 max-w-md">
+                        Organización dedicada a la prevención de la violencia sexual y la atención integral de víctimas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                           <i class="fa-brands fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="ENLACE_TIKTOK" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-titulo1 text-xl italic mb-4 text-doradoSuave">Contacto</h4>
+                    <ul class="space-y-3 font-texto text-lavandaSuave text-lg">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-verdeEsperanza"></i>
+                            <a href="mailto:cosiendo.tus.alas@gmail.com" class="hover:text-white transition break-all">cosiendo.tus.alas@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp mt-1 text-verdeEsperanza"></i>
+                            <a href="https://wa.me/525535538561" target="_blank" class="hover:text-white transition">55 3553 8561</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-moradoMedio border-opacity-30 pt-8 text-center text-lavandaSuave text-sm font-texto">
+                <p>&copy; 2024 Cosiendo Alas. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

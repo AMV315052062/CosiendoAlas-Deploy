@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Reseña: Promising Young Woman | Botiquín Cultural | Cosiendo Alas</title>
+    <meta name="description" content="Reseña de la película Promising Young Woman (2020) por Karen Socorro. Un análisis sobre la venganza psicológica, el duelo y la subversión estética del trauma.">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,600&family=Source+Sans+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        verdeEsperanza: '#42c3d9',
+                        moradoMedio: '#8e62b1',
+                        doradoSuave: '#fcc352',
+                        turquesaClaro: '#5dcad4',
+                        cyanVibrante: '#35d4da',
+                        azulCielo: '#53a0cc',
+                        lilaApagado: '#8a6eb4',
+                        azulOceano: '#653a82',
+                        lavandaSuave: '#afb0de',
+                        rosaOscuro: '#936479',
+                        grisAntracita: '#2b1045',
+                        fondoPagina: '#f8f6fb', 
+                    },
+                    fontFamily: {
+                        titulo1: ['Playfair Display', 'serif'],
+                        subtitulo: ['Montserrat', 'sans-serif'],
+                        seccion: ['Montserrat', 'sans-serif'],
+                        texto: ['Source Sans Pro', 'sans-serif'],
+                        cita: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Fondo suave y luminoso para el Botiquín Cultural */
+        .hero-review { background: linear-gradient(135deg, #f8f6fb 0%, #e0f2fe 100%); }
+        html { scroll-behavior: smooth; }
+        .nav-compact { height: 4rem !important; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1); background-color: rgba(255, 255, 255, 0.95); backdrop-filter: blur(5px); }
+        .logo-compact { height: 2.5rem !important; width: 2.5rem !important; }
+        
+        .fade-in { animation: fadeIn 0.8s ease-out forwards; }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .drop-cap::first-letter {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #53a0cc;
+            float: left;
+            line-height: 1;
+            margin-right: 0.5rem;
+            margin-top: 0.2rem;
+        }
+    </style>
+</head>
+<body class="text-grisAntracita font-texto antialiased bg-fondoPagina overflow-x-hidden flex flex-col min-h-screen">
+
+    <a href="https://www.google.com" id="safe-exit" class="fixed bottom-6 right-4 z-[100] bg-red-600 text-white px-4 py-3 rounded-full shadow-2xl flex items-center justify-center hover:bg-red-700 transition-all font-subtitulo font-bold tracking-wide border-2 border-white sm:right-6 sm:px-5 active:scale-95" title="Cerrar página inmediatamente">
+        <i class="fa-solid fa-person-running text-xl mr-2"></i> <span class="text-sm sm:text-base">SALIDA RÁPIDA</span>
+    </a>
+
+    <nav id="main-navbar" class="bg-white shadow-md fixed w-full z-50 transition-all duration-300 h-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full">
+            <div class="flex justify-between h-full items-center">
+                <a href="index.html" class="flex-shrink-0 flex items-center gap-3">
+                    <img id="nav-logo" class="h-10 w-10 sm:h-12 sm:w-12 object-contain transition-all duration-300" src="home.svg" alt="Logo Cosiendo Alas" onerror="this.src='https://placehold.co/100x100?text=CA'; this.style.borderRadius='50%'">
+                    <div>
+                        <span class="block font-subtitulo font-bold text-lg sm:text-xl sm:font-extrabold text-azulOceano tracking-wide">COSIENDO ALAS</span>
+                    </div>
+                </a>
+
+                <div class="flex items-center gap-2 sm:gap-4">
+                    <a href="https://wa.me/525535538561" target="_blank" class="hidden sm:flex px-5 py-2 bg-azulOceano text-white font-subtitulo font-bold rounded-full hover:bg-moradoMedio transition shadow-lg items-center gap-2">
+                        <i class="fa-brands fa-whatsapp text-xl"></i> <span>55 3553 8561</span>
+                    </a>
+                    <button id="menu-btn" class="text-azulOceano hover:text-verdeEsperanza focus:outline-none ml-2 p-2 active:bg-gray-100 rounded-full transition">
+                        <i class="fa-solid fa-bars text-2xl sm:text-3xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div id="overlay" class="fixed inset-0 bg-black/50 opacity-0 z-[45] hidden transition-opacity duration-300"></div>
+
+    <div id="side-menu" class="fixed top-0 right-0 h-full w-[85%] max-w-sm bg-white shadow-2xl z-[55] overflow-y-auto transform translate-x-full transition-transform duration-300">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <span class="font-subtitulo font-bold text-azulOceano text-lg">Menú</span>
+                <button id="close-menu-btn" class="text-gray-400 hover:text-azulOceano transition p-2"><i class="fa-solid fa-xmark text-2xl"></i></button>
+            </div>
+            <nav class="space-y-6 pb-20">
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Organización</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="index.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Inicio</a></li>
+                        <li><a href="somos.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">¿Quiénes somos?</a></li>
+                        <li><a href="directorio.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Directorio Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Servicios Corporativos</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="empresas.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Prevención Institucional</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Asistencia y Recursos</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="que_hacer.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">¿Qué hacer tras una agresión?</a></li>
+                        <li><a href="orientacion_juridica.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Orientación y Defensa Legal</a></li>
+                        <li><a href="material_victimas.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para víctimas</a></li>
+                        <li><a href="material_acompañantes.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1">Material para acompañantes</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-azulOceano text-lg italic border-b border-doradoSuave pb-1 mb-3">Comunidad y Cultura</h3>
+                    <ul class="space-y-3 pl-2 text-sm font-subtitulo">
+                        <li><a href="recomendaciones.html" class="block font-bold text-verdeEsperanza transition py-1"><i class="fa-solid fa-heart-circle-check mr-2"></i>Recomendaciones Culturales</a></li>
+                        <li><a href="cult_viol.html" class="block font-semibold text-rosaOscuro hover:text-red-700 transition py-1"><i class="fa-solid fa-eye mr-2"></i>Cultura de la Violencia</a></li>
+                        <li><a href="tienda.html" class="block font-semibold text-grisAntracita hover:text-verdeEsperanza transition py-1 mt-2 border-t border-gray-100 pt-2">Tienda con Causa</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <main class="flex-grow pt-32 pb-16 lg:pt-40 lg:pb-24 hero-review relative overflow-hidden">
+        <div class="absolute top-0 right-0 -mr-20 -mt-20 w-64 h-64 lg:w-96 lg:h-96 bg-white opacity-60 rounded-full blur-3xl"></div>
+        <div class="absolute bottom-0 left-0 -ml-20 -mb-20 w-64 h-64 lg:w-96 lg:h-96 bg-rosaOscuro opacity-10 rounded-full blur-3xl"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 fade-in">
+            
+            <nav class="mb-8 text-sm font-subtitulo text-gray-500 flex items-center gap-2">
+                <a href="recomendaciones.html" class="hover:text-azulOceano transition"><i class="fa-solid fa-arrow-left mr-1"></i> Botiquín Cultural</a>
+                <i class="fa-solid fa-chevron-right text-xs"></i>
+                <span class="text-azulCielo font-bold">Cine</span>
+            </nav>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-gray-100">
+                <div class="flex flex-col lg:flex-row">
+                    
+                    <div class="lg:w-1/3 bg-gray-50 p-8 flex flex-col items-center justify-start border-r border-gray-100 relative">
+                        <div class="absolute top-6 left-6 flex gap-2">
+                            <span class="bg-azulCielo text-white text-xs font-subtitulo font-bold px-3 py-1 rounded-full shadow-sm">Película</span>
+                        </div>
+                        
+                        <img src="https://pics.filmaffinity.com/Promising_Young_Woman-444938219-large.jpg" alt="Póster Promising Young Woman" class="w-48 sm:w-64 rounded-xl shadow-lg mb-8 mt-8 border border-gray-200">
+                        
+                        <div class="w-full space-y-4 font-texto text-sm text-gray-700 bg-white p-5 rounded-xl border border-gray-200 shadow-sm">
+                            <h3 class="font-seccion font-bold text-azulOceano text-base border-b border-gray-100 pb-2 mb-3">Ficha Técnica</h3>
+                            <p class="flex justify-between">
+                                <span class="font-bold text-grisAntracita">Directora:</span> <span class="text-right">Emerald Fennell</span>
+                            </p>
+                            <p class="flex justify-between">
+                                <span class="font-bold text-grisAntracita">Guion:</span> <span class="text-right">Emerald Fennell</span>
+                            </p>
+                            <p class="flex justify-between">
+                                <span class="font-bold text-grisAntracita">Año:</span> <span>2020</span>
+                            </p>
+                            <p class="flex justify-between">
+                                <span class="font-bold text-grisAntracita">Galardón:</span> <span class="text-right">Oscar (Mejor Guion Original)</span>
+                            </p>
+                        </div>
+
+                        <div class="w-full mt-6 flex flex-wrap gap-2 justify-center">
+                            <span class="px-3 py-1 bg-red-100 text-red-800 rounded-full text-xs font-seccion font-bold tracking-wider"><i class="fa-solid fa-heart-crack mr-1"></i> Duelo</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-xs font-seccion font-bold tracking-wider"><i class="fa-solid fa-masks-theater mr-1"></i> Venganza Psicológica</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-seccion font-bold tracking-wider"><i class="fa-solid fa-eye-slash mr-1"></i> Cómplices</span>
+                        </div>
+                    </div>
+
+                    <div class="lg:w-2/3 p-8 sm:p-12 lg:p-14 flex flex-col">
+                        
+                        <div class="mb-10 border-b border-gray-200 pb-8">
+                            <h1 class="font-titulo1 font-bold text-4xl sm:text-5xl text-azulCielo mb-4 leading-tight">Promising Young Woman (2020)</h1>
+                            <p class="text-xl text-gray-500 font-cita italic">La subversión de la venganza y el dolor disfrazado de tonos pastel.</p>
+                            
+                            <div class="flex items-center gap-3 mt-6">
+                                <div class="w-10 h-10 rounded-full bg-verdeEsperanza text-white flex items-center justify-center font-bold text-sm">
+                                    <i class="fa-solid fa-heart"></i>
+                                </div>
+                                <div>
+                                    <p class="font-subtitulo font-bold text-grisAntracita text-sm">Por Karen Socorro</p>
+                                    <p class="font-texto text-gray-500 text-xs">Curaduría · Botiquín Cultural</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <article class="space-y-6 flex-grow font-texto text-gray-800 text-lg leading-relaxed text-justify">
+                            
+                            <p class="drop-cap">
+                                <em>Promising Young Woman</em> (2020), ópera prima de Emerald Fennell — quien escribió, dirigió y coprodujo la película —, ganadora del Oscar a Mejor Guion Original y nominada a Mejor Película, Mejor Directora y Mejor Actriz, es la historia de Cassie, una mujer que, superada por el dolor y la pérdida, abandona su vida y pasa su tiempo libre en bares, fingiendo estar ebria y confrontando a hombres que se aprovechan de mujeres en estado de vulnerabilidad.
+                            </p>
+
+                            <p>
+                                Si bien no soy fanática del género <em>rape revenge</em>, considero que le da una vuelta e innova este tipo de películas, pues explora de manera amplia la dimensión emocional. Cassie no es solo una mujer "resentida" sino que siente rabia, impotencia, rencor, tristeza, alegría. Muestra cómo la violación destruye el tejido social. Lo difícil que es encontrar paz después de algo así, no solo para la víctima, sino, como en este caso, para las redes de apoyo.
+                            </p>
+
+                            <h3 class="font-seccion font-bold text-2xl text-azulCielo mt-10 mb-3">La venganza en el mundo real</h3>
+                            
+                            <p>
+                                Fennell ha dicho que quería escribir una película sobre venganza femenina, pero que las que existían tendían a ser "súper violentas o súper sexis, o muy, muy deprimentes", y que ella buscaba explorar cómo una mujer común tomaría venganza en el mundo real:
+                            </p>
+
+                            <blockquote class="font-cita italic text-xl text-moradoMedio border-l-4 border-moradoMedio pl-6 my-6 leading-snug">
+                                "Y eso es muy raramente alcanzar un arma. Es más raro y más retorcido que eso."
+                            </blockquote>
+
+                            <p>
+                                La venganza de Cassie no es física; en vez de combatir la violencia con violencia, su venganza es más psicológica y, discutiblemente, más perjudicial. Cassie casi nunca lastima físicamente a sus objetivos. En lugar de eso, hace que las personas cuestionen su suposición implícita de que son buenas. Y más allá de la pantalla, nos hace cuestionar a nosotros qué tan buenas podemos ser si contribuimos o guardamos silencio frente a la violencia contra las mujeres.
+                            </p>
+
+                            <p>
+                                Un elemento particularmente eficaz es cómo Fennell eligió a los actores que interpretan a los hombres de la película. Usa actores familiares y queridos del género cómico — Adam Brody, Bo Burnham, Max Greenfield, Christopher Mintz-Plasse — porque las audiencias están predispuestas a verlos como simpáticos. Esto revela la capacidad de violencia en cualquier hombre, sea o no que se vean a sí mismos como "chicos buenos". Y no son solo los hombres: también explora cómo mujeres en posiciones de poder, como una decana que desestimó la denuncia, son responsables. <em>"Este no es solo un problema de género, es un problema social"</em>, ha observado Fennell.
+                            </p>
+
+                            <h3 class="font-seccion font-bold text-2xl text-azulCielo mt-10 mb-3">El caballo de Troya en tonos pastel</h3>
+
+                            <p>
+                                Un elemento que destaca es la estética cuidada de la película. Esta ópera prima juega con escenarios bien cuidados y colores pastel, que contraponen la brutalidad de la violencia frente a los sueños perdidos. Desde el inicio, Fennell y el diseñador de producción Michael Perry decidieron que los colores brillantes y acaramelados serían la base de la película. Los azules y rosas eran clave. 
+                            </p>
+
+                            <p>
+                                La diseñadora de vestuario Nancy Steiner explicó que Fennell quería que Cassie fuera "esta chica hermosa, acaramelada, femenina, suave y con vuelos" en su vida diaria, pero que eso también era un disfraz para ocultar lo que hay adentro: todo ese dolor y sufrimiento. Fennell lo describe como una entrada hacia conversaciones más serias y complicadas: el reto era lograr que la película no se sintiera como medicina, que se sintiera como algo a lo que querrías ir en una cita, y después discutirlo. Los pasteles, el humor y la estética de comedia romántica son el caballo de Troya a través del cual la película entrega sus mensajes más punzantes.
+                            </p>
+
+                            <p>
+                                Fennell lo ha dicho directamente: <em>"Me gusta Sweet Valley High. Me gusta Paris Hilton, y me gusta Britney, y me gusta el rosa. Todavía tenemos una idea muy específica de cómo se ven las cosas serias — calles mojadas, humo de cigarro, un filtro azul sobre todo — pero eso es arbitrario, completamente inventado"</em>. Esa provocación estética — hacer una película sobre violencia sexual que se vea como un comercial de perfume de los noventa — no es superficialidad. Es estrategia.
+                            </p>
+
+                            <h3 class="font-seccion font-bold text-2xl text-azulCielo mt-10 mb-3">El poder del lenguaje y la omisión explícita</h3>
+
+                            <p>
+                                Un acierto es que nunca se usa la palabra violación, debido a que resulta demasiado doloroso nombrarla. Queda claro en todo momento a qué se está haciendo referencia sin necesidad de imágenes ni descripciones explícitas, lo cual pone énfasis en las consecuencias devastadoras. Fennell rehúsa gratificar a los espectadores con sexo o violencia gratuita. Durante la mayor parte de la película, las escenas explícitas de violencia sexual y física se oscurecen en lugar de ser explotadas gráficamente. En un género que históricamente se construyó sobre la exhibición del cuerpo violentado como espectáculo, esta decisión es radical.
+                            </p>
+
+                            <p>
+                                En cuanto al título, considero desafortunada la traducción a "Dulce venganza", pues descontextualiza y romantiza la historia, reduciéndola a un <em>rape revenge</em> cuando es más compleja. En cambio, el título en inglés me evoca un hoyo en el corazón: <strong>joven prometedora</strong>, que es, en resumen, una de las consecuencias más trágicas de la violación: la "pérdida" del potencial, el futuro y los sueños. 
+                            </p>
+
+                            <p>
+                                Fennell ha explicado que el título fue diseñado para imitar la frase "joven prometedor" (<em>promising young man</em>), usada con demasiada frecuencia en los casos de agresión sexual para describir al agresor en la corte. Fennell subvierte ese discurso centrado en el hombre y pregunta: ¿y la víctima? ¿Y la mujer? Nina era la mejor de su clase, la estudiante de medicina más inteligente y prometedora, y por lo que le pasó, abandonó todo. Ella era una joven prometedora. Y Cassie también.
+                            </p>
+
+                            <h3 class="font-seccion font-bold text-2xl text-azulCielo mt-10 mb-3">La honestidad brutal del desenlace</h3>
+
+                            <p>
+                                Considero que mi calificación está muy sesgada debido a que es la primera película con una representación respetuosa de violación que vi. Para mí, resulta muy personal y conecto de manera profunda con el sufrimiento de la protagonista. Para mí, la película no trata sobre la venganza sino cómo se sobrevive al pasado. Fennell ha dicho que la historia le salió "como una bola de pelo": <em>"Probablemente salió porque es algo que encuentro increíblemente perturbador y quería hablar de ello"</em>. Y es justamente esa urgencia — personal, visceral, no académica — lo que se siente en cada fotograma.
+                            </p>
+
+                            <p>
+                                No obstante, debo admitir que sí resulta "hollywoodiesca", especialmente al final. Sí hay acciones que llegan a caer en lo absurdo, y es probable que la resolución no deje a muchos satisfechos. Esto no es un defecto exclusivo de la percepción personal: el final ha sido objeto de gran debate, y Fennell ha explicado que lo construyó preguntándose <em>"¿qué se siente honesto? ¿Qué se siente probable, no solo para este personaje sino en el mundo?"</em>.
+                            </p>
+
+                            <p>
+                                Fennell también ha reconocido que no creía que una mujer del tamaño de Cassie pudiera físicamente dominar a un hombre muy fuerte, y que era importante que la película interrogara el mito del viaje de venganza. Esa honestidad brutal es lo que separa a <em>Promising Young Woman</em> de la fantasía: <strong>el mundo real no está diseñado para que las mujeres ganen. Y la película lo sabe.</strong>
+                            </p>
+
+                            <div class="bg-blue-50 border border-blue-100 p-6 rounded-2xl mt-8 mb-6">
+                                <p class="font-texto text-lg text-azulOceano font-semibold italic text-center">
+                                    En conclusión, yo sí recomiendo la película, pues es un rape revenge que no triggerea a la vista, no detona el TEPT y no contiene imágenes explícitas. Asimismo, considero que puede apelar a diversas audiencias, pues muestra la búsqueda de venganza, así como la búsqueda de sentido dentro del trauma y la brutalidad.
+                                </p>
+                            </div>
+
+                            <blockquote class="font-cita italic text-xl text-moradoMedio border-l-4 border-moradoMedio pl-6 my-6 leading-snug bg-purple-50 py-4 pr-4 rounded-r-lg">
+                                "Si estás escribiendo una película sobre cómo todos hemos sido cómplices en una cultura tóxica, sexista y abusiva, lo primero que tienes que hacer es mirarte a ti misma y cómo has sido parte de eso. Lo importante de esta película es que no hay nada en ella que no sea extremadamente común."<br>
+                                <span class="font-texto text-sm text-gray-500 font-normal mt-2 block">— Emerald Fennell.</span>
+                            </blockquote>
+
+                            <p>
+                                Y ahí está su fuerza: no necesita inventar monstruos porque los reconocemos en todas partes.
+                            </p>
+
+                        </article>
+
+                        <div class="mt-12 pt-6 border-t border-gray-200 flex flex-col sm:flex-row items-center justify-between gap-4">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 bg-azulOceano rounded-full flex items-center justify-center text-white font-bold text-sm">
+                                    <i class="fa-solid fa-feather-pointed"></i>
+                                </div>
+                                <span class="text-sm font-subtitulo font-bold text-grisAntracita">Análisis por Karen Socorro</span>
+                            </div>
+                            <a href="recomendaciones.html" class="text-azulOceano font-subtitulo font-bold hover:text-moradoMedio transition text-sm flex items-center px-4 py-2 border border-gray-200 rounded-full hover:bg-gray-50">
+                                <i class="fa-solid fa-arrow-left mr-2"></i> Volver al Botiquín Cultural
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="contacto" class="bg-grisAntracita text-white pt-16 pb-24 lg:pb-8 border-t-4 border-doradoSuave mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 lg:col-span-2">
+                    <div class="flex items-center gap-3 mb-4">
+                         <div class="w-10 h-10 bg-white rounded-full flex items-center justify-center overflow-hidden">
+                             <img src="home.svg" alt="Icon" class="w-8 h-8 object-contain" onerror="this.src='https://placehold.co/100x100?text=CA';">
+                         </div>
+                        <h2 class="font-subtitulo font-bold text-2xl">Cosiendo Alas</h2>
+                    </div>
+                    <p class="font-texto text-lavandaSuave text-lg mb-6 max-w-md">
+                        Organización dedicada a la prevención de la violencia sexual y la atención integral de víctimas.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="https://www.facebook.com/share/16oUTUZ9zC/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                           <i class="fa-brands fa-facebook-f text-xl"></i>
+                        </a>
+                        <a href="https://www.instagram.com/cosiendo.tus.alas/" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-instagram text-xl"></i>
+                        </a>
+                        <a href="ENLACE_TIKTOK" target="_blank" rel="noopener noreferrer" class="w-12 h-12 rounded-full bg-azulOceano flex items-center justify-center hover:bg-verdeEsperanza transition">
+                            <i class="fa-brands fa-tiktok text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="font-titulo1 text-xl italic mb-4 text-doradoSuave">Contacto Institucional</h3>
+                    <ul class="space-y-3 font-texto text-lavandaSuave text-lg">
+                        <li class="flex items-start gap-3">
+                            <i class="fa-solid fa-envelope mt-1 text-verdeEsperanza"></i>
+                            <a href="mailto:cosiendo.tus.alas@gmail.com" class="hover:text-white transition break-all">cosiendo.tus.alas@gmail.com</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fa-brands fa-whatsapp mt-1 text-verdeEsperanza"></i>
+                            <a href="https://wa.me/525535538561" target="_blank" class="hover:text-white transition">55 3553 8561</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-moradoMedio border-opacity-30 pt-8 text-center text-lavandaSuave text-sm font-texto">
+                <p>&copy; 2024 Cosiendo Alas. Todos los derechos reservados. Textos del Botiquín Cultural bajo licencia de uso libre con atribución.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const sideMenu = document.getElementById('side-menu');
+        const overlay = document.getElementById('overlay');
+        const navbar = document.getElementById('main-navbar');
+        const navLogo = document.getElementById('nav-logo');
+        const menuLinks = document.querySelectorAll('#side-menu a');
+        
+        function toggleMenu() {
+            const isOpen = !sideMenu.classList.contains('translate-x-full');
+            if (isOpen) {
+                sideMenu.classList.add('translate-x-full');
+                overlay.classList.add('opacity-0');
+                setTimeout(() => { overlay.classList.add('hidden'); }, 300);
+                document.body.style.overflow = '';
+            } else {
+                overlay.classList.remove('hidden');
+                void overlay.offsetWidth; 
+                overlay.classList.remove('opacity-0');
+                sideMenu.classList.remove('translate-x-full');
+                document.body.style.overflow = 'hidden';
+            }
+        }
+
+        function harmonizeGraphics() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('nav-compact');
+                navLogo.classList.add('logo-compact');
+            } else {
+                navbar.classList.remove('nav-compact');
+                navLogo.classList.remove('logo-compact');
+            }
+        }
+
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu);
+        menuLinks.forEach(link => { link.addEventListener('click', toggleMenu); });
+        
+        window.addEventListener('scroll', harmonizeGraphics);
+        window.addEventListener('resize', harmonizeGraphics);
+        harmonizeGraphics();
+        
+        document.addEventListener('keydown', function(event) {
+            if (event.key === "Escape") { window.location.href = "https://www.google.com"; }
+        });
+    </script>
+</body>
+</html>
